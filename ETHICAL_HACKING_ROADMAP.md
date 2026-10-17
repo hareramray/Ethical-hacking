@@ -4,6 +4,8 @@
 **Format:** A practical syllabus, progress checklist, lab plan, and reference guide.  
 **Starting assumption:** You are beginning from basic computer use. Demonstrate an existing skill and skip its introductory exercises if you already know it.
 
+**Expanded topic files:** [Open the detailed roadmap collection](roadmaps/README.md) | [Track your progress](roadmaps/PROGRESS.md).
+
 ## 00. How to use this roadmap
 
 Ethical hacking means assessing security with authorization, establishing what a weakness actually allows, and helping the owner fix it. The outcome is a defensible assessment and a safer system.
