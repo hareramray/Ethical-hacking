@@ -52,6 +52,8 @@ This lesson does not implement OAuth redirect URI handling, authentication callb
 
 ## Verification and files
 
+For registered OAuth callback destinations and authorization-code binding, use the separate [OAuth/OIDC and PKCE lesson](OAUTH_OIDC.md). An ordinary return-URL allowlist is not a complete OAuth callback policy.
+
 - [Django lesson](backend/securitylab/redirect_lab.py): bounded selectors, actual redirects, fixed validator, and marker documents.
 - [Backend tests](backend/securitylab/test_redirect_lab.py): Location/status contracts, valid control, strict selectors, parser edge cases, CSRF, host/scheme/role boundaries, and companion API restrictions.
 - [Vue lesson](frontend/src/RedirectLab.vue): comparison controls and destination observations.

@@ -40,6 +40,9 @@ from .framing_lab import framing_metadata
 from .cache_lab import CACHE_METADATA
 from .queue_lab import QUEUE_METADATA
 from .redirect_lab import redirect_metadata
+from .preflight_lab import preflight_metadata
+from .worker_lab import worker_metadata
+from .oauth_lab import oauth_metadata
 
 MAX_UPLOAD = 64 * 1024
 MAX_UPLOADS = 20
@@ -133,6 +136,9 @@ def bootstrap(request):
         "cache": CACHE_METADATA,
         "queue": QUEUE_METADATA,
         "redirect": redirect_metadata(),
+        "preflight": preflight_metadata(),
+        "worker": worker_metadata(),
+        "oauth": oauth_metadata(),
         "uploads": [upload_record(item) for item in Upload.objects.filter(owner=key)],
         "fixtures": [{"name": name, "url": "/api/fixtures/" + name, "description": value[1]}
                      for name, value in FIXTURES.items()],

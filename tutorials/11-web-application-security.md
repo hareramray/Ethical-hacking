@@ -122,6 +122,8 @@ Idempotency makes retries safe only when keys are scoped to caller and operation
 
 ## Four focused labs and evidence
 
+Additional browser-protocol comparisons cover [CORS preflight](../labs/browser_security/CORS_PREFLIGHT.md) and [CSP workers with HTTP report collection](../labs/browser_security/CSP_WORKERS_REPORTING.md). Record actual request receipt, mutations, worker messages, and received reports independently. A missing browser-readable response or report alone does not establish that the operation was prevented.
+
 Two exercises below have runnable comparisons: [queued-job authorization](../labs/browser_security/QUEUED_AUTHORIZATION.md) and [personalized cache isolation](../labs/browser_security/CACHE_ISOLATION.md). The queue lesson explicitly requires current authority at execution and download; the cache lesson preserves public cache hits while excluding private responses. Both use disposable in-process state, not a production queue or CDN. For browser navigation, add the [open-redirect lesson](../labs/browser_security/OPEN_REDIRECTS.md), which follows real HTTP redirects between owned local pages.
 
 **Export after role change.** Create an authorized queued export, reduce the fictional requester's role, then process and download it. Choose and document whether current authority is required at execution/delivery. Capture job context, policy decisions, output tenant, and download logs. Repair worker and storage authorization together. A second authorized export must still succeed.

@@ -115,4 +115,4 @@ A network failure or timeout can also make a response unreadable. If the compani
 python labs/browser_security/run_lab.py --test
 ```
 
-Browser installation and Chrome-channel alternatives are documented in the [lab guide](README.md). This lesson uses two HTTP origins on one site. Different-site SameSite behavior, HTTPS/Secure cookies, third-party-cookie policies, and preflight permission handling require separate fixtures.
+Browser installation and Chrome-channel alternatives are documented in the [lab guide](README.md). This lesson uses two HTTP origins on one site. The separate [CORS preflight lesson](CORS_PREFLIGHT.md) adds actual OPTIONS permission checks and independently records handler effects and response readability. Different-site SameSite behavior, HTTPS/Secure cookies, and third-party-cookie policies still require separate fixtures.

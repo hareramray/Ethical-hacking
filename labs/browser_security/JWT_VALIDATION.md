@@ -68,6 +68,8 @@ The library handles signing and verification; this lesson does not implement cus
 
 ## Boundaries and further work
 
+Continue with the separate [OAuth/OIDC and PKCE lesson](OAUTH_OIDC.md) for a local authorization-code flow. It uses OAuthlib and real browser redirects, with an in-process token exchange; the JWT comparison here remains focused on token validation and resource permission.
+
 `POST /api/jwt/compare/` accepts exactly `{"fixture":"normal"}` or another listed fixture ID. Django CSRF protection applies. Requests cannot supply tokens, keys, claims, algorithms, or key-discovery URLs. Fixture selection contains the teaching examples; it does not replace verification in a real application. No remote key lookup or external network request occurs.
 
 This intentionally small report policy is not a production identity system. It does not cover asymmetric keys, JWKS rotation, revocation, refresh tokens, token-type separation, login cookies, or OAuth/OIDC protocol checks. A production design must define trusted issuers and keys, intended token use, replay requirements, and resource permissions. [RFC 8725](https://www.rfc-editor.org/rfc/rfc8725.html) describes JWT algorithm verification, issuer and audience validation, and rules that prevent accepting one kind of JWT in place of another.

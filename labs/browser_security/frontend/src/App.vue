@@ -22,6 +22,9 @@ import FramingLab from './FramingLab.vue'
 import CacheLab from './CacheLab.vue'
 import QueueLab from './QueueLab.vue'
 import RedirectLab from './RedirectLab.vue'
+import PreflightLab from './PreflightLab.vue'
+import WorkerLab from './WorkerLab.vue'
+import OAuthLab from './OAuthLab.vue'
 
 const tabs = [
   { id: 'xss', number: '01', label: 'XSS & rendering', description: 'Follow data into the DOM' },
@@ -50,6 +53,9 @@ const tabs = [
   { id: 'cache', number: '24', label: 'Personalized cache isolation', description: 'Keep private responses out of shared caches' },
   { id: 'queue', number: '25', label: 'Queued-job authorization', description: 'Recheck authority when work runs and downloads' },
   { id: 'redirect', number: '26', label: 'Open redirects', description: 'Validate return destinations before navigation' },
+  { id: 'preflight', number: '27', label: 'CORS preflight', description: 'Separate request permission from response visibility' },
+  { id: 'worker', number: '28', label: 'CSP workers & reporting', description: 'Observe worker execution and received HTTP reports' },
+  { id: 'oauth', number: '29', label: 'OAuth / OIDC & PKCE', description: 'Bind authorization codes to their initiating flow' },
 ]
 const active = ref('xss')
 const ready = ref(false)
@@ -83,6 +89,9 @@ const framing = ref({ fixtures: [] })
 const cache = ref({ fixtures: [] })
 const queue = ref({ fixtures: [] })
 const redirect = ref({ fixtures: [] })
+const preflight = ref({ fixtures: [] })
+const worker = ref({ fixtures: [] })
+const oauth = ref({ fixtures: [] })
 const uploads = ref([])
 const stored = ref('')
 const mode = ref('self')
@@ -184,6 +193,9 @@ async function bootstrap(initial = false) {
   cache.value = data.cache || { fixtures: [] }
   queue.value = data.queue || { fixtures: [] }
   redirect.value = data.redirect || { fixtures: [] }
+  preflight.value = data.preflight || { fixtures: [] }
+  worker.value = data.worker || { fixtures: [] }
+  oauth.value = data.oauth || { fixtures: [] }
   uploads.value = data.uploads || []
   stored.value = data.stored?.payload || ''
   if (initial && payloads.value.length) {
@@ -374,7 +386,10 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <p class="intro" v-else-if="active === 'framing'">Try a clearly labelled framing demonstration with a harmless practice button. Compare unrestricted embedding, protective headers, and an allowed integration.</p>
         <p class="intro" v-else-if="active === 'cache'">Follow fictional users through a disposable shared cache. Compare cached markers, current permissions, and public-content cache hits.</p>
         <p class="intro" v-else-if="active === 'queue'">Follow a fictional export from submission to processing and download. Observe what happens when permissions change between those steps.</p>
-        <p class="intro" v-else>Follow real redirects between local marker pages. Compare unchecked return URLs with permitted destinations and retain ordinary navigation.</p>
+        <p class="intro" v-else-if="active === 'redirect'">Follow real redirects between local marker pages. Compare unchecked return URLs with permitted destinations and retain ordinary navigation.</p>
+        <p class="intro" v-else-if="active === 'preflight'">Observe the browser's OPTIONS request, the actual handler's effects, and JavaScript response visibility as separate events.</p>
+        <p class="intro" v-else-if="active === 'worker'">Compare a worker's execution under enforced and report-only policies. Check which violation reports reach the local collector.</p>
+        <p class="intro" v-else>Follow a local authorization-code flow with PKCE. Compare transaction binding, callback validation, and single-use code handling.</p>
 
         <div v-if="error" class="message error-message" role="alert"><strong>Request could not complete</strong><span>{{ error }}</span></div>
         <div v-if="notice" class="message success-message" role="status">{{ notice }}</div>
@@ -402,6 +417,9 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <CacheLab v-else-if="active === 'cache'" :metadata="cache" :ready="ready" :csrf-token="csrfToken" />
         <QueueLab v-else-if="active === 'queue'" :metadata="queue" :ready="ready" :csrf-token="csrfToken" />
         <RedirectLab v-else-if="active === 'redirect'" :metadata="redirect" :ready="ready" :csrf-token="csrfToken" />
+        <PreflightLab v-else-if="active === 'preflight'" :metadata="preflight" :ready="ready" :csrf-token="csrfToken" />
+        <WorkerLab v-else-if="active === 'worker'" :metadata="worker" :ready="ready" :csrf-token="csrfToken" />
+        <OAuthLab v-else-if="active === 'oauth'" :metadata="oauth" :ready="ready" :csrf-token="csrfToken" />
 
         <template v-else-if="active !== 'uploads'">
           <div class="experiment-layout">

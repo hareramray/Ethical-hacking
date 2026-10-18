@@ -33,6 +33,8 @@ Additional runnable browser lessons cover [DOM clobbering](labs/browser_security
 
 The same dashboard adds [personalized cache isolation](labs/browser_security/CACHE_ISOLATION.md), [queued-job authorization](labs/browser_security/QUEUED_AUTHORIZATION.md), and [open redirects](labs/browser_security/OPEN_REDIRECTS.md). Cache and queue comparisons use disposable application state; redirects use actual HTTP responses and local browser navigation. These are separate authorization and navigation boundaries, not additional CSP bypasses.
 
+Protocol lessons add [CORS preflight](labs/browser_security/CORS_PREFLIGHT.md), [CSP workers and real HTTP violation reporting](labs/browser_security/CSP_WORKERS_REPORTING.md), and [local OAuth/OIDC with PKCE](labs/browser_security/OAUTH_OIDC.md). These distinguish browser requests, worker execution, report receipt, and authorization-flow validation.
+
 1. For individual inputs, use the context-specific examples below. Change the marker ID for each test.
 2. For a working practice environment, save the Python block under **Local practice lab** as `csp_xss_lab.py`, then run `python csp_xss_lab.py`.
 3. Open `http://127.0.0.1:8765/` and the browser's developer-tools Console and Network panels. The initial page uses a nonce CSP and escapes reflected text.
@@ -771,7 +773,7 @@ Nonce values are generated independently for each response. Hashes cover exact U
 
 (2) The current CSP3 Working Draft's matching algorithm permits non-parser-inserted script elements under `strict-dynamic`, including the inline script created by this lab's trusted bootstrap. This was observed in the browser validation below; older implementations can differ. Parser-inserted inline scripts without an accepted nonce/hash and event attributes remain blocked here. Audit trusted script creation paths rather than treating their execution as a bypass. [W3C CSP3: matching elements to source lists](https://www.w3.org/TR/CSP/#match-element-to-source-list).
 
-The `report` mode keeps all these operations executable and records local violation events where supported. It deliberately configures no report collector; it does not test HTTP report delivery. A deployed report pipeline needs configured reporting endpoints and separate verification. Report-only CSP is delivered as a response header, not a meta element. [MDN: Report-Only](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy-Report-Only).
+The basic `report` mode keeps all these operations executable and records local violation events where supported. It deliberately configures no report collector; it does not test HTTP report delivery. For that separate measurement, use the [CSP workers and HTTP reporting lesson](labs/browser_security/CSP_WORKERS_REPORTING.md), which collects actual browser-generated reports locally. A deployed report pipeline needs configured reporting endpoints and separate verification. Report-only CSP is delivered as a response header, not a meta element. [MDN: Report-Only](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy-Report-Only).
 
 ### Validation performed
 
@@ -841,7 +843,7 @@ The original runnable lab focuses on script execution and a local fetch. Unless 
 | `'unsafe-inline'` | Compare a policy without nonces/hashes with the same policy containing a valid nonce/hash source. Do not infer behavior from the keyword's mere presence. |
 | `'unsafe-eval'` | In a lab policy only, compare the three fixed string-evaluation actions with and without it. Keep callback timers as controls. |
 | `data:` / `blob:` script sources | In a separate lab, serve only a fixed console marker. Compare absent/present scheme permission without `strict-dynamic`; revoke created blob URLs. Other controls may also reject the load. |
-| `worker-src` | Load a same-origin worker whose only action is `postMessage('CSP_WORKER_MARKER')`; record its message or violation, then terminate it. Worker creation and the worker's own execution policy are separate concerns. |
+| `worker-src` | The [worker lesson](labs/browser_security/CSP_WORKERS_REPORTING.md) compares a fixed same-origin worker under allowed, enforced-denial, and report-only policies. Record its marker, local violation events, and actual report receipt separately. Worker creation and the worker's own execution policy are separate concerns. |
 | WebAssembly | In applications using Wasm, compile a tiny empty module and compare the intended policy with the restrictive policy. Account for browser support and `'wasm-unsafe-eval'` versus broader `'unsafe-eval'`. |
 | `base-uri` | In a disposable document, attempt a `<base href="/lab-base/">` and inspect `document.baseURI`; perform no navigation. |
 | `object-src` | Attempt an object embedding a static, same-origin marker page. Confirm the specific violation rather than relying on missing visible content. |

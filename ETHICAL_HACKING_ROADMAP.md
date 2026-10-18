@@ -580,6 +580,8 @@ The [PortSwigger topic catalog](https://portswigger.net/web-security/all-topics)
 
 ### 11.6 Practice sequence and exit criteria
 
+The [CORS preflight lesson](labs/browser_security/CORS_PREFLIGHT.md), [CSP worker/reporting lesson](labs/browser_security/CSP_WORKERS_REPORTING.md), and [local OAuth/OIDC flow](labs/browser_security/OAUTH_OIDC.md) add observed browser-protocol behavior. Keep request permission, handler effects, response visibility, worker execution, report receipt, and identity-flow validation as separate evidence.
+
 Runnable companion lessons now cover [personalized cache isolation](labs/browser_security/CACHE_ISOLATION.md), [authorization during queued exports](labs/browser_security/QUEUED_AUTHORIZATION.md), and [browser return-URL validation](labs/browser_security/OPEN_REDIRECTS.md). Compare vulnerable/fixed decisions and repeat the successful allowed controls. The cache and queue lessons use disposable application models; the redirect lesson follows real HTTP navigation between the two local origins.
 
 1. Build and document the small application; perform a manual walkthrough before scanning.

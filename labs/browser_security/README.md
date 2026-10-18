@@ -12,7 +12,9 @@ Content-handling lessons cover [Markdown and rich-text sanitization](SANITIZATIO
 
 Browser-boundary lessons add [DOM clobbering](DOM_CLOBBERING.md), [client-side prototype pollution](PROTOTYPE_POLLUTION.md), and [clickjacking and framing](CLICKJACKING_FRAMING.md). Compare actual named-element lookups, inherited preferences, and cross-origin embedding with their respective repairs.
 
-The **26 lab tabs** also include [personalized cache isolation](CACHE_ISOLATION.md), [queued-job authorization](QUEUED_AUTHORIZATION.md), and [open redirects](OPEN_REDIRECTS.md). Inspect actual disposable cache and export records, then follow real HTTP redirects between local marker pages.
+The **29 lab tabs** also include [personalized cache isolation](CACHE_ISOLATION.md), [queued-job authorization](QUEUED_AUTHORIZATION.md), and [open redirects](OPEN_REDIRECTS.md). Inspect actual disposable cache and export records, then follow real HTTP redirects between local marker pages.
+
+Protocol lessons add [CORS preflight](CORS_PREFLIGHT.md), [CSP workers and HTTP reporting](CSP_WORKERS_REPORTING.md), and [OAuth/OIDC with PKCE](OAUTH_OIDC.md). Distinguish request permission, response visibility, worker execution, report receipt, and authorization-flow binding using local fixtures.
 
 The application runs on your own computer at **http://127.0.0.1:8766/**. The examples use fixed console/DOM markers. Experimental documents and upload previews are sandboxed separately from the controller. This is a teaching application, not a service to deploy publicly.
 
@@ -29,7 +31,7 @@ Setup creates a local `.venv`, installs the pinned Python dependencies and locke
 
 After pulling updates that add dependencies, rerun `--setup`. The JWT lesson uses pinned PyJWT; sanitization uses pinned markdown-it-py and nh3 from `requirements.txt`.
 
-Open **http://127.0.0.1:8766/**. The launcher also starts a companion on **http://127.0.0.1:8767/** for the CSRF/CORS, postMessage, framing, and redirect lessons. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
+Open **http://127.0.0.1:8766/**. The launcher also starts a companion on **http://127.0.0.1:8767/** for the CSRF/CORS, preflight, postMessage, framing, and redirect lessons. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
 
 ```powershell
 python labs/browser_security/run_lab.py --port 8876
@@ -69,6 +71,9 @@ That uses ports 8876 and 8877. Set `--peer-port` explicitly if needed; the two p
 | [Personalized cache isolation](CACHE_ISOLATION.md) | Request the same route as fictional users, then revoke access or log out. | A path-only cache returns stale or another user's marker; fixed authorization and private-response exclusion preserve public cache hits. |
 | [Queued-job authorization](QUEUED_AUTHORIZATION.md) | Revoke a fictional export permission before processing or download. | Submission, worker, and download checks have separate effects on stored jobs, artifacts, and returned markers; authorized exports still succeed. |
 | [Open redirects](OPEN_REDIRECTS.md) | Follow ordinary, peer-origin, and normalized-path return destinations. | Real HTTP redirects reach local marker pages; a narrow fixed destination policy rejects disallowed navigation and preserves the allowed route. |
+| [CORS preflight](CORS_PREFLIGHT.md) | Send fixed JSON/custom-header requests from the companion origin. | Compare received OPTIONS requests, actual handler calls and mutations, and browser response readability under independent origin/method/header rules. |
+| [CSP workers & reporting](CSP_WORKERS_REPORTING.md) | Start a fixed marker worker under allowed, enforced-denial, and report-only policies. | Worker execution, local violation events, and HTTP reports received by the collector are separate evidence. |
+| [OAuth / OIDC & PKCE](OAUTH_OIDC.md) | Follow a local authorization-code flow with valid and mismatched transaction inputs. | Browser redirects and OAuthlib code exchanges expose PKCE, state, nonce, redirect registration, and code-reuse decisions while preserving the allowed flow. |
 
 The controller uses Vue's compiled templates and text interpolation. It never evaluates the payload. Django returns the actual experiment document with the chosen response policy; entering code in DevTools is not part of the test.
 
@@ -93,6 +98,10 @@ The **Clickjacking & framing** tab uses the companion origin to embed a main-ori
 The **Personalized cache isolation** tab operates a fresh in-memory application cache for each comparison. It records cache reads, writes, and origin reads; it does not configure a browser cache or CDN. Dashboard responses retain `Cache-Control: no-store`. The **Queued-job authorization** tab processes a disposable queue synchronously with explicit permission changes between stages. Its policy requires current authority at execution and delivery; it does not demonstrate distributed scheduling or eliminate production races.
 
 The **Open redirects** tab follows actual HTTP redirects in isolated frames. Every destination is supplied by a server-owned fixture and stays on the two configured local origins. The fixed handler permits a narrow local destination. The peer marker is a stand-in for an unapproved destination, with no external navigation or login flow.
+
+The **CORS preflight** lesson uses the existing two HTTP origins on one site. It adds real OPTIONS requests without claiming different-site cookie behavior. The **CSP workers & reporting** lesson uses only trusted fixed frame and worker scripts; it collects browser-generated reports through a narrowly scoped endpoint. Missing or delayed report delivery is shown separately from observed execution and CSP events.
+
+The **OAuth / OIDC & PKCE** lesson uses a synthetic local provider and client. Browser authorization redirects are real; the serialized token request is passed to OAuthlib in-process. It does not log into the dashboard, use external accounts, or demonstrate production identity-provider deployment. See the walkthrough for protocol ownership and transport limits.
 
 ### Policy meanings
 

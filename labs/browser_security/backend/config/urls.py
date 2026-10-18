@@ -22,6 +22,7 @@ from securitylab.framing_lab import framing_prepare, framing_peer, framing_peer_
 from securitylab.cache_lab import cache_compare
 from securitylab.queue_lab import queue_compare
 from securitylab.redirect_lab import redirect_prepare, redirect_go, redirect_landing, redirect_peer_landing
+from securitylab import preflight_lab, worker_lab, oauth_lab
 
 urlpatterns = [
     path("", views.index),
@@ -59,6 +60,21 @@ urlpatterns = [
     path("api/cache/compare/", cache_compare),
     path("api/queue/compare/", queue_compare),
     path("api/redirect/prepare/", redirect_prepare),
+    path("api/preflight/prepare/", preflight_lab.preflight_prepare),
+    path("api/preflight/state/", preflight_lab.preflight_state),
+    path("api/preflight/probe/<str:mode>/", preflight_lab.preflight_probe),
+    path("peer/preflight/", preflight_lab.preflight_peer),
+    path("peer/preflight/boot.js", preflight_lab.preflight_peer_script),
+    path("api/worker/prepare/", worker_lab.worker_prepare),
+    path("api/worker/state/", worker_lab.worker_state),
+    path("lab/worker/frame/", worker_lab.worker_frame),
+    path("lab/worker/marker.js", worker_lab.worker_script),
+    path("api/worker/report/", worker_lab.worker_report),
+    path("api/oauth/prepare/", oauth_lab.oauth_prepare),
+    path("lab/oauth/start/", oauth_lab.oauth_start),
+    path("lab/oauth/provider/authorize/", oauth_lab.oauth_authorize),
+    path("lab/oauth/callback/", oauth_lab.oauth_callback),
+    path("lab/oauth/alternate-callback/", oauth_lab.oauth_alternate_callback),
     path("lab/redirect/go/", redirect_go),
     path("lab/redirect/landing/", redirect_landing),
     path("peer/redirect/landing/", redirect_peer_landing),

@@ -96,6 +96,8 @@ JWT is a representation; JWS supplies signing/integrity and JWE supplies encrypt
 
 Practice signature and claim validation in the [runnable JWT lesson](../labs/browser_security/JWT_VALIDATION.md). It uses PyJWT, fresh local signing keys, fixed token scenarios, and a separate subject permission check. It does not implement OAuth/OIDC, discovery, key rotation, or browser authentication.
 
+Continue with the [local OAuth/OIDC and PKCE lesson](../labs/browser_security/OAUTH_OIDC.md) for browser authorization redirects, registered callbacks, transaction binding, and code redemption through OAuthlib. Its test provider is local and its token exchange is in-process; it does not demonstrate external login, discovery, refresh tokens, or key rotation.
+
 ## Lesson 5: model the complete identity lifecycle
 
 For each transition, record entry conditions, proof, state changes, expiry, revocation, notification, audit event, and recovery. Set a measurable revocation requirement before the lab; locally verified access tokens and server-side sessions can have different invalidation mechanisms.
