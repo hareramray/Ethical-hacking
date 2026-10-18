@@ -8,6 +8,21 @@ Jump to [individual inputs](#context-specific-harmless-inputs), [JSONP tests](#j
 
 ## Quick start
 
+For the Vue + Django application with an evidence panel, stored fixtures, and a real upload API, see [Browser Security Lab](labs/browser_security/README.md):
+
+```powershell
+python labs/browser_security/run_lab.py --setup
+python labs/browser_security/run_lab.py
+```
+
+Open `http://127.0.0.1:8766/`. That application's sandbox remains enabled even in its `off` script-policy mode. The standalone standard-library server below remains a separate reference fixture on port 8765.
+
+The Vue + Django application also includes a **Path traversal** tab. Its [file-read walkthrough](labs/browser_security/PATH_TRAVERSAL.md) compares a vulnerable handler with a repaired handler using disposable public files and a harmless private sentinel. This is a server-side file-access exercise, separate from the CSP/XSS probes below.
+
+Three more runnable lessons cover [SQL injection and parameterized queries](labs/browser_security/SQL_INJECTION.md), [owner, tenant, and role access checks](labs/browser_security/ACCESS_CONTROL.md), and [CSRF versus CORS](labs/browser_security/CSRF_CORS.md). They compare vulnerable and fixed handlers using synthetic records and counters. The same launcher starts both the main origin on port 8766 and the companion origin on port 8767.
+
+Continue with [authentication and session lifecycle](labs/browser_security/AUTH_SESSIONS.md), [SSRF between local mock services](labs/browser_security/SSRF.md), and [single-use business rules and race conditions](labs/browser_security/BUSINESS_LOGIC.md). These server-side exercises use disposable accounts, token stores, HTTP fixtures, and coupon data.
+
 1. For individual inputs, use the context-specific examples below. Change the marker ID for each test.
 2. For a working practice environment, save the Python block under **Local practice lab** as `csp_xss_lab.py`, then run `python csp_xss_lab.py`.
 3. Open `http://127.0.0.1:8765/` and the browser's developer-tools Console and Network panels. The initial page uses a nonce CSP and escapes reflected text.

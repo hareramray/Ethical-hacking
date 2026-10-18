@@ -38,18 +38,22 @@ Build a matrix for anonymous, owner, same-tenant peer, other tenant, administrat
 
 CSRF arises when a browser supplies ambient credentials to a state-changing operation an attacker can cause. Review anti-CSRF tokens, origin checks, login CSRF, and SameSite behavior in the actual deployment. CORS alone is not a general CSRF defense, and XSS can undermine browser-side protections. Keep state-changing actions out of incidental reads and test legitimate forms after adding protections.
 
+Practice with the [interactive access-control lesson](../labs/browser_security/ACCESS_CONTROL.md): switch synthetic owners, peers, tenants, and administrators, then compare server decisions. The [two-origin CSRF/CORS lesson](../labs/browser_security/CSRF_CORS.md) separately measures a request's counter change and whether the companion browser script can read its response. Both run in the Vue + Django lab; persona switching is a teaching control, not a login implementation.
+
+The [authentication and session lesson](../labs/browser_security/AUTH_SESSIONS.md) executes fictional login, logout, and password-reset sequences against a separate teaching token store. Compare session rotation, revocation, expiry, and single-use decisions, including successful legitimate requests. Its virtual clock makes expiry observable without waiting.
+
 ## Lesson 3: follow data into interpreters
 
 The central question is whether untrusted data can become executable structure or alter a privileged operation. Learn parser grammar and data flow instead of collecting payload strings.
 
 | Family | Root cause and harmless local exercise | Durable repair |
 | --- | --- | --- |
-| SQL, ORM escape hatches, second-order input | Stored or immediate data enters query text; compare a synthetic quoted name against a parameterized query | Parameterize values, allowlist dynamic identifiers, restrict database rights; retain business validation |
+| SQL, ORM escape hatches, second-order input | Stored or immediate data enters query text; the [runnable SQL lesson](../labs/browser_security/SQL_INJECTION.md) compares quoted names and an OR condition with parameterized queries | Parameterize values, allowlist dynamic identifiers, restrict database rights; retain business validation |
 | NoSQL, LDAP, XPath, expression and log injection | Caller-controlled operators/grammar change query or log structure | Typed builders, explicit operators/attributes, structured logging and context-appropriate encoding |
 | OS command and argument injection | Data becomes shell syntax or an unintended executable option | Structured process APIs, executable/option allowlists, limited worker identity; use a stub that only records arguments |
 | Server-side templates | User data is interpreted as template structure or reaches dangerous helpers | Keep templates trusted and pass input as data; do not rely solely on a sandbox |
-| Traversal, inclusion, archives | Canonical paths, links, separators, or archive members escape a storage root | Enforce resolved boundaries and safe link/archive handling; test only harmless sentinel files |
-| SSRF | A fetch feature trusts schemes, hosts, redirects, DNS, or parser differences | Constrain destinations and redirects, control egress and credentials; use only owned local mock destinations |
+| Traversal, inclusion, archives | Canonical paths, links, separators, or archive members escape a storage root; practice the [runnable path traversal lesson](../labs/browser_security/PATH_TRAVERSAL.md) with disposable markers | Enforce resolved boundaries and safe link/archive handling; test only harmless sentinel files |
+| SSRF | A fetch feature trusts schemes, hosts, redirects, DNS, or parser differences; compare direct and redirected destinations in the [local SSRF lesson](../labs/browser_security/SSRF.md) | Constrain destinations and redirects, control egress and credentials; use only owned local mock destinations |
 | XML external entities/DTD | Parsing resolves external resources or expands expensive structures | Disable unnecessary resolution, configure limits, and separate schema validation from resolver safety |
 | Unsafe deserialization | Input controls object construction/types or unsafe convenience APIs | Schema-driven data formats and restricted types; signatures do not make a dangerous parser safe |
 | Uploads | Filename/type assumptions, execution paths, worker rights, or retrieval authorization fail | Generated names, content checks, isolated storage/processing, size limits, safe headers, authorized downloads |
@@ -107,6 +111,8 @@ Cache poisoning means an input influences a cached response in a way the key fai
 Business logic defects violate rules despite syntactically valid requests: skipped approval, caller-supplied price/quantity/currency, rounding inconsistencies, duplicate coupons/refunds, entitlement/trial/referral misuse, invitation/consent/account-linking confusion, and excessive administrative overrides. Describe each as a state invariant and test both legitimate and prohibited transitions.
 
 For a single-use coupon, check-then-act code can let two concurrent requests both observe “unused.” The durable fix is an atomic conditional update, transaction/locking strategy, or uniqueness constraint appropriate to the data model. In an isolated SQLite fixture, create a row with `used = 0`, execute `UPDATE coupons SET used = 1 WHERE id = ? AND used = 0`, and treat exactly one changed row as success. Repeat the operation: the second attempt must change zero rows. Then add a bounded two-connection concurrency exercise with a timeout and verify the same invariant.
+
+Run that comparison in the [business logic and race-condition lesson](../labs/browser_security/BUSINESS_LOGIC.md). Its controlled scheduling exposes two credits from the vulnerable handler and one from the atomic repair; sequential and single-request controls show which failures require overlap.
 
 Idempotency makes retries safe only when keys are scoped to caller and operation and outcomes are recorded consistently. Test partial failures, queue redelivery, stale caches, delayed revocation, and dependency outages. Fail-open authorization and incomplete cleanup are security-relevant reliability defects. Also inspect debug pages, verbose errors, backup artifacts, test endpoints, directory indexes, public storage links, defaults, and secrets in logs.
 

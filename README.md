@@ -61,6 +61,19 @@ python tutorials/tools/build_catalog.py --check
 
 The example checks exercise the local fixtures, including a temporary loopback HTTP server. The catalog check verifies curriculum retention, manifest freshness, and local tutorial links. See [coverage and validation](tutorials/COVERAGE.md) for details.
 
+## Run the Vue + Django browser-security lab
+
+The [Browser Security Lab](labs/browser_security/README.md) turns the [CSP/XSS reference examples](CSP_XSS_HARMLESS_TESTS.md) into interactive localhost exercises for XSS, CSP, JSONP, stored input, and file uploads. Additional lessons compare vulnerable and fixed behavior for [path traversal](labs/browser_security/PATH_TRAVERSAL.md), [SQL injection](labs/browser_security/SQL_INJECTION.md), [access control](labs/browser_security/ACCESS_CONTROL.md), and [CSRF/CORS](labs/browser_security/CSRF_CORS.md), using disposable files and synthetic records. The lab includes a Vue interface, Django APIs, isolated experiment frames, and automated checks. Python 3.12+ and Node.js 24 LTS are required. The launcher starts the dashboard on port 8766 and a restricted companion origin on port 8767.
+
+```powershell
+python labs/browser_security/run_lab.py --setup
+python labs/browser_security/run_lab.py
+```
+
+The same interface also includes [authentication/session lifecycle](labs/browser_security/AUTH_SESSIONS.md), [SSRF with local mock services](labs/browser_security/SSRF.md), and [business logic/race conditions](labs/browser_security/BUSINESS_LOGIC.md). These lessons use disposable synthetic fixtures and show vulnerable and fixed results side by side.
+
+Open **http://127.0.0.1:8766/**. See the lab README for sample files, policy expectations, and tests.
+
 ## Keep useful evidence
 
 | Resource | Use it to |
