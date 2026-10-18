@@ -40,6 +40,7 @@ class LabRoleMiddleware:
             "/peer/", "/peer/boot.js", "/api/health",
             "/peer/message/", "/peer/message/receiver.js",
             "/lab/message/sender/", "/lab/message/sender.js",
+            "/peer/framing/", "/peer/framing/boot.js",
         }:
             response = JsonResponse({"error": "This origin only serves the fixed companion lesson."}, status=404)
             response["Content-Security-Policy"] = "default-src 'none'; sandbox"

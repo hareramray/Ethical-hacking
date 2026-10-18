@@ -29,6 +29,8 @@ API exercises add [write authorization and mass assignment](labs/browser_securit
 
 The dashboard also includes [Markdown/rich-text sanitization](labs/browser_security/SANITIZATION.md), [real cross-frame postMessage checks](labs/browser_security/POSTMESSAGE.md), and [bounded ZIP extraction](labs/browser_security/ARCHIVE_EXTRACTION.md). These add saved and re-rendered content, actual sender-origin/window checks, and disposable file-write evidence.
 
+Additional runnable browser lessons cover [DOM clobbering](labs/browser_security/DOM_CLOBBERING.md), [prototype pollution](labs/browser_security/PROTOTYPE_POLLUTION.md), and [clickjacking/framing](labs/browser_security/CLICKJACKING_FRAMING.md). They measure named-property collisions, inherited settings, and actual cross-origin embedding without using real accounts or sensitive actions.
+
 1. For individual inputs, use the context-specific examples below. Change the marker ID for each test.
 2. For a working practice environment, save the Python block under **Local practice lab** as `csp_xss_lab.py`, then run `python csp_xss_lab.py`.
 3. Open `http://127.0.0.1:8765/` and the browser's developer-tools Console and Network panels. The initial page uses a nonce CSP and escapes reflected text.
@@ -259,6 +261,8 @@ Use the [sanitization lesson](labs/browser_security/SANITIZATION.md) to follow p
 Use context-appropriate output encoding, safe DOM sinks, and a maintained HTML sanitizer for deliberately allowed rich HTML. Do not attempt to build an HTML sanitizer with regular expressions. [OWASP: XSS prevention](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html).
 
 ### 15. Related check: DOM clobbering
+
+For an end-to-end comparison, open the dashboard's **DOM clobbering** tab and follow [the walkthrough](labs/browser_security/DOM_CLOBBERING.md). The named-configuration and form-property fixtures show actual output changes, then preserve the intended behavior using explicit references. The snippet below only demonstrates named-element exposure.
 
 In a disposable page, insert:
 
@@ -826,7 +830,7 @@ Then change one byte in the HTML script body without updating the header and con
 
 ## Additional CSP coverage checklist
 
-The runnable lab focuses on script execution and a local fetch. These additional checks need their own controlled fixture or application path; they are not automatically tested by the lab.
+The original runnable lab focuses on script execution and a local fetch. Unless a row links to a dedicated runnable lesson, these additional checks still need their own controlled fixture or application path.
 
 | Control | Harmless test and interpretation |
 | --- | --- |
@@ -840,7 +844,7 @@ The runnable lab focuses on script execution and a local fetch. These additional
 | `base-uri` | In a disposable document, attempt a `<base href="/lab-base/">` and inspect `document.baseURI`; perform no navigation. |
 | `object-src` | Attempt an object embedding a static, same-origin marker page. Confirm the specific violation rather than relying on missing visible content. |
 | `frame-src` | Embed a static same-origin child marker page; check whether the parent permits the child load. |
-| `frame-ancestors` | Try embedding the protected document from a separate local parent page. This governs who may embed the document, not which children it can load. Test via response headers. |
+| `frame-ancestors` | The [framing lesson](labs/browser_security/CLICKJACKING_FRAMING.md) embeds a practice target through a separate local origin and compares denied and explicitly allowed integrations. This governs who may embed the document, not which children it can load. |
 | `form-action` | Submit a dummy value to a dedicated local endpoint with no persistent effects. Check the destination policy separately from connection policy. |
 | `img-src`, `style-src`, `font-src`, `media-src` | Use tiny local assets and compare load success with the matching directive violation. These are resource-control checks, not by themselves XSS evidence. |
 | CSP `sandbox` | Compare a dedicated sandboxed document with its unsandboxed control. Avoid broad permissions that invalidate the intended sandbox test. |

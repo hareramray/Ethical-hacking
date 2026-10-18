@@ -34,6 +34,9 @@ from .webhook_lab import WEBHOOK_METADATA
 from .sanitizer_lab import sanitizer_metadata
 from .message_lab import message_metadata
 from .archive_lab import ARCHIVE_METADATA
+from .clobber_lab import clobber_metadata
+from .prototype_lab import prototype_metadata
+from .framing_lab import framing_metadata
 
 MAX_UPLOAD = 64 * 1024
 MAX_UPLOADS = 20
@@ -121,6 +124,9 @@ def bootstrap(request):
         "sanitizer": sanitizer_metadata(),
         "message": message_metadata(),
         "archive": ARCHIVE_METADATA,
+        "clobber": clobber_metadata(),
+        "prototype": prototype_metadata(),
+        "framing": framing_metadata(),
         "uploads": [upload_record(item) for item in Upload.objects.filter(owner=key)],
         "fixtures": [{"name": name, "url": "/api/fixtures/" + name, "description": value[1]}
                      for name, value in FIXTURES.items()],

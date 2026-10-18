@@ -10,6 +10,8 @@ API lessons cover [write authorization and mass assignment](API_WRITES.md), [JWT
 
 Content-handling lessons cover [Markdown and rich-text sanitization](SANITIZATION.md), [cross-frame postMessage security](POSTMESSAGE.md), and [bounded ZIP extraction](ARCHIVE_EXTRACTION.md). Follow saved HTML into the browser, distinguish message origin from sender identity, and inspect actual file writes inside disposable directories.
 
+Browser-boundary lessons add [DOM clobbering](DOM_CLOBBERING.md), [client-side prototype pollution](PROTOTYPE_POLLUTION.md), and [clickjacking and framing](CLICKJACKING_FRAMING.md). Compare actual named-element lookups, inherited preferences, and cross-origin embedding with their respective repairs.
+
 The application runs on your own computer at **http://127.0.0.1:8766/**. The examples use fixed console/DOM markers. Experimental documents and upload previews are sandboxed separately from the controller. This is a teaching application, not a service to deploy publicly.
 
 ## Start
@@ -25,7 +27,7 @@ Setup creates a local `.venv`, installs the pinned Python dependencies and locke
 
 After pulling updates that add dependencies, rerun `--setup`. The JWT lesson uses pinned PyJWT; sanitization uses pinned markdown-it-py and nh3 from `requirements.txt`.
 
-Open **http://127.0.0.1:8766/**. The launcher also starts a companion on **http://127.0.0.1:8767/** for the CSRF/CORS and postMessage lessons. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
+Open **http://127.0.0.1:8766/**. The launcher also starts a companion on **http://127.0.0.1:8767/** for the CSRF/CORS, postMessage, and framing lessons. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
 
 ```powershell
 python labs/browser_security/run_lab.py --port 8876
@@ -59,6 +61,9 @@ That uses ports 8876 and 8877. Set `--peer-port` explicitly if needed; the two p
 | [Sanitization](SANITIZATION.md) | Save Markdown and rich-text fixtures, then reload their previews. | Compare parsed HTML, sanitized HTML, final DOM, and harmless marker execution; legitimate formatting survives the fix. |
 | [postMessage security](POSTMESSAGE.md) | Compare trusted senders, wrong origins, wrong windows, malformed messages, and HTML text. | Real browser messages expose independent origin, source, schema, and rendering decisions. |
 | [Archive extraction](ARCHIVE_EXTRACTION.md) | Extract tiny normal, traversal, collision, and limit-check ZIP fixtures. | Actual writes expose an intended-directory escape; fixed validation and bounded staging reject unsafe archives before writing files. |
+| [DOM clobbering](DOM_CLOBBERING.md) | Compare ordinary markup with named elements that collide with configuration or form properties. | Real browser lookups change harmless output; explicit references preserve the intended value. |
+| [Prototype pollution](PROTOTYPE_POLLUTION.md) | Merge predefined JSON preferences in fresh browser realms. | Unsafe merging changes inherited values; validation before copying preserves legitimate preferences without prototype changes. |
+| [Clickjacking & framing](CLICKJACKING_FRAMING.md) | Embed a practice button through the companion origin and click the labelled demonstration. | Compare actual target readiness and click counters under unrestricted framing, CSP, X-Frame-Options, and an explicit allowed integration. |
 
 The controller uses Vue's compiled templates and text interpolation. It never evaluates the payload. Django returns the actual experiment document with the chosen response policy; entering code in DevTools is not part of the test.
 
@@ -75,6 +80,10 @@ The **API write authorization**, **JWT validation**, and **Webhook replay protec
 The **Sanitization** tab saves one fixture comparison in the browser's Django session and renders both results in opaque sandboxed frames. Both previews permit the harmless marker, so a missing marker is not attributed to a stricter CSP in fixed mode. The **postMessage security** tab uses actual sender and receiver windows on the two configured origins; the companion exposes only fixed lesson documents and scripts, never dashboard APIs. Its receivers preserve their origin for this comparison.
 
 The **Archive extraction** tab reads server-created ZIP fixtures and writes only inside fresh disposable outer directories. Vulnerable extraction can reach a sibling of the intended extraction directory, but cannot access host files. Fixed extraction checks all members and stages bounded reads before writing. No actual symlinks are created, and this is not a demonstration of concurrent symlink replacement or an unrestricted archive-upload service.
+
+The **DOM clobbering** and **Prototype pollution** tabs accept only fixed fixtures and run each comparison in fresh opaque sandbox frames. Their observed configuration changes remain inside those frames. Named-property collisions and inherited values are measured separately from JavaScript execution; these lessons do not claim arbitrary XSS or server-side execution.
+
+The **Clickjacking & framing** tab uses the companion origin to embed a main-origin target with a practice button. The target changes only a local DOM counter. The dashboard distinguishes target readiness and observed clicks from missing evidence: no readiness message alone does not establish that a framing header blocked the document. The walkthrough and browser tests include actual header enforcement and an allowed-integration control.
 
 ### Policy meanings
 

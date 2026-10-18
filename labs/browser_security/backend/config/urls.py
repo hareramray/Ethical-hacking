@@ -16,6 +16,9 @@ from securitylab.webhook_lab import webhook_compare
 from securitylab.sanitizer_lab import sanitizer_save, sanitizer_state, sanitizer_frame
 from securitylab.message_lab import message_prepare, message_receiver, message_receiver_script, message_sender, message_sender_script
 from securitylab.archive_lab import archive_compare
+from securitylab.clobber_lab import clobber_prepare, clobber_frame
+from securitylab.prototype_lab import prototype_prepare, prototype_frame
+from securitylab.framing_lab import framing_prepare, framing_peer, framing_peer_script, framing_target, framing_target_script
 
 urlpatterns = [
     path("", views.index),
@@ -45,6 +48,15 @@ urlpatterns = [
     path("lab/message/sender/", message_sender),
     path("lab/message/sender.js", message_sender_script),
     path("api/archive/compare/", archive_compare),
+    path("api/clobber/prepare/", clobber_prepare),
+    path("lab/clobber/frame/", clobber_frame),
+    path("api/prototype/prepare/", prototype_prepare),
+    path("lab/prototype/frame/", prototype_frame),
+    path("api/framing/prepare/", framing_prepare),
+    path("peer/framing/", framing_peer),
+    path("peer/framing/boot.js", framing_peer_script),
+    path("lab/framing/target/", framing_target),
+    path("lab/framing/target.js", framing_target_script),
     path("api/cross-origin/prepare/", cross_origin.prepare),
     path("api/cross-origin/state/", cross_origin.state),
     path("api/cross-origin/change/vulnerable/", cross_origin.csrf_vulnerable),

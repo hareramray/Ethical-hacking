@@ -78,6 +78,8 @@ API lessons add [write authorization and mass assignment](labs/browser_security/
 
 Content-handling lessons add [Markdown/rich-text sanitization](labs/browser_security/SANITIZATION.md), [cross-frame postMessage security](labs/browser_security/POSTMESSAGE.md), and [ZIP extraction boundaries](labs/browser_security/ARCHIVE_EXTRACTION.md). Compare saved browser output, real sender identities, and bounded filesystem writes through the same dashboard.
 
+Continue with [DOM clobbering](labs/browser_security/DOM_CLOBBERING.md), [client-side prototype pollution](labs/browser_security/PROTOTYPE_POLLUTION.md), and [clickjacking/framing](labs/browser_security/CLICKJACKING_FRAMING.md). These compare real browser name resolution, inherited preferences, and frame permissions using isolated markers and a practice button.
+
 Open **http://127.0.0.1:8766/**. See the lab README for sample files, policy expectations, and tests.
 
 ## Keep useful evidence

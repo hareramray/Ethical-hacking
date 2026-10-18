@@ -87,6 +87,8 @@ Use a local HTML file with a fixed element and assign the literal marker `<b>TRA
 
 The [sanitization lesson](../labs/browser_security/SANITIZATION.md) follows Markdown and rich text through parsing, sanitization, storage, reload, and final DOM observation. The [postMessage lesson](../labs/browser_security/POSTMESSAGE.md) uses real local frames to compare origin checks, sender-window checks, message schemas, and safe text rendering.
 
+Run the [DOM clobbering](../labs/browser_security/DOM_CLOBBERING.md) and [prototype pollution](../labs/browser_security/PROTOTYPE_POLLUTION.md) lessons to observe named-property collisions and inherited preference changes in disposable browser frames. The [clickjacking/framing lesson](../labs/browser_security/CLICKJACKING_FRAMING.md) compares cross-origin embedding policies with a harmless practice button and an explicitly permitted integration.
+
 | Browser topic | What to learn and verify |
 | --- | --- |
 | `postMessage`, DOM clobbering, prototype pollution | Validate sender origin/source and schemas; avoid trusting DOM names or inherited object properties as authority |

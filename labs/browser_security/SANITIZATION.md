@@ -107,6 +107,6 @@ The [backend tests](backend/securitylab/test_sanitizer_lab.py) exercise real par
 
 ## What remains outside this lesson
 
-This exercise is not universal sanitizer certification. It does not exhaust mutation XSS, every HTML parser differential, Markdown plugins, CSS sanitization, DOM clobbering, arbitrary URI policies, editable-document frameworks, or downstream transformations. Changes to a sanitizer policy, parser, renderer, or plugin require relevant regression cases. If stored sanitized HTML is retained across policy upgrades, plan how it will be reprocessed or invalidated; this small session fixture does not implement a content migration system.
+This exercise is not universal sanitizer certification. It does not exhaust mutation XSS, every HTML parser differential, Markdown plugins, CSS sanitization, DOM clobbering, arbitrary URI policies, editable-document frameworks, or downstream transformations. The separate [DOM clobbering lesson](DOM_CLOBBERING.md) demonstrates named-element collisions and explicit-reference repairs. Changes to a sanitizer policy, parser, renderer, or plugin require relevant regression cases. If stored sanitized HTML is retained across policy upgrades, plan how it will be reprocessed or invalidated; this small session fixture does not implement a content migration system.
 
 Continue with the [XSS and CSP examples](../../CSP_XSS_HARMLESS_TESTS.md) and the [browser lab overview](README.md).
