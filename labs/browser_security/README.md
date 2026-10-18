@@ -4,6 +4,8 @@ A runnable companion to [CSP_XSS_HARMLESS_TESTS.md](../../CSP_XSS_HARMLESS_TESTS
 
 Further lessons cover [authentication and sessions](AUTH_SESSIONS.md), [SSRF](SSRF.md), and [business logic and race conditions](BUSINESS_LOGIC.md). Each compares deliberately vulnerable behavior with a repair and a legitimate positive control.
 
+Interpreter lessons add [server-side template injection](TEMPLATE_INJECTION.md), [command and argument injection](COMMAND_INJECTION.md), and [XML external entities](XML_ENTITIES.md). They execute predefined harmless inputs through real renderers, processes, and parsers.
+
 The application runs on your own computer at **http://127.0.0.1:8766/**. The examples use fixed console/DOM markers. Experimental documents and upload previews are sandboxed separately from the controller. This is a teaching application, not a service to deploy publicly.
 
 ## Start
@@ -42,6 +44,9 @@ That uses ports 8876 and 8877. Set `--peer-port` explicitly if needed; the two p
 | [Authentication & sessions](AUTH_SESSIONS.md) | Compare login rotation, logout replay, expired reset tokens, and reused reset tokens. | Actual token-store decisions in fresh fictional account flows, with an explicit virtual clock for expiry. |
 | [SSRF](SSRF.md) | Request a public mock service, a private marker, and a public-to-private redirect. | Real HTTP requests confined to disposable local mock services; fixed destination checks apply at every hop. |
 | [Business logic & races](BUSINESS_LOGIC.md) | Redeem a coupon once, sequentially twice, and with two overlapping attempts. | A ledger exposes duplicate rewards; an atomic conditional update allows only one redemption. |
+| [Template injection](TEMPLATE_INJECTION.md) | Compare a normal name, a context-variable expression, a conditional, and HTML text. | Django evaluates template source but preserves values passed as data; output escaping addresses a different boundary. |
+| [Commands & arguments](COMMAND_INJECTION.md) | Select a normal operand, a shell separator, and an injected option. | Fixed marker-only processes show shell interpretation versus argument parsing, then literal operand handling. |
+| [XML external entities](XML_ENTITIES.md) | Parse ordinary XML, a built-in entity, and a document referencing a synthetic external resource. | The vulnerable parser resolves the marker; the fixed parser rejects the DTD before resolution. |
 
 The controller uses Vue's compiled templates and text interpolation. It never evaluates the payload. Django returns the actual experiment document with the chosen response policy; entering code in DevTools is not part of the test.
 
@@ -50,6 +55,8 @@ The **Path traversal** tab compares both handlers side by side. Follow the [walk
 The **CSRF / CORS** tab uses two real origins. Different loopback ports are still the same site, and cookies are not separated by port. The companion serves a fixed teaching script; it does not expose the dashboard APIs or change session cookies. This fixture demonstrates Origin checks and CORS response visibility, not a cross-site SameSite-cookie test. See the [walkthrough](CSRF_CORS.md) for expected counters and limitations.
 
 The **Authentication & sessions** tab executes scripted clients against a disposable teaching token store. It does not log you into the dashboard or replace Django's session machinery. The **SSRF** tab routes reserved fixture hostnames directly to sockets owned by the current exercise, without DNS or access to other services. The **Business logic & races** tab uses two database connections and an explicit scheduling barrier to make a check-then-act race repeatable. Its points are synthetic, and its files are temporary.
+
+The **Template injection**, **Commands & arguments**, and **XML external entities** tabs accept only known fixture identifiers. Their server-owned templates, commands, and XML documents cannot be replaced through the API. Template rendering uses scalar fixture context, processes print or record markers, and the XML resolver can supply only one in-memory resource. These outer exercise limits are distinct from each fixed handler's repair.
 
 ### Policy meanings
 
@@ -92,7 +99,7 @@ cd ../../..
 python labs/browser_security/run_lab.py --test
 ```
 
-The command runs Django checks and tests, rebuilds Vue, then runs Playwright against a real browser. Browser-test data is separate from learner data. Tests exercise SQL isolation, object permissions, session/reset-token decisions, local HTTP routing, concurrent coupon redemption, CSRF boundaries, CORS visibility, upload validation and retrieval, and actual marker behavior rather than treating source text as proof of execution.
+The command runs Django checks and tests, rebuilds Vue, then runs Playwright against a real browser. Browser-test data is separate from learner data. Tests exercise SQL isolation, object permissions, session/reset-token decisions, local HTTP routing, concurrent coupon redemption, template interpretation, process argument boundaries, XML resolution, CSRF boundaries, CORS visibility, upload validation and retrieval, and actual marker behavior rather than treating source text as proof of execution.
 
 Stop any running lab on ports 8766 and 8767 before running the browser checks; the tests start their own servers on those ports.
 

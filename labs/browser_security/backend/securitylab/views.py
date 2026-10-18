@@ -1,4 +1,4 @@
-"""Local-only demonstrations. Dangerous sinks exist only in sandbox documents."""
+"""Local-only comparisons with controlled browser and server-side fixtures."""
 import html
 import io
 import json
@@ -25,6 +25,9 @@ from .access_lab import ACCESS_METADATA
 from .auth_lab import AUTH_METADATA
 from .ssrf_lab import SSRF_METADATA
 from .logic_lab import LOGIC_METADATA
+from .template_lab import TEMPLATE_METADATA
+from .command_lab import COMMAND_METADATA
+from .xml_lab import XML_METADATA
 
 MAX_UPLOAD = 64 * 1024
 MAX_UPLOADS = 20
@@ -103,6 +106,9 @@ def bootstrap(request):
         "auth": AUTH_METADATA,
         "ssrf": SSRF_METADATA,
         "logic": LOGIC_METADATA,
+        "template": TEMPLATE_METADATA,
+        "command": COMMAND_METADATA,
+        "xml": XML_METADATA,
         "uploads": [upload_record(item) for item in Upload.objects.filter(owner=key)],
         "fixtures": [{"name": name, "url": "/api/fixtures/" + name, "description": value[1]}
                      for name, value in FIXTURES.items()],

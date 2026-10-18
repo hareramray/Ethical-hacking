@@ -7,6 +7,9 @@ from securitylab.access_lab import access_state, access_identity, access_record
 from securitylab.auth_lab import auth_compare
 from securitylab.ssrf_lab import ssrf_compare
 from securitylab.logic_lab import logic_compare
+from securitylab.template_lab import template_compare
+from securitylab.command_lab import command_compare
+from securitylab.xml_lab import xml_compare
 
 urlpatterns = [
     path("", views.index),
@@ -21,6 +24,9 @@ urlpatterns = [
     path("api/auth/compare/", auth_compare),
     path("api/ssrf/compare/", ssrf_compare),
     path("api/logic/compare/", logic_compare),
+    path("api/template/compare/", template_compare),
+    path("api/command/compare/", command_compare),
+    path("api/xml/compare/", xml_compare),
     path("api/cross-origin/prepare/", cross_origin.prepare),
     path("api/cross-origin/state/", cross_origin.state),
     path("api/cross-origin/change/vulnerable/", cross_origin.csrf_vulnerable),

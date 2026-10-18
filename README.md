@@ -72,6 +72,8 @@ python labs/browser_security/run_lab.py
 
 The same interface also includes [authentication/session lifecycle](labs/browser_security/AUTH_SESSIONS.md), [SSRF with local mock services](labs/browser_security/SSRF.md), and [business logic/race conditions](labs/browser_security/BUSINESS_LOGIC.md). These lessons use disposable synthetic fixtures and show vulnerable and fixed results side by side.
 
+Continue with [template injection](labs/browser_security/TEMPLATE_INJECTION.md), [command/argument injection](labs/browser_security/COMMAND_INJECTION.md), and [XML external entities](labs/browser_security/XML_ENTITIES.md). These lessons use predefined harmless fixtures with real Django rendering, marker-producing processes, and XML parsing.
+
 Open **http://127.0.0.1:8766/**. See the lab README for sample files, policy expectations, and tests.
 
 ## Keep useful evidence

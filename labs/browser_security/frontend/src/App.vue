@@ -7,6 +7,9 @@ import CrossOriginLab from './CrossOriginLab.vue'
 import AuthLab from './AuthLab.vue'
 import SsrfLab from './SsrfLab.vue'
 import LogicLab from './LogicLab.vue'
+import TemplateLab from './TemplateLab.vue'
+import CommandLab from './CommandLab.vue'
+import XmlLab from './XmlLab.vue'
 
 const tabs = [
   { id: 'xss', number: '01', label: 'XSS & rendering', description: 'Follow data into the DOM' },
@@ -20,6 +23,9 @@ const tabs = [
   { id: 'auth', number: '09', label: 'Authentication & sessions', description: 'Rotate, revoke, and expire tokens' },
   { id: 'ssrf', number: '10', label: 'SSRF', description: 'Validate server request destinations' },
   { id: 'logic', number: '11', label: 'Business logic & races', description: 'Enforce single-use operations' },
+  { id: 'template', number: '12', label: 'Template injection', description: 'Keep data out of template source' },
+  { id: 'command', number: '13', label: 'Commands & arguments', description: 'Preserve executable and operand boundaries' },
+  { id: 'xml', number: '14', label: 'XML external entities', description: 'Control parser resource resolution' },
 ]
 const active = ref('xss')
 const ready = ref(false)
@@ -38,6 +44,9 @@ const crossOrigin = ref({})
 const auth = ref({ scenarios: [] })
 const ssrf = ref({ fixtures: [] })
 const logic = ref({ scenarios: [] })
+const template = ref({ fixtures: [] })
+const command = ref({ fixtures: [] })
+const xml = ref({ fixtures: [] })
 const uploads = ref([])
 const stored = ref('')
 const mode = ref('self')
@@ -124,6 +133,9 @@ async function bootstrap(initial = false) {
   auth.value = data.auth || { scenarios: [] }
   ssrf.value = data.ssrf || { fixtures: [] }
   logic.value = data.logic || { scenarios: [] }
+  template.value = data.template || { fixtures: [] }
+  command.value = data.command || { fixtures: [] }
+  xml.value = data.xml || { fixtures: [] }
   uploads.value = data.uploads || []
   stored.value = data.stored?.payload || ''
   if (initial && payloads.value.length) {
@@ -299,7 +311,10 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <p class="intro" v-else-if="active === 'cross-origin'">Use a second localhost origin to distinguish request side effects from permission to read a response.</p>
         <p class="intro" v-else-if="active === 'auth'">Follow fictional login, logout, and password-reset flows. Inspect which session and reset tokens remain valid after each operation.</p>
         <p class="intro" v-else-if="active === 'ssrf'">Follow server-side HTTP requests between local mock services. Compare initial destination checks with validation at every redirect.</p>
-        <p class="intro" v-else>Redeem a synthetic coupon once, repeat the request, then overlap two attempts. Compare separate checks with an atomic database update.</p>
+        <p class="intro" v-else-if="active === 'logic'">Redeem a synthetic coupon once, repeat the request, then overlap two attempts. Compare separate checks with an atomic database update.</p>
+        <p class="intro" v-else-if="active === 'template'">Render a supplied fixture as template source and as variable data. Inspect the actual output from Django's template engine.</p>
+        <p class="intro" v-else-if="active === 'command'">Compare fixed harmless process fixtures. Observe shell separators, argument splitting, and literal operands in the resulting output.</p>
+        <p class="intro" v-else>Parse supplied XML documents with different resource policies. Observe external-entity resolution through a synthetic marker and preserve ordinary XML parsing.</p>
 
         <div v-if="error" class="message error-message" role="alert"><strong>Request could not complete</strong><span>{{ error }}</span></div>
         <div v-if="notice" class="message success-message" role="status">{{ notice }}</div>
@@ -312,6 +327,9 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <AuthLab v-else-if="active === 'auth'" :metadata="auth" :ready="ready" :csrf-token="csrfToken" />
         <SsrfLab v-else-if="active === 'ssrf'" :metadata="ssrf" :ready="ready" :csrf-token="csrfToken" />
         <LogicLab v-else-if="active === 'logic'" :metadata="logic" :ready="ready" :csrf-token="csrfToken" />
+        <TemplateLab v-else-if="active === 'template'" :metadata="template" :ready="ready" :csrf-token="csrfToken" />
+        <CommandLab v-else-if="active === 'command'" :metadata="command" :ready="ready" :csrf-token="csrfToken" />
+        <XmlLab v-else-if="active === 'xml'" :metadata="xml" :ready="ready" :csrf-token="csrfToken" />
 
         <template v-else-if="active !== 'uploads'">
           <div class="experiment-layout">
