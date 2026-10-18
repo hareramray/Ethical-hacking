@@ -13,6 +13,9 @@ from securitylab.xml_lab import xml_compare
 from securitylab.write_lab import write_compare
 from securitylab.jwt_lab import jwt_compare
 from securitylab.webhook_lab import webhook_compare
+from securitylab.sanitizer_lab import sanitizer_save, sanitizer_state, sanitizer_frame
+from securitylab.message_lab import message_prepare, message_receiver, message_receiver_script, message_sender, message_sender_script
+from securitylab.archive_lab import archive_compare
 
 urlpatterns = [
     path("", views.index),
@@ -33,6 +36,15 @@ urlpatterns = [
     path("api/write/compare/", write_compare),
     path("api/jwt/compare/", jwt_compare),
     path("api/webhook/compare/", webhook_compare),
+    path("api/sanitizer/save/", sanitizer_save),
+    path("api/sanitizer/state/", sanitizer_state),
+    path("lab/sanitizer/frame/", sanitizer_frame),
+    path("api/message/prepare/", message_prepare),
+    path("peer/message/", message_receiver),
+    path("peer/message/receiver.js", message_receiver_script),
+    path("lab/message/sender/", message_sender),
+    path("lab/message/sender.js", message_sender_script),
+    path("api/archive/compare/", archive_compare),
     path("api/cross-origin/prepare/", cross_origin.prepare),
     path("api/cross-origin/state/", cross_origin.state),
     path("api/cross-origin/change/vulnerable/", cross_origin.csrf_vulnerable),

@@ -13,6 +13,9 @@ import XmlLab from './XmlLab.vue'
 import WriteLab from './WriteLab.vue'
 import JwtLab from './JwtLab.vue'
 import WebhookLab from './WebhookLab.vue'
+import SanitizerLab from './SanitizerLab.vue'
+import MessageLab from './MessageLab.vue'
+import ArchiveLab from './ArchiveLab.vue'
 
 const tabs = [
   { id: 'xss', number: '01', label: 'XSS & rendering', description: 'Follow data into the DOM' },
@@ -32,6 +35,9 @@ const tabs = [
   { id: 'write', number: '15', label: 'API write authorization', description: 'Authorize objects and editable fields' },
   { id: 'jwt', number: '16', label: 'JWT validation', description: 'Verify signatures and intended claims' },
   { id: 'webhook', number: '17', label: 'Webhook replay protection', description: 'Authenticate, check freshness, deduplicate' },
+  { id: 'sanitizer', number: '18', label: 'Sanitization', description: 'Parse, sanitize, save, and render' },
+  { id: 'message', number: '19', label: 'postMessage security', description: 'Check origin, window, and message shape' },
+  { id: 'archive', number: '20', label: 'Archive extraction', description: 'Keep writes inside the extraction root' },
 ]
 const active = ref('xss')
 const ready = ref(false)
@@ -56,6 +62,9 @@ const xml = ref({ fixtures: [] })
 const write = ref({ fixtures: [] })
 const jwt = ref({ fixtures: [] })
 const webhook = ref({ fixtures: [] })
+const sanitizer = ref({ fixtures: [] })
+const message = ref({ fixtures: [] })
+const archive = ref({ fixtures: [] })
 const uploads = ref([])
 const stored = ref('')
 const mode = ref('self')
@@ -148,6 +157,9 @@ async function bootstrap(initial = false) {
   write.value = data.write || { fixtures: [] }
   jwt.value = data.jwt || { fixtures: [] }
   webhook.value = data.webhook || { fixtures: [] }
+  sanitizer.value = data.sanitizer || { fixtures: [] }
+  message.value = data.message || { fixtures: [] }
+  archive.value = data.archive || { fixtures: [] }
   uploads.value = data.uploads || []
   stored.value = data.stored?.payload || ''
   if (initial && payloads.value.length) {
@@ -329,7 +341,10 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <p class="intro" v-else-if="active === 'xml'">Parse supplied XML documents with different resource policies. Observe external-entity resolution through a synthetic marker and preserve ordinary XML parsing.</p>
         <p class="intro" v-else-if="active === 'write'">Update fictional profiles and inspect stored changes. Compare identity-only checks and mass assignment with object permissions and explicit editable fields.</p>
         <p class="intro" v-else-if="active === 'jwt'">Inspect synthetic signed tokens. Compare trusting decoded claims with signature verification, claim validation, and a separate subject permission check.</p>
-        <p class="intro" v-else>Deliver fictional events to a disposable points ledger. Observe why a valid signature alone does not prevent stale events or duplicate effects.</p>
+        <p class="intro" v-else-if="active === 'webhook'">Deliver fictional events to a disposable points ledger. Observe why a valid signature alone does not prevent stale events or duplicate effects.</p>
+        <p class="intro" v-else-if="active === 'sanitizer'">Follow Markdown and rich text through parsing, sanitization, storage, and browser rendering. Compare actual DOM results while preserving useful formatting.</p>
+        <p class="intro" v-else-if="active === 'message'">Exchange real messages between local frames. Inspect the sender origin, window identity, message shape, and final rendering.</p>
+        <p class="intro" v-else>Extract tiny predefined ZIP archives into disposable directories. Compare file destinations, bounded reads, and rejection before any writes.</p>
 
         <div v-if="error" class="message error-message" role="alert"><strong>Request could not complete</strong><span>{{ error }}</span></div>
         <div v-if="notice" class="message success-message" role="status">{{ notice }}</div>
@@ -348,6 +363,9 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <WriteLab v-else-if="active === 'write'" :metadata="write" :ready="ready" :csrf-token="csrfToken" />
         <JwtLab v-else-if="active === 'jwt'" :metadata="jwt" :ready="ready" :csrf-token="csrfToken" />
         <WebhookLab v-else-if="active === 'webhook'" :metadata="webhook" :ready="ready" :csrf-token="csrfToken" />
+        <SanitizerLab v-else-if="active === 'sanitizer'" :metadata="sanitizer" :ready="ready" :csrf-token="csrfToken" />
+        <MessageLab v-else-if="active === 'message'" :metadata="message" :ready="ready" :csrf-token="csrfToken" />
+        <ArchiveLab v-else-if="active === 'archive'" :metadata="archive" :ready="ready" :csrf-token="csrfToken" />
 
         <template v-else-if="active !== 'uploads'">
           <div class="experiment-layout">

@@ -36,7 +36,11 @@ class LabRoleMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if settings.LAB_ROLE == "peer" and request.path not in {"/peer/", "/peer/boot.js", "/api/health"}:
+        if settings.LAB_ROLE == "peer" and request.path not in {
+            "/peer/", "/peer/boot.js", "/api/health",
+            "/peer/message/", "/peer/message/receiver.js",
+            "/lab/message/sender/", "/lab/message/sender.js",
+        }:
             response = JsonResponse({"error": "This origin only serves the fixed companion lesson."}, status=404)
             response["Content-Security-Policy"] = "default-src 'none'; sandbox"
             response["X-Content-Type-Options"] = "nosniff"

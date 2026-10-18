@@ -80,7 +80,7 @@ if not candidate.is_relative_to(public_root):
 
 The complete lab also checks its outer disposable root and permits only its four known fixtures. Those limits constrain the demonstration; they do not repair the vulnerable handler's missing `public/` check. Returned paths are relative labels, not machine-specific absolute paths.
 
-In a production download feature, prefer authorized record IDs mapped to server-controlled storage names, enforce ownership separately, and limit filesystem permissions. Resolved-path validation followed by a later open is not atomic against concurrent link replacement. Storage writable by an adversary needs platform-specific safe file-opening and link policies. This lab uses freshly created fixtures that the browser cannot modify; it does not exercise symlink races, archive extraction, remote inclusion, or unrestricted host-file access.
+In a production download feature, prefer authorized record IDs mapped to server-controlled storage names, enforce ownership separately, and limit filesystem permissions. Resolved-path validation followed by a later open is not atomic against concurrent link replacement. Storage writable by an adversary needs platform-specific safe file-opening and link policies. This lesson uses freshly created fixtures that the browser cannot modify; it does not exercise symlink races, remote inclusion, or unrestricted host-file access. Continue with the separate [ZIP extraction lesson](ARCHIVE_EXTRACTION.md) for write-path traversal, member validation, and bounded extraction inside disposable directories.
 
 ## Retest and record evidence
 

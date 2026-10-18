@@ -27,6 +27,8 @@ The [template injection](labs/browser_security/TEMPLATE_INJECTION.md), [command/
 
 API exercises add [write authorization and mass assignment](labs/browser_security/API_WRITES.md), [JWT validation](labs/browser_security/JWT_VALIDATION.md), and [webhook replay protection](labs/browser_security/WEBHOOKS.md). These compare fictional profile updates, locally generated tokens, and disposable event ledgers; they are separate from browser CSP enforcement.
 
+The dashboard also includes [Markdown/rich-text sanitization](labs/browser_security/SANITIZATION.md), [real cross-frame postMessage checks](labs/browser_security/POSTMESSAGE.md), and [bounded ZIP extraction](labs/browser_security/ARCHIVE_EXTRACTION.md). These add saved and re-rendered content, actual sender-origin/window checks, and disposable file-write evidence.
+
 1. For individual inputs, use the context-specific examples below. Change the marker ID for each test.
 2. For a working practice environment, save the Python block under **Local practice lab** as `csp_xss_lab.py`, then run `python csp_xss_lab.py`.
 3. Open `http://127.0.0.1:8765/` and the browser's developer-tools Console and Network panels. The initial page uses a nonce CSP and escapes reflected text.
@@ -219,6 +221,8 @@ The first two deliberately parse HTML. The third displays literal text. Trusted 
 
 ### 13. Query, fragment, message, and storage sources
 
+For a runnable cross-frame comparison, use the [postMessage lesson](labs/browser_security/POSTMESSAGE.md). It tests real sender origins and windows, message schemas, and text versus HTML rendering using fixed local frames.
+
 Use the preceding DOM marker as data in one source at a time. Let the application's normal code consume it. The lab below supplies fragment and dedicated storage fixtures.
 
 For a message-driven widget in your own lab, send a fixed marker from its intended sender:
@@ -244,6 +248,8 @@ window.addEventListener('message', (event) => {
 For real cross-frame widgets, use the intended frame's `contentWindow` and exact expected origin instead of this self-message fixture. Do not change a production receiver to accept arbitrary senders just to run a test. [MDN: postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 
 ### 14. Framework templates, rich text, Markdown, and mutation XSS
+
+Use the [sanitization lesson](labs/browser_security/SANITIZATION.md) to follow predefined Markdown and rich HTML through parsing, nh3 sanitization, session persistence, reload, and final browser DOM inspection. Its ordinary event-handler fixtures do not constitute exhaustive mutation-XSS coverage.
 
 - Put the HTML, SVG, and URL probes through the real preview, sanitizer, persistence, and re-render pipeline. Compare the sanitized string with the final DOM after all transformations.
 - For a template engine, try the inert arithmetic marker `{{7*7}}` only if that is its actual interpolation syntax. Output `49` shows expression evaluation, not JavaScript execution or a sandbox escape.

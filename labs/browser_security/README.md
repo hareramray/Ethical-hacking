@@ -8,6 +8,8 @@ Interpreter lessons add [server-side template injection](TEMPLATE_INJECTION.md),
 
 API lessons cover [write authorization and mass assignment](API_WRITES.md), [JWT validation](JWT_VALIDATION.md), and [webhook replay protection](WEBHOOKS.md). Compare actual stored changes, token decisions, and event-ledger effects using fresh fictional fixtures.
 
+Content-handling lessons cover [Markdown and rich-text sanitization](SANITIZATION.md), [cross-frame postMessage security](POSTMESSAGE.md), and [bounded ZIP extraction](ARCHIVE_EXTRACTION.md). Follow saved HTML into the browser, distinguish message origin from sender identity, and inspect actual file writes inside disposable directories.
+
 The application runs on your own computer at **http://127.0.0.1:8766/**. The examples use fixed console/DOM markers. Experimental documents and upload previews are sandboxed separately from the controller. This is a teaching application, not a service to deploy publicly.
 
 ## Start
@@ -21,9 +23,9 @@ python labs/browser_security/run_lab.py
 
 Setup creates a local `.venv`, installs the pinned Python dependencies and locked npm dependencies, builds Vue, and creates the SQLite tables. The first setup requires internet access for packages; ordinary lab use requires no CDN or external service. It does not change your global Python packages.
 
-After pulling updates that add dependencies, rerun `--setup`. The JWT lesson uses the pinned PyJWT package from `requirements.txt`.
+After pulling updates that add dependencies, rerun `--setup`. The JWT lesson uses pinned PyJWT; sanitization uses pinned markdown-it-py and nh3 from `requirements.txt`.
 
-Open **http://127.0.0.1:8766/**. The launcher also starts a companion on **http://127.0.0.1:8767/** for the CSRF/CORS lesson. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
+Open **http://127.0.0.1:8766/**. The launcher also starts a companion on **http://127.0.0.1:8767/** for the CSRF/CORS and postMessage lessons. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
 
 ```powershell
 python labs/browser_security/run_lab.py --port 8876
@@ -54,6 +56,9 @@ That uses ports 8876 and 8877. Set `--peer-port` explicitly if needed; the two p
 | [API write authorization](API_WRITES.md) | Edit an owned profile, a peer's profile, and protected properties. | Inspect database state before and after the write; fixed object and field checks reject forbidden patches without partial changes. |
 | [JWT validation](JWT_VALIDATION.md) | Compare valid, tampered, expired, and wrongly scoped synthetic tokens. | Decoding alone trusts claims; PyJWT verifies the signature and required claims before the separate subject permission check. |
 | [Webhook replay protection](WEBHOOKS.md) | Deliver valid, tampered, stale, and repeated fictional events. | Signature checks, freshness checks, and event deduplication protect different boundaries; an atomic ledger update prevents duplicate rewards. |
+| [Sanitization](SANITIZATION.md) | Save Markdown and rich-text fixtures, then reload their previews. | Compare parsed HTML, sanitized HTML, final DOM, and harmless marker execution; legitimate formatting survives the fix. |
+| [postMessage security](POSTMESSAGE.md) | Compare trusted senders, wrong origins, wrong windows, malformed messages, and HTML text. | Real browser messages expose independent origin, source, schema, and rendering decisions. |
+| [Archive extraction](ARCHIVE_EXTRACTION.md) | Extract tiny normal, traversal, collision, and limit-check ZIP fixtures. | Actual writes expose an intended-directory escape; fixed validation and bounded staging reject unsafe archives before writing files. |
 
 The controller uses Vue's compiled templates and text interpolation. It never evaluates the payload. Django returns the actual experiment document with the chosen response policy; entering code in DevTools is not part of the test.
 
@@ -66,6 +71,10 @@ The **Authentication & sessions** tab executes scripted clients against a dispos
 The **Template injection**, **Commands & arguments**, and **XML external entities** tabs accept only known fixture identifiers. Their server-owned templates, commands, and XML documents cannot be replaced through the API. Template rendering uses scalar fixture context, processes print or record markers, and the XML resolver can supply only one in-memory resource. These outer exercise limits are distinct from each fixed handler's repair.
 
 The **API write authorization**, **JWT validation**, and **Webhook replay protection** tabs also use fixed fixture selectors and fresh comparison state. They do not modify the dashboard's accounts, accept real tokens, or receive external webhook deliveries. JWT validation is a token-verification lesson, not an OAuth/OIDC login flow. The webhook's signed-message format is a local teaching contract; provider integrations must follow their own signing specification.
+
+The **Sanitization** tab saves one fixture comparison in the browser's Django session and renders both results in opaque sandboxed frames. Both previews permit the harmless marker, so a missing marker is not attributed to a stricter CSP in fixed mode. The **postMessage security** tab uses actual sender and receiver windows on the two configured origins; the companion exposes only fixed lesson documents and scripts, never dashboard APIs. Its receivers preserve their origin for this comparison.
+
+The **Archive extraction** tab reads server-created ZIP fixtures and writes only inside fresh disposable outer directories. Vulnerable extraction can reach a sibling of the intended extraction directory, but cannot access host files. Fixed extraction checks all members and stages bounded reads before writing. No actual symlinks are created, and this is not a demonstration of concurrent symlink replacement or an unrestricted archive-upload service.
 
 ### Policy meanings
 

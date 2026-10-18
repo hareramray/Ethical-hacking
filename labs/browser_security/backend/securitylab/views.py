@@ -31,6 +31,9 @@ from .xml_lab import XML_METADATA
 from .write_lab import WRITE_METADATA
 from .jwt_lab import JWT_METADATA
 from .webhook_lab import WEBHOOK_METADATA
+from .sanitizer_lab import sanitizer_metadata
+from .message_lab import message_metadata
+from .archive_lab import ARCHIVE_METADATA
 
 MAX_UPLOAD = 64 * 1024
 MAX_UPLOADS = 20
@@ -115,6 +118,9 @@ def bootstrap(request):
         "write": WRITE_METADATA,
         "jwt": JWT_METADATA,
         "webhook": WEBHOOK_METADATA,
+        "sanitizer": sanitizer_metadata(),
+        "message": message_metadata(),
+        "archive": ARCHIVE_METADATA,
         "uploads": [upload_record(item) for item in Upload.objects.filter(owner=key)],
         "fixtures": [{"name": name, "url": "/api/fixtures/" + name, "description": value[1]}
                      for name, value in FIXTURES.items()],
