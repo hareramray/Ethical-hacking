@@ -1,0 +1,117 @@
+[
+  {
+    "name": "bug",
+    "color": "d73a4a",
+    "description": "Incorrect instructions, examples, or repository behavior."
+  },
+  {
+    "name": "documentation",
+    "color": "0075ca",
+    "description": "Improve explanations, references, formatting, or other written content."
+  },
+  {
+    "name": "duplicate",
+    "color": "cfd3d7",
+    "description": "This issue or pull request duplicates existing work."
+  },
+  {
+    "name": "enhancement",
+    "color": "a2eeef",
+    "description": "New content, exercises, features, or substantial improvements."
+  },
+  {
+    "name": "good first issue",
+    "color": "7057ff",
+    "description": "A clearly scoped task suitable for a first contribution."
+  },
+  {
+    "name": "help wanted",
+    "color": "008672",
+    "description": "Community contributions or subject expertise are welcome."
+  },
+  {
+    "name": "invalid",
+    "color": "e4e669",
+    "description": "The report does not describe an actionable issue in this repository."
+  },
+  {
+    "name": "question",
+    "color": "d876e3",
+    "description": "A question about the curriculum, exercises, or contributing."
+  },
+  {
+    "name": "wontfix",
+    "color": "ffffff",
+    "description": "A reviewed request that maintainers do not plan to implement."
+  },
+  {
+    "name": "broken link",
+    "color": "d93f0b",
+    "description": "A missing, moved, or incorrect local or external reference."
+  },
+  {
+    "name": "area: tutorials",
+    "color": "1d76db",
+    "description": "Lesson explanations, guided examples, exercises, and progress tracking."
+  },
+  {
+    "name": "area: labs",
+    "color": "1d76db",
+    "description": "Lab setup, runnable examples, reproducibility, and validation tools."
+  },
+  {
+    "name": "area: roadmap",
+    "color": "1d76db",
+    "description": "Curriculum structure, topic coverage, prerequisites, and study schedules."
+  },
+  {
+    "name": "area: templates",
+    "color": "1d76db",
+    "description": "Reusable notes, reports, checklists, assessment templates, and glossary."
+  },
+  {
+    "name": "area: foundations",
+    "color": "0e8a16",
+    "description": "Computing, networking, operating systems, programming, and cryptography basics."
+  },
+  {
+    "name": "area: applications",
+    "color": "0e8a16",
+    "description": "Web, API, mobile, authentication, secure code review, and software delivery."
+  },
+  {
+    "name": "area: infrastructure",
+    "color": "0e8a16",
+    "description": "Host testing, enterprise identity, cloud, containers, and network security."
+  },
+  {
+    "name": "area: specializations",
+    "color": "0e8a16",
+    "description": "Advanced tracks, research topics, detection, forensics, and adversary emulation."
+  },
+  {
+    "name": "area: security and ethics",
+    "color": "b60205",
+    "description": "Authorization, assessment scope, safe exercises, privacy, and professional conduct."
+  },
+  {
+    "name": "status: needs triage",
+    "color": "fbca04",
+    "description": "Awaiting initial review, scope assessment, or classification."
+  },
+  {
+    "name": "status: needs information",
+    "color": "fbca04",
+    "description": "Additional context or reproduction details are needed to continue."
+  },
+  {
+    "name": "status: in progress",
+    "color": "5319e7",
+    "description": "Someone is actively working on this issue or change."
+  },
+  {
+    "name": "status: blocked",
+    "color": "b60205",
+    "description": "Progress depends on an identified prerequisite or external action."
+  }
+]
