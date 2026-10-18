@@ -1,0 +1,6 @@
+{"id":"E1","event_time":"2026-10-18T04:00:00Z","ingest_time":"2026-10-18T04:00:01Z","kind":"login","actor_id":"u2","actor_name":"bob","outcome":"success","session_id":"s2"}
+{"id":"E2","event_time":"2026-10-18T04:01:00Z","ingest_time":"2026-10-18T04:04:00Z","kind":"role_change","actor_id":"admin1","subject_id":"u2","role":"reader","approved":true}
+{"id":"E3","event_time":"2026-10-18T04:02:00Z","ingest_time":"2026-10-18T04:02:01Z","kind":"document_read","actor_id":"u2","actor_name":"bob","document":"n1","outcome":"denied","session_id":"s2"}
+{"id":"E4","event_time":"2026-10-18T04:02:30Z","ingest_time":"2026-10-18T04:02:31Z","kind":"document_read","actor_id":"u20","actor_name":"bob.training","document":"n1","outcome":"allowed","session_id":"s20"}
+{"id":"E5","event_time":"2026-10-18T04:03:00Z","ingest_time":"2026-10-18T04:03:01Z","kind":"document_read","actor_id":"u2","actor_name":"bob","document":"n1","outcome":"allowed","session_id":"s2"}
+{"id":"E6","event_time":"2026-10-18T04:05:00Z","ingest_time":"2026-10-18T04:05:01Z","kind":"session_revoked","actor_id":"admin1","subject_id":"u2","session_id":"s2"}

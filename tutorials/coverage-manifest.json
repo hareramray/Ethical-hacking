@@ -1,0 +1,2214 @@
+[
+  {
+    "topic": "00. How to use this roadmap",
+    "tutorial": "00-how-to-use-this-roadmap.md",
+    "source": "roadmaps/00-how-to-use-this-roadmap.md",
+    "curriculum": "curriculum/00-how-to-use-this-roadmap.md",
+    "source_sha256": "fc0248bf7d9efbd651c6f886337e3375995cbda768975095d7f285552ce643a0",
+    "checklist_items": 5,
+    "headings": [
+      [
+        "Learning order",
+        "learning-order"
+      ],
+      [
+        "Navigation",
+        "navigation"
+      ],
+      [
+        "What to record",
+        "what-to-record"
+      ],
+      [
+        "A practical route through the separate topic files",
+        "a-practical-route-through-the-separate-topic-files"
+      ],
+      [
+        "Step 1: Establish your starting point",
+        "step-1-establish-your-starting-point"
+      ],
+      [
+        "Step 2: Build a dependency map",
+        "step-2-build-a-dependency-map"
+      ],
+      [
+        "Step 3: Convert a checklist item into a lesson",
+        "step-3-convert-a-checklist-item-into-a-lesson"
+      ],
+      [
+        "Step 4: Use hints without losing the learning",
+        "step-4-use-hints-without-losing-the-learning"
+      ],
+      [
+        "Step 5: Review evidence and choose the next action",
+        "step-5-review-evidence-and-choose-the-next-action"
+      ],
+      [
+        "Completion criteria for using the learning system",
+        "completion-criteria-for-using-the-learning-system"
+      ]
+    ]
+  },
+  {
+    "topic": "01. Authorization, scope, and professional conduct",
+    "tutorial": "01-authorization-scope-and-professional-conduct.md",
+    "source": "roadmaps/01-authorization-scope-and-professional-conduct.md",
+    "curriculum": "curriculum/01-authorization-scope-and-professional-conduct.md",
+    "source_sha256": "509c8f9fc256b9b244c4dfce3d42e52a134a1916b774aff5623177fb356749d1",
+    "checklist_items": 12,
+    "headings": [
+      [
+        "Understand the boundaries",
+        "understand-the-boundaries"
+      ],
+      [
+        "Produce rules of engagement",
+        "produce-rules-of-engagement"
+      ],
+      [
+        "Lab and completion check",
+        "lab-and-completion-check"
+      ],
+      [
+        "Expanded learning sequence: plan an assessment that can actually run",
+        "expanded-learning-sequence-plan-an-assessment-that-can-actually-run"
+      ],
+      [
+        "Module 1: Translate a request into an objective",
+        "module-1-translate-a-request-into-an-objective"
+      ],
+      [
+        "Module 2: Establish who controls every boundary",
+        "module-2-establish-who-controls-every-boundary"
+      ],
+      [
+        "Module 3: Make operating conditions measurable",
+        "module-3-make-operating-conditions-measurable"
+      ],
+      [
+        "Module 4: Protect assessment data throughout its lifecycle",
+        "module-4-protect-assessment-data-throughout-its-lifecycle"
+      ],
+      [
+        "Module 5: Communicate findings and disclosure responsibly",
+        "module-5-communicate-findings-and-disclosure-responsibly"
+      ],
+      [
+        "Scenario decision table",
+        "scenario-decision-table"
+      ],
+      [
+        "Capstone: a complete engagement packet",
+        "capstone-a-complete-engagement-packet"
+      ]
+    ]
+  },
+  {
+    "topic": "02. Build a safe, repeatable lab",
+    "tutorial": "02-build-a-safe-repeatable-lab.md",
+    "source": "roadmaps/02-build-a-safe-repeatable-lab.md",
+    "curriculum": "curriculum/02-build-a-safe-repeatable-lab.md",
+    "source_sha256": "f5d9d9cb4aaac51496feaeb367534a62a366051f59380e287c0ce61c2b4efa3f",
+    "checklist_items": 14,
+    "headings": [
+      [
+        "Hardware and platform planning",
+        "hardware-and-platform-planning"
+      ],
+      [
+        "Network isolation and recovery",
+        "network-isolation-and-recovery"
+      ],
+      [
+        "Build in stages",
+        "build-in-stages"
+      ],
+      [
+        "Expanded build plan: from one machine to a useful security lab",
+        "expanded-build-plan-from-one-machine-to-a-useful-security-lab"
+      ],
+      [
+        "Stage 1: Survey the host before choosing software",
+        "stage-1-survey-the-host-before-choosing-software"
+      ],
+      [
+        "Stage 2: Establish clean base images",
+        "stage-2-establish-clean-base-images"
+      ],
+      [
+        "Stage 3: Design connectivity explicitly",
+        "stage-3-design-connectivity-explicitly"
+      ],
+      [
+        "Stage 4: Deploy an application with synthetic state",
+        "stage-4-deploy-an-application-with-synthetic-state"
+      ],
+      [
+        "Stage 5: Add observability and repeatability",
+        "stage-5-add-observability-and-repeatability"
+      ],
+      [
+        "Stage 6: Extend for enterprise and specialist work",
+        "stage-6-extend-for-enterprise-and-specialist-work"
+      ],
+      [
+        "Troubleshooting the environment",
+        "troubleshooting-the-environment"
+      ],
+      [
+        "Lab acceptance and recovery drill",
+        "lab-acceptance-and-recovery-drill"
+      ]
+    ]
+  },
+  {
+    "topic": "03. Computing and study foundations",
+    "tutorial": "03-computing-and-study-foundations.md",
+    "source": "roadmaps/03-computing-and-study-foundations.md",
+    "curriculum": "curriculum/03-computing-and-study-foundations.md",
+    "source_sha256": "d42d50fbd7487fb0baf7bae4dbe6ab432e251332f1b06b495c9b13ecbee9d0aa",
+    "checklist_items": 45,
+    "headings": [
+      [
+        "Computer architecture and data",
+        "computer-architecture-and-data"
+      ],
+      [
+        "Operating systems and application execution",
+        "operating-systems-and-application-execution"
+      ],
+      [
+        "Learning workflow and technical communication",
+        "learning-workflow-and-technical-communication"
+      ],
+      [
+        "Safe practice and exit criteria",
+        "safe-practice-and-exit-criteria"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1 — Represent information accurately",
+        "stage-1--represent-information-accurately"
+      ],
+      [
+        "Stage 2 — Follow data through a computer",
+        "stage-2--follow-data-through-a-computer"
+      ],
+      [
+        "Stage 3 — Manage files and execution environments",
+        "stage-3--manage-files-and-execution-environments"
+      ],
+      [
+        "Stage 4 — Turn observations into explanations",
+        "stage-4--turn-observations-into-explanations"
+      ],
+      [
+        "Guided labs with evidence",
+        "guided-labs-with-evidence"
+      ],
+      [
+        "Lab A — One text file, several representations",
+        "lab-a--one-text-file-several-representations"
+      ],
+      [
+        "Lab B — Application, process, and resource boundary",
+        "lab-b--application-process-and-resource-boundary"
+      ],
+      [
+        "Lab C — Restore and explain a failure",
+        "lab-c--restore-and-explain-a-failure"
+      ],
+      [
+        "Capstone and completion rubric",
+        "capstone-and-completion-rubric"
+      ],
+      [
+        "Retention and next steps",
+        "retention-and-next-steps"
+      ]
+    ]
+  },
+  {
+    "topic": "04. Networking and Internet protocols",
+    "tutorial": "04-networking-and-internet-protocols.md",
+    "source": "roadmaps/04-networking-and-internet-protocols.md",
+    "curriculum": "curriculum/04-networking-and-internet-protocols.md",
+    "source_sha256": "be60483b4bedfd2dcb98ca4f6bebfab44ed9ffc8337a8975692efa9a3e37a371",
+    "checklist_items": 56,
+    "headings": [
+      [
+        "Network models, addressing, and delivery",
+        "network-models-addressing-and-delivery"
+      ],
+      [
+        "Transport and infrastructure services",
+        "transport-and-infrastructure-services"
+      ],
+      [
+        "Web traffic, encrypted connections, and remote access",
+        "web-traffic-encrypted-connections-and-remote-access"
+      ],
+      [
+        "Safe practice and exit criteria",
+        "safe-practice-and-exit-criteria"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1 — Trace local and routed delivery",
+        "stage-1--trace-local-and-routed-delivery"
+      ],
+      [
+        "Stage 2 — Give IPv6 equal attention",
+        "stage-2--give-ipv6-equal-attention"
+      ],
+      [
+        "Stage 3 — Understand transports and measurement",
+        "stage-3--understand-transports-and-measurement"
+      ],
+      [
+        "Stage 4 — Resolve names and locate infrastructure",
+        "stage-4--resolve-names-and-locate-infrastructure"
+      ],
+      [
+        "Stage 5 — Follow browser traffic end to end",
+        "stage-5--follow-browser-traffic-end-to-end"
+      ],
+      [
+        "Guided labs with evidence",
+        "guided-labs-with-evidence"
+      ],
+      [
+        "Lab A — Addressing and local service delivery",
+        "lab-a--addressing-and-local-service-delivery"
+      ],
+      [
+        "Lab B — Four failures, four explanations",
+        "lab-b--four-failures-four-explanations"
+      ],
+      [
+        "Lab C — Encryption boundary and dual-stack comparison",
+        "lab-c--encryption-boundary-and-dual-stack-comparison"
+      ],
+      [
+        "Capstone, rubric, and retention",
+        "capstone-rubric-and-retention"
+      ]
+    ]
+  },
+  {
+    "topic": "05. Linux administration",
+    "tutorial": "05-linux-administration.md",
+    "source": "roadmaps/05-linux-administration.md",
+    "curriculum": "curriculum/05-linux-administration.md",
+    "source_sha256": "17c570ad0d95a0edf41f0d679768b0fbbd896f52d5ad78fa28ba54e2438f27ec",
+    "checklist_items": 54,
+    "headings": [
+      [
+        "Shell, files, and permissions",
+        "shell-files-and-permissions"
+      ],
+      [
+        "Services, networking, and maintenance",
+        "services-networking-and-maintenance"
+      ],
+      [
+        "Internals and hardening",
+        "internals-and-hardening"
+      ],
+      [
+        "Safe practice and exit criteria",
+        "safe-practice-and-exit-criteria"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1 — Become precise at the shell",
+        "stage-1--become-precise-at-the-shell"
+      ],
+      [
+        "Stage 2 — Predict effective filesystem access",
+        "stage-2--predict-effective-filesystem-access"
+      ],
+      [
+        "Stage 3 — Run an understandable service",
+        "stage-3--run-an-understandable-service"
+      ],
+      [
+        "Stage 4 — Maintain storage, packages, and network state",
+        "stage-4--maintain-storage-packages-and-network-state"
+      ],
+      [
+        "Stage 5 — Add hardening with measurable effects",
+        "stage-5--add-hardening-with-measurable-effects"
+      ],
+      [
+        "Guided labs with evidence",
+        "guided-labs-with-evidence"
+      ],
+      [
+        "Lab A — A permission prediction table",
+        "lab-a--a-permission-prediction-table"
+      ],
+      [
+        "Lab B — Service diagnosis without broad privilege",
+        "lab-b--service-diagnosis-without-broad-privilege"
+      ],
+      [
+        "Lab C — Rebuild from backup",
+        "lab-c--rebuild-from-backup"
+      ],
+      [
+        "Capstone rubric and spaced practice",
+        "capstone-rubric-and-spaced-practice"
+      ]
+    ]
+  },
+  {
+    "topic": "06. Windows administration",
+    "tutorial": "06-windows-administration.md",
+    "source": "roadmaps/06-windows-administration.md",
+    "curriculum": "curriculum/06-windows-administration.md",
+    "source_sha256": "82b0296d6e605214df1d0f338843bb33d0671be55c9780bafbe45d458372e5be",
+    "checklist_items": 54,
+    "headings": [
+      [
+        "Windows architecture and permissions",
+        "windows-architecture-and-permissions"
+      ],
+      [
+        "Administration and observability",
+        "administration-and-observability"
+      ],
+      [
+        "Enterprise foundations",
+        "enterprise-foundations"
+      ],
+      [
+        "Safe practice and exit criteria",
+        "safe-practice-and-exit-criteria"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1 — Identify the environment and execution context",
+        "stage-1--identify-the-environment-and-execution-context"
+      ],
+      [
+        "Stage 2 — Reason about Windows access decisions",
+        "stage-2--reason-about-windows-access-decisions"
+      ],
+      [
+        "Stage 3 — Administer through objects and evidence",
+        "stage-3--administer-through-objects-and-evidence"
+      ],
+      [
+        "Stage 4 — Maintain services, network boundaries, and recovery",
+        "stage-4--maintain-services-network-boundaries-and-recovery"
+      ],
+      [
+        "Stage 5 — Prepare for enterprise identity",
+        "stage-5--prepare-for-enterprise-identity"
+      ],
+      [
+        "Guided labs with evidence",
+        "guided-labs-with-evidence"
+      ],
+      [
+        "Lab A — Local versus shared-folder access",
+        "lab-a--local-versus-shared-folder-access"
+      ],
+      [
+        "Lab B — Service and event correlation",
+        "lab-b--service-and-event-correlation"
+      ],
+      [
+        "Lab C — Recover a usable configuration",
+        "lab-c--recover-a-usable-configuration"
+      ],
+      [
+        "Capstone rubric and retention",
+        "capstone-rubric-and-retention"
+      ]
+    ]
+  },
+  {
+    "topic": "07. Programming and automation",
+    "tutorial": "07-programming-and-automation.md",
+    "source": "roadmaps/07-programming-and-automation.md",
+    "curriculum": "curriculum/07-programming-and-automation.md",
+    "source_sha256": "d11a604d88f04f4dbe2046292385143b502894136e3f140faa6d826838274cbd",
+    "checklist_items": 83,
+    "headings": [
+      [
+        "Common programming foundations",
+        "common-programming-foundations"
+      ],
+      [
+        "Languages and development skills",
+        "languages-and-development-skills"
+      ],
+      [
+        "Software engineering and secure automation",
+        "software-engineering-and-secure-automation"
+      ],
+      [
+        "Safe practice and exit criteria",
+        "safe-practice-and-exit-criteria"
+      ],
+      [
+        "Study order and depth",
+        "study-order-and-depth"
+      ],
+      [
+        "Stage 1 — Shared programming fundamentals",
+        "stage-1--shared-programming-fundamentals"
+      ],
+      [
+        "Stage 2 — Python: core practical track",
+        "stage-2--python-core-practical-track"
+      ],
+      [
+        "Language and data sequence",
+        "language-and-data-sequence"
+      ],
+      [
+        "Tooling and robust automation sequence",
+        "tooling-and-robust-automation-sequence"
+      ],
+      [
+        "Stage 3 — Bash: precise local orchestration",
+        "stage-3--bash-precise-local-orchestration"
+      ],
+      [
+        "Stage 4 — PowerShell: objects and repeatable administration",
+        "stage-4--powershell-objects-and-repeatable-administration"
+      ],
+      [
+        "Stage 5 — JavaScript, HTML, and browser behavior",
+        "stage-5--javascript-html-and-browser-behavior"
+      ],
+      [
+        "Stage 6 — SQL and data integrity",
+        "stage-6--sql-and-data-integrity"
+      ],
+      [
+        "Stage 7 — C and memory: systems foundation",
+        "stage-7--c-and-memory-systems-foundation"
+      ],
+      [
+        "Stage 8 — Secondary languages and deeper study",
+        "stage-8--secondary-languages-and-deeper-study"
+      ],
+      [
+        "Engineering capstone and completion rubric",
+        "engineering-capstone-and-completion-rubric"
+      ]
+    ]
+  },
+  {
+    "topic": "08. Security principles and cryptography",
+    "tutorial": "08-security-principles-and-cryptography.md",
+    "source": "roadmaps/08-security-principles-and-cryptography.md",
+    "curriculum": "curriculum/08-security-principles-and-cryptography.md",
+    "source_sha256": "243c5a2d865bdb40d6ae70ed59e98874f8614d506b1d964e80c7e572871be8bc",
+    "checklist_items": 63,
+    "headings": [
+      [
+        "Security reasoning and architecture",
+        "security-reasoning-and-architecture"
+      ],
+      [
+        "Identity and access management",
+        "identity-and-access-management"
+      ],
+      [
+        "Cryptographic building blocks and operational use",
+        "cryptographic-building-blocks-and-operational-use"
+      ],
+      [
+        "Safe practice and exit criteria",
+        "safe-practice-and-exit-criteria"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1 — Convert security goals into testable claims",
+        "stage-1--convert-security-goals-into-testable-claims"
+      ],
+      [
+        "Stage 2 — Separate identity, access, and session state",
+        "stage-2--separate-identity-access-and-session-state"
+      ],
+      [
+        "Stage 3 — Choose a primitive by the required property",
+        "stage-3--choose-a-primitive-by-the-required-property"
+      ],
+      [
+        "Stage 4 — Password storage and key lifecycle",
+        "stage-4--password-storage-and-key-lifecycle"
+      ],
+      [
+        "Stage 5 — Certificates and encrypted transport",
+        "stage-5--certificates-and-encrypted-transport"
+      ],
+      [
+        "Guided labs with evidence",
+        "guided-labs-with-evidence"
+      ],
+      [
+        "Lab A — Access decisions and denied cases",
+        "lab-a--access-decisions-and-denied-cases"
+      ],
+      [
+        "Lab B — Authenticated encryption and lifecycle",
+        "lab-b--authenticated-encryption-and-lifecycle"
+      ],
+      [
+        "Lab C — Certificate trust, name, and time",
+        "lab-c--certificate-trust-name-and-time"
+      ],
+      [
+        "Lab D — Password verification and recovery boundaries",
+        "lab-d--password-verification-and-recovery-boundaries"
+      ],
+      [
+        "Capstone rubric and retention",
+        "capstone-rubric-and-retention"
+      ]
+    ]
+  },
+  {
+    "topic": "09. Assessment methodology, reconnaissance, and enumeration",
+    "tutorial": "09-assessment-methodology-reconnaissance-and-enumeration.md",
+    "source": "roadmaps/09-assessment-methodology-reconnaissance-and-enumeration.md",
+    "curriculum": "curriculum/09-assessment-methodology-reconnaissance-and-enumeration.md",
+    "source_sha256": "fdd874a1279f9b2d1697046bf7092d8b130806fbe2f5440d9fcbbc0c13a3e97f",
+    "checklist_items": 40,
+    "headings": [
+      [
+        "Build a repeatable assessment process",
+        "build-a-repeatable-assessment-process"
+      ],
+      [
+        "Passive reconnaissance and asset ownership",
+        "passive-reconnaissance-and-asset-ownership"
+      ],
+      [
+        "Active discovery and service enumeration",
+        "active-discovery-and-service-enumeration"
+      ],
+      [
+        "Lab sequence",
+        "lab-sequence"
+      ],
+      [
+        "Detailed learning route and assessment notebook",
+        "detailed-learning-route-and-assessment-notebook"
+      ],
+      [
+        "Module A: turn scope into executable decisions",
+        "module-a-turn-scope-into-executable-decisions"
+      ],
+      [
+        "Module B: establish the expected system",
+        "module-b-establish-the-expected-system"
+      ],
+      [
+        "Module C: collect and reconcile discovery evidence",
+        "module-c-collect-and-reconcile-discovery-evidence"
+      ],
+      [
+        "Module D: enumerate access and configuration",
+        "module-d-enumerate-access-and-configuration"
+      ],
+      [
+        "Three scenario labs with controls",
+        "three-scenario-labs-with-controls"
+      ],
+      [
+        "Lab 1: segmentation with an incomplete inventory",
+        "lab-1-segmentation-with-an-incomplete-inventory"
+      ],
+      [
+        "Lab 2: apparent service mismatch",
+        "lab-2-apparent-service-mismatch"
+      ],
+      [
+        "Lab 3: ordinary identity versus administrator",
+        "lab-3-ordinary-identity-versus-administrator"
+      ],
+      [
+        "Troubleshooting and common reasoning errors",
+        "troubleshooting-and-common-reasoning-errors"
+      ],
+      [
+        "Repeatable mini-engagement and pass rubric",
+        "repeatable-mini-engagement-and-pass-rubric"
+      ]
+    ]
+  },
+  {
+    "topic": "10. Vulnerability assessment and research",
+    "tutorial": "10-vulnerability-assessment-and-research.md",
+    "source": "roadmaps/10-vulnerability-assessment-and-research.md",
+    "curriculum": "curriculum/10-vulnerability-assessment-and-research.md",
+    "source_sha256": "dd4bd106e50e1acad68ef047594372eb6b37ad1c1e3e31eef8af6979abc443a4",
+    "checklist_items": 41,
+    "headings": [
+      [
+        "Understand vulnerability information",
+        "understand-vulnerability-information"
+      ],
+      [
+        "Use scanners critically",
+        "use-scanners-critically"
+      ],
+      [
+        "Research and reproduce safely",
+        "research-and-reproduce-safely"
+      ],
+      [
+        "Lab and completion check",
+        "lab-and-completion-check"
+      ],
+      [
+        "Detailed learning route: from alert to defensible conclusion",
+        "detailed-learning-route-from-alert-to-defensible-conclusion"
+      ],
+      [
+        "Stage 1: build an evidence vocabulary",
+        "stage-1-build-an-evidence-vocabulary"
+      ],
+      [
+        "Stage 2: understand what a check actually measures",
+        "stage-2-understand-what-a-check-actually-measures"
+      ],
+      [
+        "Stage 3: decide applicability before reproduction",
+        "stage-3-decide-applicability-before-reproduction"
+      ],
+      [
+        "Stage 4: reproduce and understand the root cause",
+        "stage-4-reproduce-and-understand-the-root-cause"
+      ],
+      [
+        "Risk assessment and remediation decisions",
+        "risk-assessment-and-remediation-decisions"
+      ],
+      [
+        "Scenario labs",
+        "scenario-labs"
+      ],
+      [
+        "Lab A: the misleading version result",
+        "lab-a-the-misleading-version-result"
+      ],
+      [
+        "Lab B: the real configuration weakness",
+        "lab-b-the-real-configuration-weakness"
+      ],
+      [
+        "Lab C: patch comparison",
+        "lab-c-patch-comparison"
+      ],
+      [
+        "Troubleshooting and completion rubric",
+        "troubleshooting-and-completion-rubric"
+      ]
+    ]
+  },
+  {
+    "topic": "11. Web application security",
+    "tutorial": "11-web-application-security.md",
+    "source": "roadmaps/11-web-application-security.md",
+    "curriculum": "curriculum/11-web-application-security.md",
+    "source_sha256": "7c18a353142916130ffb44f2a08c1fcb28774acf6358fb5c3aabf7d362ab72e0",
+    "checklist_items": 57,
+    "headings": [
+      [
+        "11.1 Map the application before testing",
+        "111-map-the-application-before-testing"
+      ],
+      [
+        "11.2 Identity, authorization, and session weaknesses",
+        "112-identity-authorization-and-session-weaknesses"
+      ],
+      [
+        "11.3 Injection, interpretation, and unsafe server behavior",
+        "113-injection-interpretation-and-unsafe-server-behavior"
+      ],
+      [
+        "11.4 Browser, frontend, and content security",
+        "114-browser-frontend-and-content-security"
+      ],
+      [
+        "11.5 HTTP intermediaries, caches, and application logic",
+        "115-http-intermediaries-caches-and-application-logic"
+      ],
+      [
+        "11.6 Practice sequence and exit criteria",
+        "116-practice-sequence-and-exit-criteria"
+      ],
+      [
+        "Expanded study sequence: build, trace, test, repair",
+        "expanded-study-sequence-build-trace-test-repair"
+      ],
+      [
+        "Phase A: understand normal requests and state",
+        "phase-a-understand-normal-requests-and-state"
+      ],
+      [
+        "Phase B: make authorization and lifecycle reliable",
+        "phase-b-make-authorization-and-lifecycle-reliable"
+      ],
+      [
+        "Phase C: follow data into interpreters",
+        "phase-c-follow-data-into-interpreters"
+      ],
+      [
+        "Phase D: browser behavior and content boundaries",
+        "phase-d-browser-behavior-and-content-boundaries"
+      ],
+      [
+        "Focused scenario labs",
+        "focused-scenario-labs"
+      ],
+      [
+        "Lab 1: export authorization after a role change",
+        "lab-1-export-authorization-after-a-role-change"
+      ],
+      [
+        "Lab 2: structured input and stored output",
+        "lab-2-structured-input-and-stored-output"
+      ],
+      [
+        "Lab 3: upload and background processing",
+        "lab-3-upload-and-background-processing"
+      ],
+      [
+        "Lab 4: personalized content and shared caching",
+        "lab-4-personalized-content-and-shared-caching"
+      ],
+      [
+        "Common errors, troubleshooting, and completion",
+        "common-errors-troubleshooting-and-completion"
+      ]
+    ]
+  },
+  {
+    "topic": "12. API security and modern authentication",
+    "tutorial": "12-api-security-and-modern-authentication.md",
+    "source": "roadmaps/12-api-security-and-modern-authentication.md",
+    "curriculum": "curriculum/12-api-security-and-modern-authentication.md",
+    "source_sha256": "4cbdcac54fd982eef45792e1a4ddb90c50e7d660bbe12e64394ddf9aeb3d86bb",
+    "checklist_items": 35,
+    "headings": [
+      [
+        "12.1 API design and attack-surface coverage",
+        "121-api-design-and-attack-surface-coverage"
+      ],
+      [
+        "12.2 Protocol-specific learning",
+        "122-protocol-specific-learning"
+      ],
+      [
+        "12.3 Identity protocols and credential lifecycle",
+        "123-identity-protocols-and-credential-lifecycle"
+      ],
+      [
+        "Expanded API and identity curriculum",
+        "expanded-api-and-identity-curriculum"
+      ],
+      [
+        "Module 1: contracts, schemas, and consistent interpretation",
+        "module-1-contracts-schemas-and-consistent-interpretation"
+      ],
+      [
+        "Module 2: authorization across all resource paths",
+        "module-2-authorization-across-all-resource-paths"
+      ],
+      [
+        "Authentication lifecycle: state transitions to learn and test",
+        "authentication-lifecycle-state-transitions-to-learn-and-test"
+      ],
+      [
+        "Protocol practice in a deliberate order",
+        "protocol-practice-in-a-deliberate-order"
+      ],
+      [
+        "OAuth, OpenID Connect, and tokens: core implementation path",
+        "oauth-openid-connect-and-tokens-core-implementation-path"
+      ],
+      [
+        "Additional protocol modules: choose by system",
+        "additional-protocol-modules-choose-by-system"
+      ],
+      [
+        "Scenario labs with evidence and repairs",
+        "scenario-labs-with-evidence-and-repairs"
+      ],
+      [
+        "Lab A: mass assignment and excessive response fields",
+        "lab-a-mass-assignment-and-excessive-response-fields"
+      ],
+      [
+        "Lab B: account suspension during a stream",
+        "lab-b-account-suspension-during-a-stream"
+      ],
+      [
+        "Lab C: webhook replay and key rotation",
+        "lab-c-webhook-replay-and-key-rotation"
+      ],
+      [
+        "Troubleshooting and final portfolio",
+        "troubleshooting-and-final-portfolio"
+      ]
+    ]
+  },
+  {
+    "topic": "13. Secure code review and software delivery",
+    "tutorial": "13-secure-code-review-and-software-delivery.md",
+    "source": "roadmaps/13-secure-code-review-and-software-delivery.md",
+    "curriculum": "curriculum/13-secure-code-review-and-software-delivery.md",
+    "source_sha256": "924367b412908e24a40c41d7d8092a1b9a2913f236a5abf41b45ab0fbfe47d51",
+    "checklist_items": 51,
+    "headings": [
+      [
+        "13.1 Read code as a system",
+        "131-read-code-as-a-system"
+      ],
+      [
+        "13.2 Verification tools and secure changes",
+        "132-verification-tools-and-secure-changes"
+      ],
+      [
+        "13.3 Dependencies, builds, and delivery infrastructure",
+        "133-dependencies-builds-and-delivery-infrastructure"
+      ],
+      [
+        "13.4 Delivery capstone and exit criteria",
+        "134-delivery-capstone-and-exit-criteria"
+      ],
+      [
+        "Expanded review and delivery learning path",
+        "expanded-review-and-delivery-learning-path"
+      ],
+      [
+        "Module 1: orient yourself before searching for defects",
+        "module-1-orient-yourself-before-searching-for-defects"
+      ],
+      [
+        "Module 2: review data flow and control flow together",
+        "module-2-review-data-flow-and-control-flow-together"
+      ],
+      [
+        "Module 3: learn stack-specific hazards without memorizing payloads",
+        "module-3-learn-stack-specific-hazards-without-memorizing-payloads"
+      ],
+      [
+        "Module 4: use analysis tools as evidence collectors",
+        "module-4-use-analysis-tools-as-evidence-collectors"
+      ],
+      [
+        "Software delivery as a chain of trust",
+        "software-delivery-as-a-chain-of-trust"
+      ],
+      [
+        "Three scenario labs",
+        "three-scenario-labs"
+      ],
+      [
+        "Lab A: authorization present in HTTP but absent in the worker",
+        "lab-a-authorization-present-in-http-but-absent-in-the-worker"
+      ],
+      [
+        "Lab B: an analysis warning with uncertain reachability",
+        "lab-b-an-analysis-warning-with-uncertain-reachability"
+      ],
+      [
+        "Lab C: artifact promotion and permissions",
+        "lab-c-artifact-promotion-and-permissions"
+      ],
+      [
+        "Troubleshooting, review quality, and pass criteria",
+        "troubleshooting-review-quality-and-pass-criteria"
+      ]
+    ]
+  },
+  {
+    "topic": "14. Linux and Windows host security testing",
+    "tutorial": "14-linux-and-windows-host-security-testing.md",
+    "source": "roadmaps/14-linux-and-windows-host-security-testing.md",
+    "curriculum": "curriculum/14-linux-and-windows-host-security-testing.md",
+    "source_sha256": "8dc414a60080ac645e0acffb613df0fbfd4ceaff25b4b47352331218ed8bd225",
+    "checklist_items": 57,
+    "headings": [
+      [
+        "Understand the local trust model",
+        "understand-the-local-trust-model"
+      ],
+      [
+        "Linux assessment topics",
+        "linux-assessment-topics"
+      ],
+      [
+        "Windows assessment topics",
+        "windows-assessment-topics"
+      ],
+      [
+        "Credentials and post-access discipline",
+        "credentials-and-post-access-discipline"
+      ],
+      [
+        "Lab and completion check",
+        "lab-and-completion-check"
+      ],
+      [
+        "Detailed host assessment curriculum",
+        "detailed-host-assessment-curriculum"
+      ],
+      [
+        "Phase 1: establish the host's intended role",
+        "phase-1-establish-the-hosts-intended-role"
+      ],
+      [
+        "Phase 2: Linux permissions and execution",
+        "phase-2-linux-permissions-and-execution"
+      ],
+      [
+        "Phase 3: Windows effective access and privileged components",
+        "phase-3-windows-effective-access-and-privileged-components"
+      ],
+      [
+        "Phase 4: credentials, logging, and recovery",
+        "phase-4-credentials-logging-and-recovery"
+      ],
+      [
+        "Scenario labs",
+        "scenario-labs"
+      ],
+      [
+        "Lab A: Linux service configuration boundary",
+        "lab-a-linux-service-configuration-boundary"
+      ],
+      [
+        "Lab B: Windows service directory boundary",
+        "lab-b-windows-service-directory-boundary"
+      ],
+      [
+        "Lab C: remote share and secret exposure",
+        "lab-c-remote-share-and-secret-exposure"
+      ],
+      [
+        "Troubleshooting and common assessment errors",
+        "troubleshooting-and-common-assessment-errors"
+      ],
+      [
+        "Repeatable capstone and pass rubric",
+        "repeatable-capstone-and-pass-rubric"
+      ]
+    ]
+  },
+  {
+    "topic": "15. Active Directory and enterprise identity",
+    "tutorial": "15-active-directory-and-enterprise-identity.md",
+    "source": "roadmaps/15-active-directory-and-enterprise-identity.md",
+    "curriculum": "curriculum/15-active-directory-and-enterprise-identity.md",
+    "source_sha256": "6bdb2d4f1d89510065aafcb7020d9a8b0c59be5b54cbc2548fa68e5d578a5a2f",
+    "checklist_items": 57,
+    "headings": [
+      [
+        "Learn administration before assessment",
+        "learn-administration-before-assessment"
+      ],
+      [
+        "Assess identity attack paths",
+        "assess-identity-attack-paths"
+      ],
+      [
+        "Hybrid identity and SaaS",
+        "hybrid-identity-and-saas"
+      ],
+      [
+        "Lab and completion check",
+        "lab-and-completion-check"
+      ],
+      [
+        "Expanded enterprise identity learning sequence",
+        "expanded-enterprise-identity-learning-sequence"
+      ],
+      [
+        "Stage 1: operate a small domain correctly",
+        "stage-1-operate-a-small-domain-correctly"
+      ],
+      [
+        "Stage 2: trace authentication and authorization",
+        "stage-2-trace-authentication-and-authorization"
+      ],
+      [
+        "Stage 3: map permissions and access paths",
+        "stage-3-map-permissions-and-access-paths"
+      ],
+      [
+        "Credential-related research: required understanding and bounded depth",
+        "credential-related-research-required-understanding-and-bounded-depth"
+      ],
+      [
+        "Certificates, hybrid identity, and SaaS modules",
+        "certificates-hybrid-identity-and-saas-modules"
+      ],
+      [
+        "Certificate services",
+        "certificate-services"
+      ],
+      [
+        "Hybrid and SaaS identity",
+        "hybrid-and-saas-identity"
+      ],
+      [
+        "Scenario labs",
+        "scenario-labs"
+      ],
+      [
+        "Lab A: excessive group-management delegation",
+        "lab-a-excessive-group-management-delegation"
+      ],
+      [
+        "Lab B: Group Policy ownership and maintenance",
+        "lab-b-group-policy-ownership-and-maintenance"
+      ],
+      [
+        "Lab C: deprovisioning across an application",
+        "lab-c-deprovisioning-across-an-application"
+      ],
+      [
+        "Troubleshooting and completion rubric",
+        "troubleshooting-and-completion-rubric"
+      ]
+    ]
+  },
+  {
+    "topic": "16. Cloud, containers, and Kubernetes",
+    "tutorial": "16-cloud-containers-and-kubernetes.md",
+    "source": "roadmaps/16-cloud-containers-and-kubernetes.md",
+    "curriculum": "curriculum/16-cloud-containers-and-kubernetes.md",
+    "source_sha256": "9ca3e55b8131e1ce569445ce951db159996bc4ae610425d92e03d78f488d87df",
+    "checklist_items": 73,
+    "headings": [
+      [
+        "Cloud concepts that transfer between providers",
+        "cloud-concepts-that-transfer-between-providers"
+      ],
+      [
+        "Choose one provider, then translate",
+        "choose-one-provider-then-translate"
+      ],
+      [
+        "Cloud assessment skills",
+        "cloud-assessment-skills"
+      ],
+      [
+        "Containers",
+        "containers"
+      ],
+      [
+        "Kubernetes",
+        "kubernetes"
+      ],
+      [
+        "Lab and completion check",
+        "lab-and-completion-check"
+      ],
+      [
+        "Detailed cloud learning path and specialization choices",
+        "detailed-cloud-learning-path-and-specialization-choices"
+      ],
+      [
+        "Foundation module: design a disposable assessment environment",
+        "foundation-module-design-a-disposable-assessment-environment"
+      ],
+      [
+        "AWS study sequence",
+        "aws-study-sequence"
+      ],
+      [
+        "AWS 1: hierarchy and effective permissions",
+        "aws-1-hierarchy-and-effective-permissions"
+      ],
+      [
+        "AWS 2: network, workloads, and data",
+        "aws-2-network-workloads-and-data"
+      ],
+      [
+        "AWS 3: visibility and capstone",
+        "aws-3-visibility-and-capstone"
+      ],
+      [
+        "Azure study sequence",
+        "azure-study-sequence"
+      ],
+      [
+        "Azure 1: distinguish tenant identity and resource authorization",
+        "azure-1-distinguish-tenant-identity-and-resource-authorization"
+      ],
+      [
+        "Azure 2: workloads, storage, and private access",
+        "azure-2-workloads-storage-and-private-access"
+      ],
+      [
+        "Azure 3: visibility and capstone",
+        "azure-3-visibility-and-capstone"
+      ],
+      [
+        "Google Cloud study sequence",
+        "google-cloud-study-sequence"
+      ],
+      [
+        "Google Cloud 1: hierarchy and IAM",
+        "google-cloud-1-hierarchy-and-iam"
+      ],
+      [
+        "Google Cloud 2: network, data, and execution",
+        "google-cloud-2-network-data-and-execution"
+      ],
+      [
+        "Google Cloud 3: visibility and capstone",
+        "google-cloud-3-visibility-and-capstone"
+      ],
+      [
+        "Container curriculum: image, runtime, host, and registry",
+        "container-curriculum-image-runtime-host-and-registry"
+      ],
+      [
+        "Kubernetes curriculum: policy must match effective behavior",
+        "kubernetes-curriculum-policy-must-match-effective-behavior"
+      ],
+      [
+        "Troubleshooting and final readiness rubric",
+        "troubleshooting-and-final-readiness-rubric"
+      ],
+      [
+        "Cross-provider scenario: inherited access survives a narrow local fix",
+        "cross-provider-scenario-inherited-access-survives-a-narrow-local-fix"
+      ]
+    ]
+  },
+  {
+    "topic": "17. Wireless and network appliance security",
+    "tutorial": "17-wireless-and-network-appliance-security.md",
+    "source": "roadmaps/17-wireless-and-network-appliance-security.md",
+    "curriculum": "curriculum/17-wireless-and-network-appliance-security.md",
+    "source_sha256": "1c82ff4437971c891cfd079895ab69e7c86cba8f5d9967eee9db0f2b58cf2cb8",
+    "checklist_items": 27,
+    "headings": [
+      [
+        "Knowledge and skill checklist",
+        "knowledge-and-skill-checklist"
+      ],
+      [
+        "Safe projects and evidence",
+        "safe-projects-and-evidence"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Follow one connection through every layer",
+        "stage-1-follow-one-connection-through-every-layer"
+      ],
+      [
+        "Stage 2: Build an authentication decision tree",
+        "stage-2-build-an-authentication-decision-tree"
+      ],
+      [
+        "Stage 3: Separate users, devices, and administrators",
+        "stage-3-separate-users-devices-and-administrators"
+      ],
+      [
+        "Stage 4: Review appliance lifecycle and recovery",
+        "stage-4-review-appliance-lifecycle-and-recovery"
+      ],
+      [
+        "Stage 5: Add short-range systems deliberately",
+        "stage-5-add-short-range-systems-deliberately"
+      ],
+      [
+        "Worked lab: trusted, guest, and management zones",
+        "worked-lab-trusted-guest-and-management-zones"
+      ],
+      [
+        "Debugging blind spots and pass criteria",
+        "debugging-blind-spots-and-pass-criteria"
+      ],
+      [
+        "Practical prerequisite: wireless capture capabilities",
+        "practical-prerequisite-wireless-capture-capabilities"
+      ]
+    ]
+  },
+  {
+    "topic": "18. Mobile application security",
+    "tutorial": "18-mobile-application-security.md",
+    "source": "roadmaps/18-mobile-application-security.md",
+    "curriculum": "curriculum/18-mobile-application-security.md",
+    "source_sha256": "dfb713efe4dd20e4e4f177274a7138c0f59f4364a91ff3cde76ddee21f82ec9b",
+    "checklist_items": 23,
+    "headings": [
+      [
+        "Knowledge and skill checklist",
+        "knowledge-and-skill-checklist"
+      ],
+      [
+        "Safe projects and evidence",
+        "safe-projects-and-evidence"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Understand the application as a distributed system",
+        "stage-1-understand-the-application-as-a-distributed-system"
+      ],
+      [
+        "Stage 2: Track data throughout its lifecycle",
+        "stage-2-track-data-throughout-its-lifecycle"
+      ],
+      [
+        "Stage 3: Evaluate entry points and identity",
+        "stage-3-evaluate-entry-points-and-identity"
+      ],
+      [
+        "Stage 4: Inspect transport and embedded web boundaries",
+        "stage-4-inspect-transport-and-embedded-web-boundaries"
+      ],
+      [
+        "Stage 5: Assess delivery and maintenance",
+        "stage-5-assess-delivery-and-maintenance"
+      ],
+      [
+        "Worked lab: a two-account notes application",
+        "worked-lab-a-two-account-notes-application"
+      ],
+      [
+        "Debugging and mastery gates",
+        "debugging-and-mastery-gates"
+      ]
+    ]
+  },
+  {
+    "topic": "19. Reverse engineering, exploit development, and malware analysis",
+    "tutorial": "19-reverse-engineering-exploit-development-and-malware-analysis.md",
+    "source": "roadmaps/19-reverse-engineering-exploit-development-and-malware-analysis.md",
+    "curriculum": "curriculum/19-reverse-engineering-exploit-development-and-malware-analysis.md",
+    "source_sha256": "4e18f6722302d6968042fa5b65bd3ff52be3b79f5431789f58eca9221cccbfad",
+    "checklist_items": 27,
+    "headings": [
+      [
+        "Knowledge and skill checklist",
+        "knowledge-and-skill-checklist"
+      ],
+      [
+        "Safe projects and evidence",
+        "safe-projects-and-evidence"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Connect source code, executable format, and instructions",
+        "stage-1-connect-source-code-executable-format-and-instructions"
+      ],
+      [
+        "Stage 2: Reconstruct behavior with evidence",
+        "stage-2-reconstruct-behavior-with-evidence"
+      ],
+      [
+        "Stage 3: Diagnose memory errors without overstating impact",
+        "stage-3-diagnose-memory-errors-without-overstating-impact"
+      ],
+      [
+        "Stage 4: Design a useful fuzzing experiment",
+        "stage-4-design-a-useful-fuzzing-experiment"
+      ],
+      [
+        "Stage 5: Study suspicious software through controlled evidence",
+        "stage-5-study-suspicious-software-through-controlled-evidence"
+      ],
+      [
+        "Worked lab: parser failure to verified repair",
+        "worked-lab-parser-failure-to-verified-repair"
+      ],
+      [
+        "Blind spots and advancement criteria",
+        "blind-spots-and-advancement-criteria"
+      ]
+    ]
+  },
+  {
+    "topic": "20. Detection engineering, incident response, and forensics",
+    "tutorial": "20-detection-engineering-incident-response-and-forensics.md",
+    "source": "roadmaps/20-detection-engineering-incident-response-and-forensics.md",
+    "curriculum": "curriculum/20-detection-engineering-incident-response-and-forensics.md",
+    "source_sha256": "6204ebc607046bd1eb25a6aaedf32bc9d06955d637edeb2f5d157aed03a3b33d",
+    "checklist_items": 30,
+    "headings": [
+      [
+        "Knowledge and skill checklist",
+        "knowledge-and-skill-checklist"
+      ],
+      [
+        "Safe projects and evidence",
+        "safe-projects-and-evidence"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Establish an observable lab",
+        "stage-1-establish-an-observable-lab"
+      ],
+      [
+        "Stage 2: Build detection hypotheses before queries",
+        "stage-2-build-detection-hypotheses-before-queries"
+      ],
+      [
+        "Stage 3: Measure quality and maintain ownership",
+        "stage-3-measure-quality-and-maintain-ownership"
+      ],
+      [
+        "Stage 4: Practice a defensible investigation",
+        "stage-4-practice-a-defensible-investigation"
+      ],
+      [
+        "Stage 5: Learn acquisition, containment, and recovery decisions",
+        "stage-5-learn-acquisition-containment-and-recovery-decisions"
+      ],
+      [
+        "Worked lab: a synthetic document-access incident",
+        "worked-lab-a-synthetic-document-access-incident"
+      ],
+      [
+        "Debugging blind spots and completion gates",
+        "debugging-blind-spots-and-completion-gates"
+      ]
+    ]
+  },
+  {
+    "topic": "21. Human and physical security assessments",
+    "tutorial": "21-human-and-physical-security-assessments.md",
+    "source": "roadmaps/21-human-and-physical-security-assessments.md",
+    "curriculum": "curriculum/21-human-and-physical-security-assessments.md",
+    "source_sha256": "84e729fbfe8212ca1528c2ca1c1ab46b78591138dea26d8e23258522704a7aed",
+    "checklist_items": 22,
+    "headings": [
+      [
+        "Knowledge and skill checklist",
+        "knowledge-and-skill-checklist"
+      ],
+      [
+        "Safe projects and evidence",
+        "safe-projects-and-evidence"
+      ],
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Model the workflow that creates risk",
+        "stage-1-model-the-workflow-that-creates-risk"
+      ],
+      [
+        "Stage 2: Design an exercise people can learn from",
+        "stage-2-design-an-exercise-people-can-learn-from"
+      ],
+      [
+        "Stage 3: Assess digital verification and reporting",
+        "stage-3-assess-digital-verification-and-reporting"
+      ],
+      [
+        "Stage 4: Review physical access as a lifecycle",
+        "stage-4-review-physical-access-as-a-lifecycle"
+      ],
+      [
+        "Stage 5: Interpret results without blaming individuals",
+        "stage-5-interpret-results-without-blaming-individuals"
+      ],
+      [
+        "Worked lab: account-recovery tabletop",
+        "worked-lab-account-recovery-tabletop"
+      ],
+      [
+        "Mastery and review criteria",
+        "mastery-and-review-criteria"
+      ]
+    ]
+  },
+  {
+    "topic": "22. Advanced specialization map",
+    "tutorial": "22-advanced-specialization-map.md",
+    "source": "roadmaps/22-advanced-specialization-map.md",
+    "curriculum": "curriculum/22-advanced-specialization-map.md",
+    "source_sha256": "6e9dd7dcc96e8148776fdffe477006e9c74e619fd6641e28548c8e3e4747ba09",
+    "checklist_items": 33,
+    "headings": [
+      [
+        "22.1 AI, LLM, RAG, and agent security",
+        "221-ai-llm-rag-and-agent-security"
+      ],
+      [
+        "22.2 IoT, embedded systems, and hardware",
+        "222-iot-embedded-systems-and-hardware"
+      ],
+      [
+        "22.3 OT, ICS, and cyber-physical systems",
+        "223-ot-ics-and-cyber-physical-systems"
+      ],
+      [
+        "22.4 Telecom and radio-frequency security",
+        "224-telecom-and-radio-frequency-security"
+      ],
+      [
+        "22.5 Browser, kernel, and virtualization research",
+        "225-browser-kernel-and-virtualization-research"
+      ],
+      [
+        "22.6 Blockchain and smart-contract security",
+        "226-blockchain-and-smart-contract-security"
+      ],
+      [
+        "22.7 Desktop clients, macOS, privacy, and architecture",
+        "227-desktop-clients-macos-privacy-and-architecture"
+      ],
+      [
+        "22.8 Adversary emulation and red/purple-team planning",
+        "228-adversary-emulation-and-redpurple-team-planning"
+      ],
+      [
+        "Choose and navigate a specialization",
+        "choose-and-navigate-a-specialization"
+      ],
+      [
+        "A practical selection process",
+        "a-practical-selection-process"
+      ],
+      [
+        "Shared research standards",
+        "shared-research-standards"
+      ]
+    ]
+  },
+  {
+    "topic": "23. Reporting, remediation, and retesting",
+    "tutorial": "23-reporting-remediation-and-retesting.md",
+    "source": "roadmaps/23-reporting-remediation-and-retesting.md",
+    "curriculum": "curriculum/23-reporting-remediation-and-retesting.md",
+    "source_sha256": "9de7ed8f106780b41cbc0558d051dbb3cb22bfc3ff8f65c1a9b88a65cbeddb83",
+    "checklist_items": 21,
+    "headings": [
+      [
+        "Evidence and reasoning",
+        "evidence-and-reasoning"
+      ],
+      [
+        "A useful assessment report",
+        "a-useful-assessment-report"
+      ],
+      [
+        "Remediation that developers and administrators can use",
+        "remediation-that-developers-and-administrators-can-use"
+      ],
+      [
+        "Communication skills",
+        "communication-skills"
+      ],
+      [
+        "Expanded reporting curriculum",
+        "expanded-reporting-curriculum"
+      ],
+      [
+        "Module 1: Turn an observation into a defensible claim",
+        "module-1-turn-an-observation-into-a-defensible-claim"
+      ],
+      [
+        "Module 2: Make reproduction independent of your memory",
+        "module-2-make-reproduction-independent-of-your-memory"
+      ],
+      [
+        "Module 3: Explain severity and business consequence",
+        "module-3-explain-severity-and-business-consequence"
+      ],
+      [
+        "Module 4: Write a fix that addresses the cause",
+        "module-4-write-a-fix-that-addresses-the-cause"
+      ],
+      [
+        "Module 5: Design retesting before the fix lands",
+        "module-5-design-retesting-before-the-fix-lands"
+      ],
+      [
+        "Module 6: Produce reports for different readers",
+        "module-6-produce-reports-for-different-readers"
+      ],
+      [
+        "Report quality-assurance rubric",
+        "report-quality-assurance-rubric"
+      ],
+      [
+        "Final reporting capstone",
+        "final-reporting-capstone"
+      ]
+    ]
+  },
+  {
+    "topic": "24. Capstones, portfolio, and career direction",
+    "tutorial": "24-capstones-portfolio-and-career-direction.md",
+    "source": "roadmaps/24-capstones-portfolio-and-career-direction.md",
+    "curriculum": "curriculum/24-capstones-portfolio-and-career-direction.md",
+    "source_sha256": "01be56edf928be43f3f298ea20ead356ce788f2c6934f409a5e945a7a334621d",
+    "checklist_items": 18,
+    "headings": [
+      [
+        "Project ladder",
+        "project-ladder"
+      ],
+      [
+        "Build a portfolio with substance",
+        "build-a-portfolio-with-substance"
+      ],
+      [
+        "Select a direction",
+        "select-a-direction"
+      ],
+      [
+        "Optional credentials",
+        "optional-credentials"
+      ],
+      [
+        "Bug bounty as a separate practice route",
+        "bug-bounty-as-a-separate-practice-route"
+      ],
+      [
+        "Expanded project roadmap: build evidence of useful work",
+        "expanded-project-roadmap-build-evidence-of-useful-work"
+      ],
+      [
+        "Stage 1: Choose a bounded problem",
+        "stage-1-choose-a-bounded-problem"
+      ],
+      [
+        "Stage 2: Build a coherent foundation portfolio",
+        "stage-2-build-a-coherent-foundation-portfolio"
+      ],
+      [
+        "Stage 3: Add an unfamiliar assessment",
+        "stage-3-add-an-unfamiliar-assessment"
+      ],
+      [
+        "Stage 4: Specialize through a two-project sequence",
+        "stage-4-specialize-through-a-two-project-sequence"
+      ],
+      [
+        "Stage 5: Practice technical review and explanation",
+        "stage-5-practice-technical-review-and-explanation"
+      ],
+      [
+        "Role comparison exercise",
+        "role-comparison-exercise"
+      ],
+      [
+        "Certificate and course decision worksheet",
+        "certificate-and-course-decision-worksheet"
+      ],
+      [
+        "Portfolio release checklist",
+        "portfolio-release-checklist"
+      ]
+    ]
+  },
+  {
+    "topic": "25. Study schedules and readiness checks",
+    "tutorial": "25-study-schedules-and-readiness-checks.md",
+    "source": "roadmaps/25-study-schedules-and-readiness-checks.md",
+    "curriculum": "curriculum/25-study-schedules-and-readiness-checks.md",
+    "source_sha256": "1074f4c70732428fb3065d86d75f34200fd21db22b98a1ba787cfaeea828614e",
+    "checklist_items": 14,
+    "headings": [
+      [
+        "A realistic time budget",
+        "a-realistic-time-budget"
+      ],
+      [
+        "Weekly routine: example for 10 hours",
+        "weekly-routine-example-for-10-hours"
+      ],
+      [
+        "Your first 30 days",
+        "your-first-30-days"
+      ],
+      [
+        "Assessment questions",
+        "assessment-questions"
+      ],
+      [
+        "Common mistakes and corrections",
+        "common-mistakes-and-corrections"
+      ],
+      [
+        "Keep the roadmap current",
+        "keep-the-roadmap-current"
+      ],
+      [
+        "Expanded planning method: adapt the schedule to evidence",
+        "expanded-planning-method-adapt-the-schedule-to-evidence"
+      ],
+      [
+        "Step 1: Measure capacity before setting dates",
+        "step-1-measure-capacity-before-setting-dates"
+      ],
+      [
+        "Step 2: Plan one block at a time",
+        "step-2-plan-one-block-at-a-time"
+      ],
+      [
+        "Step 3: Use a session contract",
+        "step-3-use-a-session-contract"
+      ],
+      [
+        "Step 4: Track proficiency separately from activity",
+        "step-4-track-proficiency-separately-from-activity"
+      ],
+      [
+        "Step 5: Schedule retrieval and integration",
+        "step-5-schedule-retrieval-and-integration"
+      ],
+      [
+        "Example four-week block with adaptable workload",
+        "example-four-week-block-with-adaptable-workload"
+      ],
+      [
+        "Replanning decisions",
+        "replanning-decisions"
+      ],
+      [
+        "Monthly and quarterly reviews",
+        "monthly-and-quarterly-reviews"
+      ]
+    ]
+  },
+  {
+    "topic": "26. Tools and learning resources",
+    "tutorial": "26-tools-and-learning-resources.md",
+    "source": "roadmaps/26-tools-and-learning-resources.md",
+    "curriculum": "curriculum/26-tools-and-learning-resources.md",
+    "source_sha256": "e9f6f03e3b2d36e5270dabf08255c8b4e7ec2811acda283d86711ecc93b34411",
+    "checklist_items": 5,
+    "headings": [
+      [
+        "Tool-role matrix",
+        "tool-role-matrix"
+      ],
+      [
+        "Learning resources by starting level",
+        "learning-resources-by-starting-level"
+      ],
+      [
+        "How to consume resources without getting stuck collecting them",
+        "how-to-consume-resources-without-getting-stuck-collecting-them"
+      ],
+      [
+        "Download provenance and maintenance",
+        "download-provenance-and-maintenance"
+      ],
+      [
+        "Expanded tool-learning roadmap",
+        "expanded-tool-learning-roadmap"
+      ],
+      [
+        "Stage 1: Learn observation before automation",
+        "stage-1-learn-observation-before-automation"
+      ],
+      [
+        "Stage 2: Learn a small network toolkit",
+        "stage-2-learn-a-small-network-toolkit"
+      ],
+      [
+        "Stage 3: Add a browser and one intercepting proxy",
+        "stage-3-add-a-browser-and-one-intercepting-proxy"
+      ],
+      [
+        "Stage 4: Evaluate scanners and code-analysis tools",
+        "stage-4-evaluate-scanners-and-code-analysis-tools"
+      ],
+      [
+        "Stage 5: Add specialist tools only when their model is understood",
+        "stage-5-add-specialist-tools-only-when-their-model-is-understood"
+      ],
+      [
+        "Stage 6: Automate repeated, understood work",
+        "stage-6-automate-repeated-understood-work"
+      ],
+      [
+        "Resource selection and reading strategy",
+        "resource-selection-and-reading-strategy"
+      ],
+      [
+        "Tool competence assessment",
+        "tool-competence-assessment"
+      ]
+    ]
+  },
+  {
+    "topic": "27. Reusable templates and glossary",
+    "tutorial": "27-reusable-templates-and-glossary.md",
+    "source": "roadmaps/27-reusable-templates-and-glossary.md",
+    "curriculum": "curriculum/27-reusable-templates-and-glossary.md",
+    "source_sha256": "07b33155b9704dcb8455a5a0b5eb8f68c50da85c4e8a48a09a77a9a0e0025901",
+    "checklist_items": 7,
+    "headings": [
+      [
+        "Learning note template",
+        "learning-note-template"
+      ],
+      [
+        "Scope and rules-of-engagement template",
+        "scope-and-rules-of-engagement-template"
+      ],
+      [
+        "Finding template",
+        "finding-template"
+      ],
+      [
+        "Example of a precise lab finding",
+        "example-of-a-precise-lab-finding"
+      ],
+      [
+        "Coverage and progress templates",
+        "coverage-and-progress-templates"
+      ],
+      [
+        "Command and interface vocabulary to practice",
+        "command-and-interface-vocabulary-to-practice"
+      ],
+      [
+        "Glossary",
+        "glossary"
+      ],
+      [
+        "Personal starting checklist",
+        "personal-starting-checklist"
+      ],
+      [
+        "Expanded documentation roadmap",
+        "expanded-documentation-roadmap"
+      ],
+      [
+        "Stage 1: Establish identifiers and artifact organization",
+        "stage-1-establish-identifiers-and-artifact-organization"
+      ],
+      [
+        "Stage 2: Design a test case before collecting output",
+        "stage-2-design-a-test-case-before-collecting-output"
+      ],
+      [
+        "Stage 3: Build a hypothesis log",
+        "stage-3-build-a-hypothesis-log"
+      ],
+      [
+        "Stage 4: Maintain change and cleanup records",
+        "stage-4-maintain-change-and-cleanup-records"
+      ],
+      [
+        "Stage 5: Review templates through actual use",
+        "stage-5-review-templates-through-actual-use"
+      ],
+      [
+        "Additional reusable templates",
+        "additional-reusable-templates"
+      ],
+      [
+        "Test-case record",
+        "test-case-record"
+      ],
+      [
+        "Hypothesis record",
+        "hypothesis-record"
+      ],
+      [
+        "Evidence register",
+        "evidence-register"
+      ],
+      [
+        "Change and cleanup register",
+        "change-and-cleanup-register"
+      ],
+      [
+        "Remediation verification record",
+        "remediation-verification-record"
+      ],
+      [
+        "Weekly learning review",
+        "weekly-learning-review"
+      ],
+      [
+        "Glossary-building exercise",
+        "glossary-building-exercise"
+      ],
+      [
+        "Documentation capstone",
+        "documentation-capstone"
+      ]
+    ]
+  },
+  {
+    "topic": "22.1 AI, LLM, RAG, and agent security",
+    "tutorial": "specializations/22-01-ai-llm-rag-and-agent-security.md",
+    "source": "roadmaps/specializations/22-01-ai-llm-rag-and-agent-security.md",
+    "curriculum": "curriculum/specializations/22-01-ai-llm-rag-and-agent-security.md",
+    "source_sha256": "d6fdce62d152cb7bb1749978162f2febbb4dc9e769ea2a8846062a8f38b44ac9",
+    "checklist_items": 15,
+    "headings": [
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Build the system before testing its security",
+        "stage-1-build-the-system-before-testing-its-security"
+      ],
+      [
+        "Stage 2: Model trust and permissions explicitly",
+        "stage-2-model-trust-and-permissions-explicitly"
+      ],
+      [
+        "Stage 3: Study retrieval and tenant isolation",
+        "stage-3-study-retrieval-and-tenant-isolation"
+      ],
+      [
+        "Stage 4: Evaluate untrusted content and output handling",
+        "stage-4-evaluate-untrusted-content-and-output-handling"
+      ],
+      [
+        "Stage 5: Build evaluations that detect regressions",
+        "stage-5-build-evaluations-that-detect-regressions"
+      ],
+      [
+        "Worked lab: a two-tenant research assistant",
+        "worked-lab-a-two-tenant-research-assistant"
+      ],
+      [
+        "Blind spots and research gates",
+        "blind-spots-and-research-gates"
+      ]
+    ]
+  },
+  {
+    "topic": "22.2 IoT, embedded systems, and hardware",
+    "tutorial": "specializations/22-02-iot-embedded-systems-and-hardware.md",
+    "source": "roadmaps/specializations/22-02-iot-embedded-systems-and-hardware.md",
+    "curriculum": "curriculum/specializations/22-02-iot-embedded-systems-and-hardware.md",
+    "source_sha256": "bcf98728cdc159affd2dda52ffea1dd0e606f7c58279ed0637d9f89d872545f2",
+    "checklist_items": 16,
+    "headings": [
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Learn the electrical and computing foundations",
+        "stage-1-learn-the-electrical-and-computing-foundations"
+      ],
+      [
+        "Stage 2: Inventory interfaces and trust boundaries",
+        "stage-2-inventory-interfaces-and-trust-boundaries"
+      ],
+      [
+        "Stage 3: Analyze firmware as a software artifact",
+        "stage-3-analyze-firmware-as-a-software-artifact"
+      ],
+      [
+        "Stage 4: Study boot, identity, and updates",
+        "stage-4-study-boot-identity-and-updates"
+      ],
+      [
+        "Stage 5: Review networked behavior and fleet operation",
+        "stage-5-review-networked-behavior-and-fleet-operation"
+      ],
+      [
+        "Worked lab: an update and recovery review",
+        "worked-lab-an-update-and-recovery-review"
+      ],
+      [
+        "Debugging blind spots and completion gates",
+        "debugging-blind-spots-and-completion-gates"
+      ]
+    ]
+  },
+  {
+    "topic": "22.3 OT, ICS, and cyber-physical systems",
+    "tutorial": "specializations/22-03-ot-ics-and-cyber-physical-systems.md",
+    "source": "roadmaps/specializations/22-03-ot-ics-and-cyber-physical-systems.md",
+    "curriculum": "curriculum/specializations/22-03-ot-ics-and-cyber-physical-systems.md",
+    "source_sha256": "c34ce3e4e27a89f033b2a29fcff1b8052190dc74d5fe9a338540ad25058a8ede",
+    "checklist_items": 15,
+    "headings": [
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Understand the process before the network",
+        "stage-1-understand-the-process-before-the-network"
+      ],
+      [
+        "Stage 2: Model architecture and operational dependencies",
+        "stage-2-model-architecture-and-operational-dependencies"
+      ],
+      [
+        "Stage 3: Learn industrial communications through observation",
+        "stage-3-learn-industrial-communications-through-observation"
+      ],
+      [
+        "Stage 4: Design controls around operational constraints",
+        "stage-4-design-controls-around-operational-constraints"
+      ],
+      [
+        "Stage 5: Practice incident coordination and restoration",
+        "stage-5-practice-incident-coordination-and-restoration"
+      ],
+      [
+        "Worked lab: fictional tank monitoring and recovery",
+        "worked-lab-fictional-tank-monitoring-and-recovery"
+      ],
+      [
+        "Debugging blind spots and study boundaries",
+        "debugging-blind-spots-and-study-boundaries"
+      ]
+    ]
+  },
+  {
+    "topic": "22.4 Telecom and radio-frequency security",
+    "tutorial": "specializations/22-04-telecom-and-radio-frequency-security.md",
+    "source": "roadmaps/specializations/22-04-telecom-and-radio-frequency-security.md",
+    "curriculum": "curriculum/specializations/22-04-telecom-and-radio-frequency-security.md",
+    "source_sha256": "56a70675cd065670dc5dbc64ea1939c53204fb5150082514a8f86c40177f2dee",
+    "checklist_items": 14,
+    "headings": [
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Build the signal and protocol foundations",
+        "stage-1-build-the-signal-and-protocol-foundations"
+      ],
+      [
+        "Stage 2: Map cellular identities and architecture",
+        "stage-2-map-cellular-identities-and-architecture"
+      ],
+      [
+        "Stage 3: Learn VoIP as a distributed application",
+        "stage-3-learn-voip-as-a-distributed-application"
+      ],
+      [
+        "Stage 4: Evaluate privacy and operational constraints",
+        "stage-4-evaluate-privacy-and-operational-constraints"
+      ],
+      [
+        "Stage 5: Develop an evidence-based analysis method",
+        "stage-5-develop-an-evidence-based-analysis-method"
+      ],
+      [
+        "Worked lab: simulated signaling and media",
+        "worked-lab-simulated-signaling-and-media"
+      ],
+      [
+        "Debugging blind spots and pass criteria",
+        "debugging-blind-spots-and-pass-criteria"
+      ]
+    ]
+  },
+  {
+    "topic": "22.5 Browser, kernel, and virtualization research",
+    "tutorial": "specializations/22-05-browser-kernel-and-virtualization-research.md",
+    "source": "roadmaps/specializations/22-05-browser-kernel-and-virtualization-research.md",
+    "curriculum": "curriculum/specializations/22-05-browser-kernel-and-virtualization-research.md",
+    "source_sha256": "3e9bbaebe3cea0c9b52bd2c36e76b96b504cd2820c58beddb74ffaba8d9f987c",
+    "checklist_items": 17,
+    "headings": [
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Demonstrate prerequisite debugging competence",
+        "stage-1-demonstrate-prerequisite-debugging-competence"
+      ],
+      [
+        "Stage 2: Choose one boundary and understand its design",
+        "stage-2-choose-one-boundary-and-understand-its-design"
+      ],
+      [
+        "Stage 3: Develop a precise bug model",
+        "stage-3-develop-a-precise-bug-model"
+      ],
+      [
+        "Stage 4: Engineer a bounded experiment",
+        "stage-4-engineer-a-bounded-experiment"
+      ],
+      [
+        "Stage 5: Learn patch review and responsible reporting",
+        "stage-5-learn-patch-review-and-responsible-reporting"
+      ],
+      [
+        "Worked lab: a toy asynchronous parser service",
+        "worked-lab-a-toy-asynchronous-parser-service"
+      ],
+      [
+        "Blind spots and advancement criteria",
+        "blind-spots-and-advancement-criteria"
+      ]
+    ]
+  },
+  {
+    "topic": "22.6 Blockchain and smart-contract security",
+    "tutorial": "specializations/22-06-blockchain-and-smart-contract-security.md",
+    "source": "roadmaps/specializations/22-06-blockchain-and-smart-contract-security.md",
+    "curriculum": "curriculum/specializations/22-06-blockchain-and-smart-contract-security.md",
+    "source_sha256": "94800da9ed9edbdf1a6d13150a6a478cbd3e372ec05c6673f23f9637fdc4e084",
+    "checklist_items": 15,
+    "headings": [
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Understand state and transaction execution",
+        "stage-1-understand-state-and-transaction-execution"
+      ],
+      [
+        "Stage 2: Learn the language and execution model",
+        "stage-2-learn-the-language-and-execution-model"
+      ],
+      [
+        "Stage 3: Define invariants before finding vulnerabilities",
+        "stage-3-define-invariants-before-finding-vulnerabilities"
+      ],
+      [
+        "Stage 4: Review dependencies, oracles, and governance",
+        "stage-4-review-dependencies-oracles-and-governance"
+      ],
+      [
+        "Stage 5: Build layered testing and review",
+        "stage-5-build-layered-testing-and-review"
+      ],
+      [
+        "Worked lab: a local training escrow",
+        "worked-lab-a-local-training-escrow"
+      ],
+      [
+        "Debugging blind spots and completion gates",
+        "debugging-blind-spots-and-completion-gates"
+      ]
+    ]
+  },
+  {
+    "topic": "22.7 Desktop clients, macOS, privacy, and architecture",
+    "tutorial": "specializations/22-07-desktop-clients-macos-privacy-and-architecture.md",
+    "source": "roadmaps/specializations/22-07-desktop-clients-macos-privacy-and-architecture.md",
+    "curriculum": "curriculum/specializations/22-07-desktop-clients-macos-privacy-and-architecture.md",
+    "source_sha256": "f5407f1cb41f651d71980b6707d0c79e47e3fcaa0f7dd8d7c928ed607a3d3f1f",
+    "checklist_items": 17,
+    "headings": [
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Model a desktop application and its privileges",
+        "stage-1-model-a-desktop-application-and-its-privileges"
+      ],
+      [
+        "Stage 2: Review input and process boundaries",
+        "stage-2-review-input-and-process-boundaries"
+      ],
+      [
+        "Stage 3: Learn macOS protection mechanisms distinctly",
+        "stage-3-learn-macos-protection-mechanisms-distinctly"
+      ],
+      [
+        "Stage 4: Audit the installer and update lifecycle",
+        "stage-4-audit-the-installer-and-update-lifecycle"
+      ],
+      [
+        "Stage 5: Add privacy engineering and architecture review",
+        "stage-5-add-privacy-engineering-and-architecture-review"
+      ],
+      [
+        "Worked lab: a desktop notes client and updater",
+        "worked-lab-a-desktop-notes-client-and-updater"
+      ],
+      [
+        "Blind spots and completion gates",
+        "blind-spots-and-completion-gates"
+      ]
+    ]
+  },
+  {
+    "topic": "22.8 Adversary emulation and red/purple-team planning",
+    "tutorial": "specializations/22-08-adversary-emulation-and-redpurple-team-planning.md",
+    "source": "roadmaps/specializations/22-08-adversary-emulation-and-redpurple-team-planning.md",
+    "curriculum": "curriculum/specializations/22-08-adversary-emulation-and-redpurple-team-planning.md",
+    "source_sha256": "934f9a86e856bcb970a3e0644ccdea72af1978c78f0fe37c0f7321bb386fe0bd",
+    "checklist_items": 20,
+    "headings": [
+      [
+        "Detailed learning sequence",
+        "detailed-learning-sequence"
+      ],
+      [
+        "Stage 1: Define the question the exercise must answer",
+        "stage-1-define-the-question-the-exercise-must-answer"
+      ],
+      [
+        "Stage 2: Write an executable plan and rules of engagement",
+        "stage-2-write-an-executable-plan-and-rules-of-engagement"
+      ],
+      [
+        "Stage 3: Prepare the environment and instrumentation",
+        "stage-3-prepare-the-environment-and-instrumentation"
+      ],
+      [
+        "Stage 4: Run transparent purple-team iterations",
+        "stage-4-run-transparent-purple-team-iterations"
+      ],
+      [
+        "Stage 5: Measure response and translate findings into improvements",
+        "stage-5-measure-response-and-translate-findings-into-improvements"
+      ],
+      [
+        "Worked lab: three harmless validation actions",
+        "worked-lab-three-harmless-validation-actions"
+      ],
+      [
+        "Blind spots and completion gates",
+        "blind-spots-and-completion-gates"
+      ]
+    ]
+  }
+]
