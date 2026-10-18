@@ -1,8 +1,17 @@
 # Ethical Hacking Roadmap & Tutorials
 
+[![GitHub repository](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hareramray/Ethical-hacking)
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/hareramray)
+[![GitHub issues](https://img.shields.io/badge/Issues-0969DA?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hareramray/Ethical-hacking/issues)
+[![Repository labels](https://img.shields.io/badge/Labels-8250DF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hareramray/Ethical-hacking/labels)
+
 A structured learning collection for understanding systems, testing security controls, explaining findings, and verifying repairs. Work through **28 main chapters and 8 advanced specialist tracks**, with detailed roadmaps, guided tutorials, practical exercises, and reusable notes.
 
-**[Start learning](tutorials/README.md) · [Browse detailed roadmaps](roadmaps/README.md) · [Read the master roadmap](ETHICAL_HACKING_ROADMAP.md)**
+[![Start the tutorials](https://img.shields.io/badge/Tutorials-0A7B83?style=for-the-badge&logo=readthedocs&logoColor=white)](tutorials/README.md)
+[![Browse the roadmaps](https://img.shields.io/badge/Roadmaps-1F7A46?style=for-the-badge&logo=readthedocs&logoColor=white)](roadmaps/README.md)
+[![Run the practice labs](https://img.shields.io/badge/Practice_Labs-3776AB?style=for-the-badge&logo=python&logoColor=white)](tutorials/examples/README.md)
+
+[Read the master roadmap](ETHICAL_HACKING_ROADMAP.md)
 
 Practice only on systems you own or are explicitly authorized to assess. Follow each lesson's scope and use isolated, recoverable environments.
 
@@ -72,6 +81,8 @@ Pull requests for corrections, clearer lessons, and bounded practice examples ar
 
 ## Support the project
 
-[Sponsor hareramray](https://github.com/sponsors/hareramray) to support the project.
+[![Sponsor hareramray on GitHub](https://img.shields.io/badge/Sponsor_hareramray-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/hareramray)
+
+Support the tutorials, practice exercises, and ongoing maintenance.
 
 Maintainer reference: [sponsorship and label setup](.github/REPOSITORY_SETUP.md).

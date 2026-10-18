@@ -4,7 +4,8 @@
 
 These notes cover sponsorship and label administration. Keep this file named `REPOSITORY_SETUP.md`: GitHub selects a README in `.github` before a root README, so naming these setup notes `README.md` would replace the learning homepage. See [GitHub's README selection rules](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes).
 
-[Sponsor the maintainer](https://github.com/sponsors/hareramray) | [Repository labels](https://github.com/hareramray/Ethical-hacking/labels)
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/hareramray)
+[![Repository labels](https://img.shields.io/badge/Labels-8250DF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hareramray/Ethical-hacking/labels)
 
 [FUNDING.yml](FUNDING.yml) connects the repository to the maintainer's existing GitHub Sponsors profile. GitHub uses this file on the default branch (`main`) for the Sponsor button; the repository's Sponsorships setting must also be enabled. See [GitHub's sponsor-button documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository).
 
