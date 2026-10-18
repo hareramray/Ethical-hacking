@@ -19,6 +19,9 @@ from securitylab.archive_lab import archive_compare
 from securitylab.clobber_lab import clobber_prepare, clobber_frame
 from securitylab.prototype_lab import prototype_prepare, prototype_frame
 from securitylab.framing_lab import framing_prepare, framing_peer, framing_peer_script, framing_target, framing_target_script
+from securitylab.cache_lab import cache_compare
+from securitylab.queue_lab import queue_compare
+from securitylab.redirect_lab import redirect_prepare, redirect_go, redirect_landing, redirect_peer_landing
 
 urlpatterns = [
     path("", views.index),
@@ -53,6 +56,12 @@ urlpatterns = [
     path("api/prototype/prepare/", prototype_prepare),
     path("lab/prototype/frame/", prototype_frame),
     path("api/framing/prepare/", framing_prepare),
+    path("api/cache/compare/", cache_compare),
+    path("api/queue/compare/", queue_compare),
+    path("api/redirect/prepare/", redirect_prepare),
+    path("lab/redirect/go/", redirect_go),
+    path("lab/redirect/landing/", redirect_landing),
+    path("peer/redirect/landing/", redirect_peer_landing),
     path("peer/framing/", framing_peer),
     path("peer/framing/boot.js", framing_peer_script),
     path("lab/framing/target/", framing_target),

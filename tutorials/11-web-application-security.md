@@ -122,6 +122,8 @@ Idempotency makes retries safe only when keys are scoped to caller and operation
 
 ## Four focused labs and evidence
 
+Two exercises below have runnable comparisons: [queued-job authorization](../labs/browser_security/QUEUED_AUTHORIZATION.md) and [personalized cache isolation](../labs/browser_security/CACHE_ISOLATION.md). The queue lesson explicitly requires current authority at execution and download; the cache lesson preserves public cache hits while excluding private responses. Both use disposable in-process state, not a production queue or CDN. For browser navigation, add the [open-redirect lesson](../labs/browser_security/OPEN_REDIRECTS.md), which follows real HTTP redirects between owned local pages.
+
 **Export after role change.** Create an authorized queued export, reduce the fictional requester's role, then process and download it. Choose and document whether current authority is required at execution/delivery. Capture job context, policy decisions, output tenant, and download logs. Repair worker and storage authorization together. A second authorized export must still succeed.
 
 **Structured input and stored output.** Extend the SQLite example into local search and comments. Trace parameterization, persistence, serialization, and rendering. Verify a quoted name, permitted rich formatting, inert unexpected markup, and authorization separately. Preserve a source-to-sink diagram and tests for each boundary.

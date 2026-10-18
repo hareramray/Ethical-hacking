@@ -31,6 +31,8 @@ The dashboard also includes [Markdown/rich-text sanitization](labs/browser_secur
 
 Additional runnable browser lessons cover [DOM clobbering](labs/browser_security/DOM_CLOBBERING.md), [prototype pollution](labs/browser_security/PROTOTYPE_POLLUTION.md), and [clickjacking/framing](labs/browser_security/CLICKJACKING_FRAMING.md). They measure named-property collisions, inherited settings, and actual cross-origin embedding without using real accounts or sensitive actions.
 
+The same dashboard adds [personalized cache isolation](labs/browser_security/CACHE_ISOLATION.md), [queued-job authorization](labs/browser_security/QUEUED_AUTHORIZATION.md), and [open redirects](labs/browser_security/OPEN_REDIRECTS.md). Cache and queue comparisons use disposable application state; redirects use actual HTTP responses and local browser navigation. These are separate authorization and navigation boundaries, not additional CSP bypasses.
+
 1. For individual inputs, use the context-specific examples below. Change the marker ID for each test.
 2. For a working practice environment, save the Python block under **Local practice lab** as `csp_xss_lab.py`, then run `python csp_xss_lab.py`.
 3. Open `http://127.0.0.1:8765/` and the browser's developer-tools Console and Network panels. The initial page uses a nonce CSP and escapes reflected text.

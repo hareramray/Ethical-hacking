@@ -19,6 +19,9 @@ import ArchiveLab from './ArchiveLab.vue'
 import ClobberLab from './ClobberLab.vue'
 import PrototypeLab from './PrototypeLab.vue'
 import FramingLab from './FramingLab.vue'
+import CacheLab from './CacheLab.vue'
+import QueueLab from './QueueLab.vue'
+import RedirectLab from './RedirectLab.vue'
 
 const tabs = [
   { id: 'xss', number: '01', label: 'XSS & rendering', description: 'Follow data into the DOM' },
@@ -44,6 +47,9 @@ const tabs = [
   { id: 'clobber', number: '21', label: 'DOM clobbering', description: 'Keep named elements out of configuration' },
   { id: 'prototype', number: '22', label: 'Prototype pollution', description: 'Separate own data from inherited values' },
   { id: 'framing', number: '23', label: 'Clickjacking & framing', description: 'Control who can embed an action' },
+  { id: 'cache', number: '24', label: 'Personalized cache isolation', description: 'Keep private responses out of shared caches' },
+  { id: 'queue', number: '25', label: 'Queued-job authorization', description: 'Recheck authority when work runs and downloads' },
+  { id: 'redirect', number: '26', label: 'Open redirects', description: 'Validate return destinations before navigation' },
 ]
 const active = ref('xss')
 const ready = ref(false)
@@ -74,6 +80,9 @@ const archive = ref({ fixtures: [] })
 const clobber = ref({ fixtures: [] })
 const prototype = ref({ fixtures: [] })
 const framing = ref({ fixtures: [] })
+const cache = ref({ fixtures: [] })
+const queue = ref({ fixtures: [] })
+const redirect = ref({ fixtures: [] })
 const uploads = ref([])
 const stored = ref('')
 const mode = ref('self')
@@ -172,6 +181,9 @@ async function bootstrap(initial = false) {
   clobber.value = data.clobber || { fixtures: [] }
   prototype.value = data.prototype || { fixtures: [] }
   framing.value = data.framing || { fixtures: [] }
+  cache.value = data.cache || { fixtures: [] }
+  queue.value = data.queue || { fixtures: [] }
+  redirect.value = data.redirect || { fixtures: [] }
   uploads.value = data.uploads || []
   stored.value = data.stored?.payload || ''
   if (initial && payloads.value.length) {
@@ -359,7 +371,10 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <p class="intro" v-else-if="active === 'archive'">Extract tiny predefined ZIP archives into disposable directories. Compare file destinations, bounded reads, and rejection before any writes.</p>
         <p class="intro" v-else-if="active === 'clobber'">Observe how named HTML elements can change a script's configuration lookup. Compare implicit browser properties with explicit references.</p>
         <p class="intro" v-else-if="active === 'prototype'">Merge fixed JSON fixtures inside disposable browser frames. Inspect inherited settings, prototype changes, and validation before copying data.</p>
-        <p class="intro" v-else>Try a clearly labelled framing demonstration with a harmless practice button. Compare unrestricted embedding, protective headers, and an allowed integration.</p>
+        <p class="intro" v-else-if="active === 'framing'">Try a clearly labelled framing demonstration with a harmless practice button. Compare unrestricted embedding, protective headers, and an allowed integration.</p>
+        <p class="intro" v-else-if="active === 'cache'">Follow fictional users through a disposable shared cache. Compare cached markers, current permissions, and public-content cache hits.</p>
+        <p class="intro" v-else-if="active === 'queue'">Follow a fictional export from submission to processing and download. Observe what happens when permissions change between those steps.</p>
+        <p class="intro" v-else>Follow real redirects between local marker pages. Compare unchecked return URLs with permitted destinations and retain ordinary navigation.</p>
 
         <div v-if="error" class="message error-message" role="alert"><strong>Request could not complete</strong><span>{{ error }}</span></div>
         <div v-if="notice" class="message success-message" role="status">{{ notice }}</div>
@@ -384,6 +399,9 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <ClobberLab v-else-if="active === 'clobber'" :metadata="clobber" :ready="ready" :csrf-token="csrfToken" />
         <PrototypeLab v-else-if="active === 'prototype'" :metadata="prototype" :ready="ready" :csrf-token="csrfToken" />
         <FramingLab v-else-if="active === 'framing'" :metadata="framing" :ready="ready" :csrf-token="csrfToken" />
+        <CacheLab v-else-if="active === 'cache'" :metadata="cache" :ready="ready" :csrf-token="csrfToken" />
+        <QueueLab v-else-if="active === 'queue'" :metadata="queue" :ready="ready" :csrf-token="csrfToken" />
+        <RedirectLab v-else-if="active === 'redirect'" :metadata="redirect" :ready="ready" :csrf-token="csrfToken" />
 
         <template v-else-if="active !== 'uploads'">
           <div class="experiment-layout">

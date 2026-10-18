@@ -580,6 +580,8 @@ The [PortSwigger topic catalog](https://portswigger.net/web-security/all-topics)
 
 ### 11.6 Practice sequence and exit criteria
 
+Runnable companion lessons now cover [personalized cache isolation](labs/browser_security/CACHE_ISOLATION.md), [authorization during queued exports](labs/browser_security/QUEUED_AUTHORIZATION.md), and [browser return-URL validation](labs/browser_security/OPEN_REDIRECTS.md). Compare vulnerable/fixed decisions and repeat the successful allowed controls. The cache and queue lessons use disposable application models; the redirect lesson follows real HTTP navigation between the two local origins.
+
 1. Build and document the small application; perform a manual walkthrough before scanning.
 2. Complete at least 25 training exercises spanning identity, access control, injection, browser security, files, SSRF, logic, and intermediaries. Revisit five without walkthroughs after a delay.
 3. Assess a local [OWASP Juice Shop](https://owasp.org/projects/juice-shop) or [WebGoat](https://owasp.org/projects/webgoat) deployment and distinguish verified findings from scanner suggestions.

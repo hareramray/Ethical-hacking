@@ -80,6 +80,8 @@ Content-handling lessons add [Markdown/rich-text sanitization](labs/browser_secu
 
 Continue with [DOM clobbering](labs/browser_security/DOM_CLOBBERING.md), [client-side prototype pollution](labs/browser_security/PROTOTYPE_POLLUTION.md), and [clickjacking/framing](labs/browser_security/CLICKJACKING_FRAMING.md). These compare real browser name resolution, inherited preferences, and frame permissions using isolated markers and a practice button.
 
+The dashboard now has **26 lab tabs**, including [personalized cache isolation](labs/browser_security/CACHE_ISOLATION.md), [queued-job authorization](labs/browser_security/QUEUED_AUTHORIZATION.md), and [open redirects](labs/browser_security/OPEN_REDIRECTS.md). Compare disposable cache entries and export lifecycles, then observe real redirects between owned local marker pages.
+
 Open **http://127.0.0.1:8766/**. See the lab README for sample files, policy expectations, and tests.
 
 ## Keep useful evidence

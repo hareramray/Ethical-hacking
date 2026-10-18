@@ -37,6 +37,9 @@ from .archive_lab import ARCHIVE_METADATA
 from .clobber_lab import clobber_metadata
 from .prototype_lab import prototype_metadata
 from .framing_lab import framing_metadata
+from .cache_lab import CACHE_METADATA
+from .queue_lab import QUEUE_METADATA
+from .redirect_lab import redirect_metadata
 
 MAX_UPLOAD = 64 * 1024
 MAX_UPLOADS = 20
@@ -127,6 +130,9 @@ def bootstrap(request):
         "clobber": clobber_metadata(),
         "prototype": prototype_metadata(),
         "framing": framing_metadata(),
+        "cache": CACHE_METADATA,
+        "queue": QUEUE_METADATA,
+        "redirect": redirect_metadata(),
         "uploads": [upload_record(item) for item in Upload.objects.filter(owner=key)],
         "fixtures": [{"name": name, "url": "/api/fixtures/" + name, "description": value[1]}
                      for name, value in FIXTURES.items()],
