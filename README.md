@@ -74,6 +74,8 @@ The same interface also includes [authentication/session lifecycle](labs/browser
 
 Continue with [template injection](labs/browser_security/TEMPLATE_INJECTION.md), [command/argument injection](labs/browser_security/COMMAND_INJECTION.md), and [XML external entities](labs/browser_security/XML_ENTITIES.md). These lessons use predefined harmless fixtures with real Django rendering, marker-producing processes, and XML parsing.
 
+API lessons add [write authorization and mass assignment](labs/browser_security/API_WRITES.md), [JWT validation](labs/browser_security/JWT_VALIDATION.md), and [webhook replay protection](labs/browser_security/WEBHOOKS.md). Inspect stored changes, token decisions, and duplicate-event effects with fictional profiles and disposable ledgers.
+
 Open **http://127.0.0.1:8766/**. See the lab README for sample files, policy expectations, and tests.
 
 ## Keep useful evidence

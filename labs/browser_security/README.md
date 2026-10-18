@@ -6,6 +6,8 @@ Further lessons cover [authentication and sessions](AUTH_SESSIONS.md), [SSRF](SS
 
 Interpreter lessons add [server-side template injection](TEMPLATE_INJECTION.md), [command and argument injection](COMMAND_INJECTION.md), and [XML external entities](XML_ENTITIES.md). They execute predefined harmless inputs through real renderers, processes, and parsers.
 
+API lessons cover [write authorization and mass assignment](API_WRITES.md), [JWT validation](JWT_VALIDATION.md), and [webhook replay protection](WEBHOOKS.md). Compare actual stored changes, token decisions, and event-ledger effects using fresh fictional fixtures.
+
 The application runs on your own computer at **http://127.0.0.1:8766/**. The examples use fixed console/DOM markers. Experimental documents and upload previews are sandboxed separately from the controller. This is a teaching application, not a service to deploy publicly.
 
 ## Start
@@ -18,6 +20,8 @@ python labs/browser_security/run_lab.py
 ```
 
 Setup creates a local `.venv`, installs the pinned Python dependencies and locked npm dependencies, builds Vue, and creates the SQLite tables. The first setup requires internet access for packages; ordinary lab use requires no CDN or external service. It does not change your global Python packages.
+
+After pulling updates that add dependencies, rerun `--setup`. The JWT lesson uses the pinned PyJWT package from `requirements.txt`.
 
 Open **http://127.0.0.1:8766/**. The launcher also starts a companion on **http://127.0.0.1:8767/** for the CSRF/CORS lesson. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
 
@@ -47,6 +51,9 @@ That uses ports 8876 and 8877. Set `--peer-port` explicitly if needed; the two p
 | [Template injection](TEMPLATE_INJECTION.md) | Compare a normal name, a context-variable expression, a conditional, and HTML text. | Django evaluates template source but preserves values passed as data; output escaping addresses a different boundary. |
 | [Commands & arguments](COMMAND_INJECTION.md) | Select a normal operand, a shell separator, and an injected option. | Fixed marker-only processes show shell interpretation versus argument parsing, then literal operand handling. |
 | [XML external entities](XML_ENTITIES.md) | Parse ordinary XML, a built-in entity, and a document referencing a synthetic external resource. | The vulnerable parser resolves the marker; the fixed parser rejects the DTD before resolution. |
+| [API write authorization](API_WRITES.md) | Edit an owned profile, a peer's profile, and protected properties. | Inspect database state before and after the write; fixed object and field checks reject forbidden patches without partial changes. |
+| [JWT validation](JWT_VALIDATION.md) | Compare valid, tampered, expired, and wrongly scoped synthetic tokens. | Decoding alone trusts claims; PyJWT verifies the signature and required claims before the separate subject permission check. |
+| [Webhook replay protection](WEBHOOKS.md) | Deliver valid, tampered, stale, and repeated fictional events. | Signature checks, freshness checks, and event deduplication protect different boundaries; an atomic ledger update prevents duplicate rewards. |
 
 The controller uses Vue's compiled templates and text interpolation. It never evaluates the payload. Django returns the actual experiment document with the chosen response policy; entering code in DevTools is not part of the test.
 
@@ -57,6 +64,8 @@ The **CSRF / CORS** tab uses two real origins. Different loopback ports are stil
 The **Authentication & sessions** tab executes scripted clients against a disposable teaching token store. It does not log you into the dashboard or replace Django's session machinery. The **SSRF** tab routes reserved fixture hostnames directly to sockets owned by the current exercise, without DNS or access to other services. The **Business logic & races** tab uses two database connections and an explicit scheduling barrier to make a check-then-act race repeatable. Its points are synthetic, and its files are temporary.
 
 The **Template injection**, **Commands & arguments**, and **XML external entities** tabs accept only known fixture identifiers. Their server-owned templates, commands, and XML documents cannot be replaced through the API. Template rendering uses scalar fixture context, processes print or record markers, and the XML resolver can supply only one in-memory resource. These outer exercise limits are distinct from each fixed handler's repair.
+
+The **API write authorization**, **JWT validation**, and **Webhook replay protection** tabs also use fixed fixture selectors and fresh comparison state. They do not modify the dashboard's accounts, accept real tokens, or receive external webhook deliveries. JWT validation is a token-verification lesson, not an OAuth/OIDC login flow. The webhook's signed-message format is a local teaching contract; provider integrations must follow their own signing specification.
 
 ### Policy meanings
 
@@ -99,7 +108,7 @@ cd ../../..
 python labs/browser_security/run_lab.py --test
 ```
 
-The command runs Django checks and tests, rebuilds Vue, then runs Playwright against a real browser. Browser-test data is separate from learner data. Tests exercise SQL isolation, object permissions, session/reset-token decisions, local HTTP routing, concurrent coupon redemption, template interpretation, process argument boundaries, XML resolution, CSRF boundaries, CORS visibility, upload validation and retrieval, and actual marker behavior rather than treating source text as proof of execution.
+The command runs Django checks and tests, rebuilds Vue, then runs Playwright against a real browser. Browser-test data is separate from learner data. Tests exercise SQL isolation, object and property permissions, session/reset-token decisions, JWT signatures and claims, webhook authentication and replay, local HTTP routing, concurrent coupon redemption, template interpretation, process argument boundaries, XML resolution, CSRF boundaries, CORS visibility, upload validation and retrieval, and actual marker behavior rather than treating source text as proof of execution.
 
 Stop any running lab on ports 8766 and 8767 before running the browser checks; the tests start their own servers on those ports.
 

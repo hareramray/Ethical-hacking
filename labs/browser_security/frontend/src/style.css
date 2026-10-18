@@ -30,5 +30,7 @@
 .ssrf-boundary-note{margin-top:12px}.ssrf-trace pre+pre{margin-top:10px}
 .interpreter-setup .traversal-content+.field-help,.interpreter-setup .traversal-content+.traversal-description,.interpreter-setup .traversal-description+.traversal-description,.interpreter-setup .traversal-description+.field-help{margin-top:12px}
 .traversal-outcome.outcome-evaluated{background:#fcece6;color:#a14d3b}.traversal-outcome.outcome-parse_error,.traversal-outcome.outcome-timeout,.traversal-outcome.outcome-unavailable{background:#fff1d3;color:#8d641c}
+.traversal-outcome.outcome-rejected,.traversal-outcome.outcome-denied{background:#fff1d3;color:#8d641c}.comparison-evidence{margin-top:22px}
+[data-testid="webhook-delivery"]+[data-testid="webhook-delivery"]{margin-top:24px;border-top:1px solid #e0e8db;padding-top:4px}[data-testid="webhook-delivery"] details{margin-top:12px}[data-testid="webhook-delivery"] summary{font-size:11px;color:#536b5e;cursor:pointer}
 @media(max-width:960px){.traversal-layout,.traversal-results{grid-template-columns:1fr;gap:17px}}
 @media(max-width:640px){.sidebar nav{grid-template-columns:repeat(3,minmax(0,1fr))}.nav-item strong{font-size:10px}.traversal-details{grid-template-columns:95px minmax(0,1fr);gap:8px 10px}.traversal-tree,.traversal-content{font-size:11px;padding:12px}}

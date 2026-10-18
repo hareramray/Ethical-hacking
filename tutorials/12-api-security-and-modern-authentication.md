@@ -57,7 +57,7 @@ assert "internal_note" not in update_profile(alice, "alice", {})
 print("valid update passed; forbidden write denied; internal field absent")
 ```
 
-The expected printed line confirms three independent claims. Now test inactive Alice, a Beta identity, and a second Alpha user. Add null, empty, overlong, and numeric display names. A denial must leave state unchanged. To study mass assignment, compare this explicit mapping with a paper example of blindly merging caller fields into the stored record; no privileged system is needed to understand the flaw.
+The expected printed line confirms three independent claims. Now test inactive Alice, a Beta identity, and a second Alpha user. Add null, empty, overlong, and numeric display names. A denial must leave state unchanged. The [runnable API write lesson](../labs/browser_security/API_WRITES.md) compares blind assignment with object and field checks against disposable SQLite profiles. Inspect before/after state for legitimate updates, peer and tenant boundaries, protected fields, and mixed patches that must fail without partial changes.
 
 Create at least twenty cases by crossing identities with direct lookup, list/search, nested object, property edit, export, old API version, batch, and asynchronous operation. Define mixed-batch semantics: reject all atomically or report item-level decisions without applying denied items. Bind idempotency keys to subject/tenant/action and preserve authorization on repeats. Idempotency does not grant permission.
 
@@ -70,6 +70,8 @@ Describe purchase, reservation, invitation, password recovery, publication, and 
 Partner APIs are untrusted inputs despite business relationships. Validate TLS/transport identity, schemas, lengths, identifiers, and error content. Scope credentials, constrain redirects, use deadlines, and make retries bounded and idempotent where required. An upstream identifier is not proof the current user owns the local object it names.
 
 For webhooks, separate authenticity, freshness, and business deduplication. Verify signatures with the provider's defined byte representation and library, enforce the chosen timestamp policy, track event IDs, constrain delivery destinations, and define key rotation overlap. Duplicate delivery is normal in many event systems; it must not duplicate a payment or inventory effect. Event ordering and dead-letter recovery need explicit state handling.
+
+The [runnable webhook lesson](../labs/browser_security/WEBHOOKS.md) demonstrates these first three boundaries with real HMAC checks and a disposable points ledger. Compare a valid event, tampered bytes, stale deliveries, and signed retries with the same event ID. The lesson's local signing format is explicit and does not represent every provider's protocol.
 
 ## Lesson 4: understand the protocol roles
 
@@ -91,6 +93,8 @@ Configure exact redirect trust, issuer selection, correlation/state, PKCE, clien
 OIDC adds an identity layer: discovery, ID tokens, subject identifiers, UserInfo, nonce, authentication freshness, account linking, and logout. An ID token is intended for the relying party's authentication processing; it is not automatically an API access credential. Validate issuer, audience, request binding, and token purpose using the library's supported configuration. [OpenID Connect Core](https://openid.net/specs/openid-connect-core-1_0.html).
 
 JWT is a representation; JWS supplies signing/integrity and JWE supplies encryption. Base64 decoding does not authenticate a token. Validators need trusted algorithm/key selection, signature checks, issuer/audience, expiration/not-before, token-type separation, and the appropriate application policy. Key IDs choose among trusted issuer keys, not arbitrary untrusted locations. JWKS retrieval/caching/rotation needs bounded network behavior and explicit failure handling. Document how key rollover and revocation interact with already issued credentials.
+
+Practice signature and claim validation in the [runnable JWT lesson](../labs/browser_security/JWT_VALIDATION.md). It uses PyJWT, fresh local signing keys, fixed token scenarios, and a separate subject permission check. It does not implement OAuth/OIDC, discovery, key rotation, or browser authentication.
 
 ## Lesson 5: model the complete identity lifecycle
 

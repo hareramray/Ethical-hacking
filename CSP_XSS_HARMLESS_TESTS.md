@@ -25,6 +25,8 @@ Continue with [authentication and session lifecycle](labs/browser_security/AUTH_
 
 The [template injection](labs/browser_security/TEMPLATE_INJECTION.md), [command/argument injection](labs/browser_security/COMMAND_INJECTION.md), and [XML external-entity](labs/browser_security/XML_ENTITIES.md) lessons extend this into server-side interpreters. Select predefined harmless fixtures and compare actual vulnerable/fixed results; the interfaces do not accept arbitrary templates, commands, or XML documents.
 
+API exercises add [write authorization and mass assignment](labs/browser_security/API_WRITES.md), [JWT validation](labs/browser_security/JWT_VALIDATION.md), and [webhook replay protection](labs/browser_security/WEBHOOKS.md). These compare fictional profile updates, locally generated tokens, and disposable event ledgers; they are separate from browser CSP enforcement.
+
 1. For individual inputs, use the context-specific examples below. Change the marker ID for each test.
 2. For a working practice environment, save the Python block under **Local practice lab** as `csp_xss_lab.py`, then run `python csp_xss_lab.py`.
 3. Open `http://127.0.0.1:8765/` and the browser's developer-tools Console and Network panels. The initial page uses a nonce CSP and escapes reflected text.

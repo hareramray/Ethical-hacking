@@ -10,6 +10,9 @@ from securitylab.logic_lab import logic_compare
 from securitylab.template_lab import template_compare
 from securitylab.command_lab import command_compare
 from securitylab.xml_lab import xml_compare
+from securitylab.write_lab import write_compare
+from securitylab.jwt_lab import jwt_compare
+from securitylab.webhook_lab import webhook_compare
 
 urlpatterns = [
     path("", views.index),
@@ -27,6 +30,9 @@ urlpatterns = [
     path("api/template/compare/", template_compare),
     path("api/command/compare/", command_compare),
     path("api/xml/compare/", xml_compare),
+    path("api/write/compare/", write_compare),
+    path("api/jwt/compare/", jwt_compare),
+    path("api/webhook/compare/", webhook_compare),
     path("api/cross-origin/prepare/", cross_origin.prepare),
     path("api/cross-origin/state/", cross_origin.state),
     path("api/cross-origin/change/vulnerable/", cross_origin.csrf_vulnerable),
