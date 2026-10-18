@@ -12,9 +12,11 @@ Content-handling lessons cover [Markdown and rich-text sanitization](SANITIZATIO
 
 Browser-boundary lessons add [DOM clobbering](DOM_CLOBBERING.md), [client-side prototype pollution](PROTOTYPE_POLLUTION.md), and [clickjacking and framing](CLICKJACKING_FRAMING.md). Compare actual named-element lookups, inherited preferences, and cross-origin embedding with their respective repairs.
 
-The **29 lab tabs** also include [personalized cache isolation](CACHE_ISOLATION.md), [queued-job authorization](QUEUED_AUTHORIZATION.md), and [open redirects](OPEN_REDIRECTS.md). Inspect actual disposable cache and export records, then follow real HTTP redirects between local marker pages.
+The **32 lab tabs** also include [personalized cache isolation](CACHE_ISOLATION.md), [queued-job authorization](QUEUED_AUTHORIZATION.md), and [open redirects](OPEN_REDIRECTS.md). Inspect actual disposable cache and export records, then follow real HTTP redirects between local marker pages.
 
 Protocol lessons add [CORS preflight](CORS_PREFLIGHT.md), [CSP workers and HTTP reporting](CSP_WORKERS_REPORTING.md), and [OAuth/OIDC with PKCE](OAUTH_OIDC.md). Distinguish request permission, response visibility, worker execution, report receipt, and authorization-flow binding using local fixtures.
+
+Further comparisons cover [WebSocket security](WEBSOCKETS.md), [GraphQL authorization](GRAPHQL.md), and [Trusted Types policies](TRUSTED_TYPES.md). Inspect real socket messages, GraphQL resolver decisions and stored changes, and formatting preserved by a sanitizer-backed browser policy.
 
 The application runs on your own computer at **http://127.0.0.1:8766/**. The examples use fixed console/DOM markers. Experimental documents and upload previews are sandboxed separately from the controller. This is a teaching application, not a service to deploy publicly.
 
@@ -29,9 +31,9 @@ python labs/browser_security/run_lab.py
 
 Setup creates a local `.venv`, installs the pinned Python dependencies and locked npm dependencies, builds Vue, and creates the SQLite tables. The first setup requires internet access for packages; ordinary lab use requires no CDN or external service. It does not change your global Python packages.
 
-After pulling updates that add dependencies, rerun `--setup`. The JWT lesson uses pinned PyJWT; sanitization uses pinned markdown-it-py and nh3 from `requirements.txt`.
+After pulling updates that add dependencies, rerun `--setup`. Python dependencies include PyJWT, OAuthlib, graphql-core, Uvicorn, websockets, markdown-it-py, and nh3. The frontend build copies the pinned DOMPurify browser bundle into `dist` for the Trusted Types frames; it is served locally and needs no CDN.
 
-Open **http://127.0.0.1:8766/**. The launcher also starts a companion on **http://127.0.0.1:8767/** for the CSRF/CORS, preflight, postMessage, framing, and redirect lessons. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
+Open **http://127.0.0.1:8766/**. The launcher starts one Uvicorn ASGI process per origin, including a companion on **http://127.0.0.1:8767/** for the CSRF/CORS, preflight, postMessage, framing, redirect, and WebSocket lessons. Django handles HTTP; a bounded ASGI handler handles the WebSocket lesson. Leave the terminal running; `Ctrl+C` stops both servers. A different main port automatically moves the companion to the next port:
 
 ```powershell
 python labs/browser_security/run_lab.py --port 8876
@@ -74,6 +76,9 @@ That uses ports 8876 and 8877. Set `--peer-port` explicitly if needed; the two p
 | [CORS preflight](CORS_PREFLIGHT.md) | Send fixed JSON/custom-header requests from the companion origin. | Compare received OPTIONS requests, actual handler calls and mutations, and browser response readability under independent origin/method/header rules. |
 | [CSP workers & reporting](CSP_WORKERS_REPORTING.md) | Start a fixed marker worker under allowed, enforced-denial, and report-only policies. | Worker execution, local violation events, and HTTP reports received by the collector are separate evidence. |
 | [OAuth / OIDC & PKCE](OAUTH_OIDC.md) | Follow a local authorization-code flow with valid and mismatched transaction inputs. | Browser redirects and OAuthlib code exchanges expose PKCE, state, nonce, redirect registration, and code-reuse decisions while preserving the allowed flow. |
+| [WebSocket security](WEBSOCKETS.md) | Open local sockets with an allowed or companion origin, then send fixed record actions or revoke permission. | Compare accepted handshakes, actual messages, tenant/action decisions, and a second message after permission changes. |
+| [GraphQL authorization](GRAPHQL.md) | Execute fixed queries and mutations against fictional records. | Compare nested and field access, alias handling, mutation state, and query-budget rejection before resolver execution. |
+| [Trusted Types policies](TRUSTED_TYPES.md) | Render fixed formatting, text, and event-marker fixtures through pass-through and sanitizing policies. | Distinguish Trusted Types sink acceptance from safe content, preserve allowed formatting, and observe raw-string or forbidden-policy rejection. |
 
 The controller uses Vue's compiled templates and text interpolation. It never evaluates the payload. Django returns the actual experiment document with the chosen response policy; entering code in DevTools is not part of the test.
 
@@ -102,6 +107,12 @@ The **Open redirects** tab follows actual HTTP redirects in isolated frames. Eve
 The **CORS preflight** lesson uses the existing two HTTP origins on one site. It adds real OPTIONS requests without claiming different-site cookie behavior. The **CSP workers & reporting** lesson uses only trusted fixed frame and worker scripts; it collects browser-generated reports through a narrowly scoped endpoint. Missing or delayed report delivery is shown separately from observed execution and CSP events.
 
 The **OAuth / OIDC & PKCE** lesson uses a synthetic local provider and client. Browser authorization redirects are real; the serialized token request is passed to OAuthlib in-process. It does not log into the dashboard, use external accounts, or demonstrate production identity-provider deployment. See the walkthrough for protocol ownership and transport limits.
+
+The **WebSocket security** lesson uses actual browser sockets and disposable permission state. Its permission-revocation fixture changes a lesson permission while a connection stays open; it does not log out the Django dashboard. Loopback `ws://` exercises handshake and message checks, not TLS or cross-site cookie behavior. Use the launcher rather than Django's HTTP-only `runserver` for this lesson.
+
+The **GraphQL authorization** lesson executes server-owned operations through graphql-core against fresh synthetic stores. GraphQL data/errors, resolver counts, and before/after records provide separate evidence. The fixture selector is not an unrestricted GraphQL endpoint, and the bounded operation-budget example is not a load test.
+
+The **Trusted Types policies** lesson runs fixed inputs in opaque sandbox frames. A pass-through policy can produce a trusted object without sanitizing its contents; the repaired policy uses DOMPurify and preserves allowed formatting. The lesson reports unsupported Trusted Types separately and does not treat a missing marker as proof of enforcement. The existing basic `tt` policy still forbids all policy creation.
 
 ### Policy meanings
 
@@ -144,7 +155,7 @@ cd ../../..
 python labs/browser_security/run_lab.py --test
 ```
 
-The command runs Django checks and tests, rebuilds Vue, then runs Playwright against a real browser. Browser-test data is separate from learner data. Tests exercise SQL isolation, object and property permissions, session/reset-token decisions, JWT signatures and claims, webhook authentication and replay, local HTTP routing, concurrent coupon redemption, template interpretation, process argument boundaries, XML resolution, CSRF boundaries, CORS visibility, upload validation and retrieval, and actual marker behavior rather than treating source text as proof of execution.
+The command rebuilds Vue and the local sanitizer asset, runs Django checks and tests, then runs Playwright against a real browser. Browser-test data is separate from learner data. Tests exercise SQL isolation, object and property permissions, session/reset-token decisions, JWT signatures and claims, webhook authentication and replay, local HTTP routing, concurrent coupon redemption, template interpretation, process argument boundaries, XML resolution, CSRF boundaries, CORS visibility, upload validation and retrieval, real WebSocket messages, GraphQL resolver effects, and actual marker behavior rather than treating source text as proof of execution.
 
 Stop any running lab on ports 8766 and 8767 before running the browser checks; the tests start their own servers on those ports.
 

@@ -80,9 +80,11 @@ Content-handling lessons add [Markdown/rich-text sanitization](labs/browser_secu
 
 Continue with [DOM clobbering](labs/browser_security/DOM_CLOBBERING.md), [client-side prototype pollution](labs/browser_security/PROTOTYPE_POLLUTION.md), and [clickjacking/framing](labs/browser_security/CLICKJACKING_FRAMING.md). These compare real browser name resolution, inherited preferences, and frame permissions using isolated markers and a practice button.
 
-The dashboard now has **29 lab tabs**, including [personalized cache isolation](labs/browser_security/CACHE_ISOLATION.md), [queued-job authorization](labs/browser_security/QUEUED_AUTHORIZATION.md), and [open redirects](labs/browser_security/OPEN_REDIRECTS.md). Compare disposable cache entries and export lifecycles, then observe real redirects between owned local marker pages.
+The dashboard now has **32 lab tabs**, including [personalized cache isolation](labs/browser_security/CACHE_ISOLATION.md), [queued-job authorization](labs/browser_security/QUEUED_AUTHORIZATION.md), and [open redirects](labs/browser_security/OPEN_REDIRECTS.md). Compare disposable cache entries and export lifecycles, then observe real redirects between owned local marker pages.
 
 Continue with [CORS preflight](labs/browser_security/CORS_PREFLIGHT.md), [CSP workers and HTTP reporting](labs/browser_security/CSP_WORKERS_REPORTING.md), and [OAuth/OIDC with PKCE](labs/browser_security/OAUTH_OIDC.md). Observe actual browser requests, worker execution, received violation reports, and a local code flow using OAuthlib.
+
+The [WebSocket security](labs/browser_security/WEBSOCKETS.md), [GraphQL authorization](labs/browser_security/GRAPHQL.md), and [Trusted Types policy](labs/browser_security/TRUSTED_TYPES.md) lessons add real persistent connections, nested API permissions, and sanitizer-backed browser rendering. They use fixed inputs and fictional records, with successful controls alongside deliberate failures.
 
 Open **http://127.0.0.1:8766/**. See the lab README for sample files, policy expectations, and tests.
 

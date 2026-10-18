@@ -2,6 +2,8 @@
 
 This Vue + Django lesson follows formatted input through parsing, sanitization, persistence, and browser rendering. One path stores the parser's HTML unchanged. The fixed path applies an explicit HTML policy using nh3, stores the sanitized result, and renders that stored value without further transformations. The browser measures harmless marker execution and the elements that remain.
 
+For client-side sink enforcement, continue with [Trusted Types sanitizer policies](TRUSTED_TYPES.md). That separate lesson compares a pass-through policy with a DOMPurify-backed policy inside isolated browser frames; a trusted type alone does not establish that content was sanitized.
+
 Start the [browser security lab](README.md) from the repository root:
 
 ```powershell

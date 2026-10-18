@@ -5,16 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "vite build",
+    "build": "vite build && node scripts/copy-sanitizer.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "dompurify": "3.4.16",
     "vue": "3.5.44"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "6.0.10",
     "@playwright/test": "1.64.1",
+    "@vitejs/plugin-vue": "6.0.10",
     "vite": "8.3.4"
   }
 }

@@ -24,6 +24,7 @@ DEBUG = False
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "[::1]"]
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
+ASGI_APPLICATION = "config.asgi.application"
 INSTALLED_APPS = ["django.contrib.contenttypes", "django.contrib.sessions", "securitylab"]
 MIDDLEWARE = [
     "securitylab.middleware.LocalOnlyMiddleware",

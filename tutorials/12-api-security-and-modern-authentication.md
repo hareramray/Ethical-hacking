@@ -121,6 +121,8 @@ SCIM provisioning/deprovisioning, service accounts, changed emails, lost devices
 
 ## Lesson 6: apply the same policy across protocols
 
+Practice with the [runnable GraphQL authorization lesson](../labs/browser_security/GRAPHQL.md) and [WebSocket security lesson](../labs/browser_security/WEBSOCKETS.md). Fixed GraphQL operations expose nested object/field decisions and actual mutation effects; real local sockets expose handshake-origin checks, message permissions, and permission changes after connection. Both use fictional records and preserve successful authorized controls.
+
 | Protocol | Core mechanism | Exercise and repair focus |
 | --- | --- | --- |
 | GraphQL | Schema fields dispatch to resolvers; queries/mutations/subscriptions can nest relationships | Share object/property policy across resolvers, node IDs, aliases and batches; bound depth/cost/pagination, sanitize errors, revisit subscription authorization |

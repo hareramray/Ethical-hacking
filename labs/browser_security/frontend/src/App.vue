@@ -25,6 +25,9 @@ import RedirectLab from './RedirectLab.vue'
 import PreflightLab from './PreflightLab.vue'
 import WorkerLab from './WorkerLab.vue'
 import OAuthLab from './OAuthLab.vue'
+import WebSocketLab from './WebSocketLab.vue'
+import GraphqlLab from './GraphqlLab.vue'
+import TrustedTypesLab from './TrustedTypesLab.vue'
 
 const tabs = [
   { id: 'xss', number: '01', label: 'XSS & rendering', description: 'Follow data into the DOM' },
@@ -56,6 +59,9 @@ const tabs = [
   { id: 'preflight', number: '27', label: 'CORS preflight', description: 'Separate request permission from response visibility' },
   { id: 'worker', number: '28', label: 'CSP workers & reporting', description: 'Observe worker execution and received HTTP reports' },
   { id: 'oauth', number: '29', label: 'OAuth / OIDC & PKCE', description: 'Bind authorization codes to their initiating flow' },
+  { id: 'websocket', number: '30', label: 'WebSocket security', description: 'Authorize connections and individual messages' },
+  { id: 'graphql', number: '31', label: 'GraphQL authorization', description: 'Check nested objects, fields, and mutations' },
+  { id: 'trusted', number: '32', label: 'Trusted Types policies', description: 'Preserve formatting through a sanitizing policy' },
 ]
 const active = ref('xss')
 const ready = ref(false)
@@ -92,6 +98,9 @@ const redirect = ref({ fixtures: [] })
 const preflight = ref({ fixtures: [] })
 const worker = ref({ fixtures: [] })
 const oauth = ref({ fixtures: [] })
+const websocket = ref({ fixtures: [] })
+const graphql = ref({ fixtures: [] })
+const trusted = ref({ fixtures: [] })
 const uploads = ref([])
 const stored = ref('')
 const mode = ref('self')
@@ -196,6 +205,9 @@ async function bootstrap(initial = false) {
   preflight.value = data.preflight || { fixtures: [] }
   worker.value = data.worker || { fixtures: [] }
   oauth.value = data.oauth || { fixtures: [] }
+  websocket.value = data.websocket || { fixtures: [] }
+  graphql.value = data.graphql || { fixtures: [] }
+  trusted.value = data.trusted || { fixtures: [] }
   uploads.value = data.uploads || []
   stored.value = data.stored?.payload || ''
   if (initial && payloads.value.length) {
@@ -389,7 +401,10 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <p class="intro" v-else-if="active === 'redirect'">Follow real redirects between local marker pages. Compare unchecked return URLs with permitted destinations and retain ordinary navigation.</p>
         <p class="intro" v-else-if="active === 'preflight'">Observe the browser's OPTIONS request, the actual handler's effects, and JavaScript response visibility as separate events.</p>
         <p class="intro" v-else-if="active === 'worker'">Compare a worker's execution under enforced and report-only policies. Check which violation reports reach the local collector.</p>
-        <p class="intro" v-else>Follow a local authorization-code flow with PKCE. Compare transaction binding, callback validation, and single-use code handling.</p>
+        <p class="intro" v-else-if="active === 'oauth'">Follow a local authorization-code flow with PKCE. Compare transaction binding, callback validation, and single-use code handling.</p>
+        <p class="intro" v-else-if="active === 'websocket'">Open real local WebSockets. Compare handshake origin checks, message permissions, and access after a permission change.</p>
+        <p class="intro" v-else-if="active === 'graphql'">Execute fixed GraphQL operations against fictional records. Inspect nested access, field permissions, mutation effects, and query limits.</p>
+        <p class="intro" v-else>Compare a pass-through Trusted Types policy with a sanitizing policy. Observe accepted sinks, preserved formatting, and harmless execution markers.</p>
 
         <div v-if="error" class="message error-message" role="alert"><strong>Request could not complete</strong><span>{{ error }}</span></div>
         <div v-if="notice" class="message success-message" role="status">{{ notice }}</div>
@@ -420,6 +435,9 @@ onBeforeUnmount(() => window.removeEventListener('message', receiveEvent))
         <PreflightLab v-else-if="active === 'preflight'" :metadata="preflight" :ready="ready" :csrf-token="csrfToken" />
         <WorkerLab v-else-if="active === 'worker'" :metadata="worker" :ready="ready" :csrf-token="csrfToken" />
         <OAuthLab v-else-if="active === 'oauth'" :metadata="oauth" :ready="ready" :csrf-token="csrfToken" />
+        <WebSocketLab v-else-if="active === 'websocket'" :metadata="websocket" :ready="ready" :csrf-token="csrfToken" />
+        <GraphqlLab v-else-if="active === 'graphql'" :metadata="graphql" :ready="ready" :csrf-token="csrfToken" />
+        <TrustedTypesLab v-else-if="active === 'trusted'" :metadata="trusted" :ready="ready" :csrf-token="csrfToken" />
 
         <template v-else-if="active !== 'uploads'">
           <div class="experiment-layout">

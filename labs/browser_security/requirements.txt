@@ -2,6 +2,11 @@ Django==6.0.9
 Pillow==13.0.0
 PyJWT==2.15.1
 oauthlib==4.0.0
+graphql-core==3.3.0
+uvicorn==0.54.0
+websockets==17.2
+click==8.5.0
+h11==0.16.0
 markdown-it-py==4.2.0
 mdurl==0.1.2
 nh3==0.3.7

@@ -96,7 +96,12 @@ def serve(port, peer_port):
     try:
         for role, selected_port in (("main", port), ("peer", peer_port)):
             processes.append(subprocess.Popen(
-                [str(PYTHON), "manage.py", "runserver", f"127.0.0.1:{selected_port}", "--noreload"],
+                [str(PYTHON), "-m", "uvicorn", "config.asgi:application",
+                 "--host", "127.0.0.1", "--port", str(selected_port),
+                 "--workers", "1", "--loop", "asyncio", "--http", "h11",
+                 "--ws", "websockets-sansio", "--ws-max-size", "1024",
+                 "--lifespan", "off", "--no-proxy-headers", "--no-access-log",
+                 "--log-level", "warning", "--timeout-graceful-shutdown", "2"],
                 cwd=BACKEND, env=dict(common, LAB_ROLE=role),
                 creationflags=subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0,
             ))
@@ -132,9 +137,10 @@ def main():
         if args.build:
             build()
         elif args.test:
+            # Backend frame tests consume the locally built sanitizer artifact.
+            build()
             run([PYTHON, "manage.py", "check"], BACKEND)
             run([PYTHON, "manage.py", "test", "securitylab", "--verbosity", "2"], BACKEND)
-            build()
             run([npm(), "run", "test:e2e"], FRONTEND)
         else:
             if not (FRONTEND / "dist" / "index.html").is_file():

@@ -35,6 +35,8 @@ The same dashboard adds [personalized cache isolation](labs/browser_security/CAC
 
 Protocol lessons add [CORS preflight](labs/browser_security/CORS_PREFLIGHT.md), [CSP workers and real HTTP violation reporting](labs/browser_security/CSP_WORKERS_REPORTING.md), and [local OAuth/OIDC with PKCE](labs/browser_security/OAUTH_OIDC.md). These distinguish browser requests, worker execution, report receipt, and authorization-flow validation.
 
+Continue with [WebSocket security](labs/browser_security/WEBSOCKETS.md), [GraphQL authorization](labs/browser_security/GRAPHQL.md), and [Trusted Types sanitizer policies](labs/browser_security/TRUSTED_TYPES.md). The first two extend authorization to different execution paths; the third demonstrates safe formatting through an explicitly permitted policy while retaining a harmless unsafe-policy comparison.
+
 1. For individual inputs, use the context-specific examples below. Change the marker ID for each test.
 2. For a working practice environment, save the Python block under **Local practice lab** as `csp_xss_lab.py`, then run `python csp_xss_lab.py`.
 3. Open `http://127.0.0.1:8765/` and the browser's developer-tools Console and Network panels. The initial page uses a nonce CSP and escapes reflected text.
@@ -767,7 +769,7 @@ http://127.0.0.1:8765/?mode=off#%3Cimg%20src%3D%22data%3Aimage%2Fpng%3Bbase64%2C
 | `eval`, `Function`, string timer | Yes | No | No | No | No | Yes | No |
 | Fetch `/ping` | Yes | No | No | No | No | Yes | No |
 
-(1) In `tt` mode, supporting browsers also reject raw strings at covered DOM/script sinks, such as `innerHTML`, with a `TypeError`. This lab permits no Trusted Types policies. Unsupported browsers may still enforce its nonce CSP, so blocked execution alone does not prove Trusted Types enforcement. An HTML source already parsed from the server response is a different path. [MDN: require-trusted-types-for](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for).
+(1) In `tt` mode, supporting browsers also reject raw strings at covered DOM/script sinks, such as `innerHTML`, with a `TypeError`. This mode permits no Trusted Types policies. The separate [Trusted Types policy lesson](labs/browser_security/TRUSTED_TYPES.md) demonstrates explicitly allowed policies and sanitizer-backed formatting. Unsupported browsers may still enforce nonce CSP, so blocked execution alone does not prove Trusted Types enforcement. An HTML source already parsed from the server response is a different path. [MDN: require-trusted-types-for](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for).
 
 Nonce values are generated independently for each response. Hashes cover exact UTF-8 script contents, excluding the surrounding tags. [MDN: script-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src).
 

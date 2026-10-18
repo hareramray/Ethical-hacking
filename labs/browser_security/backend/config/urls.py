@@ -23,6 +23,7 @@ from securitylab.cache_lab import cache_compare
 from securitylab.queue_lab import queue_compare
 from securitylab.redirect_lab import redirect_prepare, redirect_go, redirect_landing, redirect_peer_landing
 from securitylab import preflight_lab, worker_lab, oauth_lab
+from securitylab import websocket_lab, graphql_lab, trusted_lab
 
 urlpatterns = [
     path("", views.index),
@@ -71,6 +72,16 @@ urlpatterns = [
     path("lab/worker/marker.js", worker_lab.worker_script),
     path("api/worker/report/", worker_lab.worker_report),
     path("api/oauth/prepare/", oauth_lab.oauth_prepare),
+    path("api/graphql/compare/", graphql_lab.graphql_compare),
+    path("api/websocket/prepare/", websocket_lab.websocket_prepare),
+    path("api/websocket/state/", websocket_lab.websocket_state),
+    path("api/websocket/revoke/", websocket_lab.websocket_revoke),
+    path("lab/websocket/frame/", websocket_lab.websocket_frame),
+    path("lab/websocket/boot.js", websocket_lab.websocket_script),
+    path("peer/websocket/", websocket_lab.websocket_peer),
+    path("peer/websocket/boot.js", websocket_lab.websocket_peer_script),
+    path("api/trusted/prepare/", trusted_lab.trusted_prepare),
+    path("lab/trusted/frame/", trusted_lab.trusted_frame),
     path("lab/oauth/start/", oauth_lab.oauth_start),
     path("lab/oauth/provider/authorize/", oauth_lab.oauth_authorize),
     path("lab/oauth/callback/", oauth_lab.oauth_callback),

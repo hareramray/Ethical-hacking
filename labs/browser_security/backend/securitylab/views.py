@@ -10,7 +10,7 @@ from functools import wraps
 from pathlib import Path
 
 from django.conf import settings
-from django.http import FileResponse, HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.middleware.csrf import get_token
 from django.utils.http import content_disposition_header
 from PIL import Image, UnidentifiedImageError
@@ -43,6 +43,9 @@ from .redirect_lab import redirect_metadata
 from .preflight_lab import preflight_metadata
 from .worker_lab import worker_metadata
 from .oauth_lab import oauth_metadata
+from .websocket_lab import websocket_metadata
+from .graphql_lab import graphql_metadata
+from .trusted_lab import trusted_metadata
 
 MAX_UPLOAD = 64 * 1024
 MAX_UPLOADS = 20
@@ -139,6 +142,9 @@ def bootstrap(request):
         "preflight": preflight_metadata(),
         "worker": worker_metadata(),
         "oauth": oauth_metadata(),
+        "websocket": websocket_metadata(),
+        "graphql": graphql_metadata(),
+        "trusted": trusted_metadata(),
         "uploads": [upload_record(item) for item in Upload.objects.filter(owner=key)],
         "fixtures": [{"name": name, "url": "/api/fixtures/" + name, "description": value[1]}
                      for name, value in FIXTURES.items()],
@@ -449,7 +455,8 @@ def ping(request):
 def index(request):
     target = settings.FRONTEND_DIR / "index.html"
     if target.is_file():
-        response = FileResponse(target.open("rb"), content_type="text/html; charset=utf-8")
+        # These small local build artifacts need no synchronous streaming under ASGI.
+        response = HttpResponse(target.read_bytes(), content_type="text/html; charset=utf-8")
     else:
         response = HttpResponse(
             "<!doctype html><html lang=en><meta charset=utf-8><title>Browser lab setup</title>"
@@ -471,7 +478,7 @@ def asset(request, asset):
     content_type = mimetypes.guess_type(target.name)[0] or "application/octet-stream"
     if target.suffix == ".js":
         content_type = "text/javascript"
-    response = FileResponse(target.open("rb"), content_type=content_type)
+    response = HttpResponse(target.read_bytes(), content_type=content_type)
     response["Content-Security-Policy"] = APP_POLICY
     return response
 
